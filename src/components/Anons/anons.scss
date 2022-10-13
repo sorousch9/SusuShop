@@ -1,0 +1,18 @@
+.container {
+  max-width: 1610px;
+  padding: 0;
+}
+.anons-info {
+  background-color: var(--primaryBG);
+  height: 2vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+  p {
+    align-items: center;
+    font-size: 0.9rem;
+    span {
+      color: var(--bs-gray-800);
+    }
+  }
+}
