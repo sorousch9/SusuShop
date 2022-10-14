@@ -1,13 +1,15 @@
 .container {
   max-width: 1610px;
   padding: 0;
+ 
 }
 .anons-info {
-  background-color: var(--primaryBG);
-  height: 2vh;
+  background: rgb(255,219,85);
+
   display: flex;
   justify-content: space-between;
   padding: 0px 10px;
+  height: 1.6vh;
   p {
     align-items: center;
     font-size: 0.9rem;
