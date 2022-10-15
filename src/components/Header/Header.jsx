@@ -3,26 +3,30 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/LOGO.png";
 import { Col, Container, Row } from "react-bootstrap";
 import { Badge } from "@mui/material";
-import { BsSearch, BsCardChecklist } from "react-icons/bs";
+import { BsSearch, BsCardChecklist, BsCheck2Square } from "react-icons/bs";
 import { AiOutlineUser, AiOutlineShoppingCart } from "react-icons/ai";
 import { IoBusinessSharp } from "react-icons/io5";
+import { GoLocation } from "react-icons/go";
+import { VscSignOut, VscHeart } from "react-icons/vsc";
 export const Header = () => {
   return (
     <Container>
       <Row>
-        <Col md="2">
+        <Col xs="4" sm="2" xl="2">
           <div className="logo">
             <a href="/">
               <img src={logo} alt="beuroMarkt AG" />
             </a>
           </div>
         </Col>
-        <Col md="5">
-          <div className="header-right">
+        <Col xs="8" sm="6" xl="5">
+          <div className="header-center">
             <div className="search-style">
               <form>
                 <select className="select-active">
-                  <option>All Categories</option>
+                  <option disabled selected>
+                  Kategorien
+                  </option>
                   <option>Women's</option>
                   <option>Men's</option>
                   <option>Cellphones</option>
@@ -38,13 +42,13 @@ export const Header = () => {
                   <i>
                     <BsSearch />
                   </i>
-                  <input type="text" placeholder="Wonach suchen Sie ?" />
+                  <input type="text" placeholder="Suche" />
                 </div>
               </form>
             </div>
           </div>
         </Col>
-        <Col md="3">
+        <Col xs="12" sm="4" xl="5">
           <div class="header-action-right">
             <div className="header-action">
               <div className="header-action-icon">
@@ -62,10 +66,10 @@ export const Header = () => {
                     }}
                   >
                     <AiOutlineShoppingCart
-                      style={{ fontSize: "1.3rem", marginRight: "5px" }}
+                      style={{ fontSize: "1.6rem", marginRight: "0.5rem" }}
                     />
                   </Badge>
-                  <span>Warenkorb</span>
+                  <span className="herder-span">Warenkorb</span>
                 </Link>
               </div>
               <div className="header-action-icon">
@@ -83,11 +87,11 @@ export const Header = () => {
                     }}
                   >
                     <BsCardChecklist
-                      style={{ fontSize: "1.3rem", marginRight: "5px" }}
+                      style={{ fontSize: "1.6rem", marginRight: "0.5rem" }}
                     />
                   </Badge>
 
-                  <span>Einkaufslisten</span>
+                  <span className="herder-span" >Einkaufslisten</span>
                 </Link>
               </div>
               <div className="header-action-icon">
@@ -97,9 +101,9 @@ export const Header = () => {
                   className="text-link"
                 >
                   <AiOutlineUser
-                    style={{ fontSize: "1.3rem", marginRight: "5px" }}
+                    style={{ fontSize: "1.7rem", marginRight: "0.5rem" }}
                   />
-                  <span>Account</span>
+                  <span className="herder-span">Account</span>
                 </Link>
 
                 <div className="cart-dropdown-wrap">
@@ -113,7 +117,9 @@ export const Header = () => {
                         }}
                         className="text-link"
                       >
-                        <i className="fi fi-rs-user mr-10"></i>
+                        <i className="tab-ico">
+                          <AiOutlineUser />
+                        </i>
                         My Account
                       </Link>
                     </li>
@@ -126,7 +132,9 @@ export const Header = () => {
                         }}
                         className="text-link"
                       >
-                        <i className="fi fi-rs-location-alt mr-10"></i>
+                        <i className="tab-ico">
+                          <GoLocation />
+                        </i>
                         Order Tracking
                       </Link>
                     </li>
@@ -139,8 +147,10 @@ export const Header = () => {
                         }}
                         className="text-link"
                       >
-                        <i className="fi fi-rs-label mr-10"></i>
-                        My Voucher
+                        <i className="tab-ico">
+                          <BsCheck2Square />
+                        </i>
+                        Mein Gutschein
                       </Link>
                     </li>
                     <li>
@@ -152,10 +162,13 @@ export const Header = () => {
                         }}
                         className="text-link"
                       >
-                        <i className="fi fi-rs-heart mr-10"></i>
-                        My Wishlist
+                        <i className="tab-ico">
+                          <VscHeart />
+                        </i>
+                        Meine Wunschliste
                       </Link>
                     </li>
+
                     <li>
                       <Link
                         to="/"
@@ -165,38 +178,33 @@ export const Header = () => {
                         }}
                         className="text-link"
                       >
-                        <i className="fi fi-rs-settings-sliders mr-10"></i>
-                        Setting
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/"
-                        style={{
-                          color: "inherit",
-                          textDecoration: "inherit",
-                        }}
-                        className="text-link"
-                      >
-                        <i className="fi fi-rs-sign-out mr-10"></i>
-                        Sign out
+                        <i className="tab-ico">
+                          <VscSignOut />
+                        </i>
+                        Ausloggen
                       </Link>
                     </li>
                   </ul>
                 </div>
               </div>
+              <div className="header-action-icon">
+                <Link
+                  to="/"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                  className="text-link"
+                >
+                  <IoBusinessSharp
+                    style={{ fontSize: "1.6rem", marginRight: "0.5rem" }}
+                  />
+                  <span className="bus-span">Geschäftskundenshop</span>
+                  <p>Geschäfts<br></br>kundenshop</p>
+                </Link>
+              </div>
             </div>
           </div>
         </Col>
-        <Col md="2">
-          <div className="hotline">
-            <IoBusinessSharp style={{ fontSize: "2.4rem",color:"#474747",marginRight:"5px" }} />
-            <p>
-            Geschäftskundenshop<span>Alle Preise werden dann<br></br> zzgl. MwSt. angezeigt.</span>
-            </p>
-          </div>
-        </Col>
       </Row>
+      
     </Container>
   );
 };

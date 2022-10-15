@@ -4,12 +4,9 @@
  
 }
 .anons-info {
-  background: rgb(255,219,85);
-
+  background: rgb(250, 226, 137);
   display: flex;
-  justify-content: space-between;
-  padding: 0px 10px;
-  height: 1.6vh;
+  justify-content: space-around;
   p {
     align-items: center;
     font-size: 0.9rem;
@@ -17,4 +14,7 @@
       color: var(--bs-gray-800);
     }
   }
+}
+@media screen and (max-width: 700px) {
+  .anons-info {display: none; };
 }
