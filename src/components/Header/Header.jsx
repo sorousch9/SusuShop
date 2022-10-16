@@ -25,7 +25,7 @@ export const Header = () => {
               <form>
                 <select className="select-active">
                   <option disabled selected>
-                  Kategorien
+                  Alle Kategorien
                   </option>
                   <option>Women's</option>
                   <option>Men's</option>
