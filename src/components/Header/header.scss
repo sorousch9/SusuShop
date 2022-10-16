@@ -1,9 +1,9 @@
-.row {
+
+.header{
+  background-color: var(--primaryBG);
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: rgb(255,219,85);
-  
+  align-items: center; 
 }
 
 .logo {
@@ -22,6 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 .search-style {
   width: 85%;
