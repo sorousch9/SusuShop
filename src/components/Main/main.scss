@@ -1,18 +1,17 @@
-
 .glow {
-    width: 220px;
-    height: 50px;
+    width: 100%;
+    height: 35px;
     border: none;
     outline: none;
-    background: ededed;
     cursor: pointer;
     position: relative;
     z-index: 0;
     border-radius: 5px;
+    margin: 0.5rem 0rem;
 }
 .glow:before {
     content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background: linear-gradient(45deg, #f58f8f, #ff7300, #fffb00, #48ff00, #00ffd5, #8598fa, #a996be, #fa86e1, #fc9c9c);
     position: absolute;
     top: -2px;
     left:-2px;
@@ -45,9 +44,17 @@
     100% { background-position: 0 0; }
 }
 
-
+.categorie-1{
+    position: relative;
+  margin: 0.8rem 0rem;
+  padding: 0.8rem 2rem;
+  border: 1px solid #ececec;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.123);
+}
 .categorie {
   position: relative;
+  margin: 1rem 0rem;
   padding: 2rem;
   border: 1px solid #ececec;
   border-radius: 15px;

@@ -12,33 +12,40 @@ export const Main = () => {
     <Container>
       <Row>
         <Col md="2">
-        <button class="glow" type="button">GRATIS FÜR SIE</button>
-          <div className="categorie">
-            <h5>Kategorien</h5>
-            <ul>
-              <li>
-                <Link
-                  to="/"
-                  style={{ color: "inherit", textDecoration: "inherit" }}
-                  className="text-link"
-                >
-                <span>Alle</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  style={{ color: "inherit", textDecoration: "inherit" }}
-                  className="text-link"
-                >
-                  <img src={officevec} alt="office" />
-                  <span>Erste</span>
-                  <i>
-                    <BsArrowBarRight />
-                  </i>
-                </Link>
-              </li>
-            </ul>
+          <div className="sideBar">
+            <button className="glow" type="button">
+              GRATIS FÜR SIE
+            </button>
+            <div className="categorie-1">Aktionsartikel</div>
+            <div className="categorie-1">B-Ware</div>
+            <div className="categorie-1">Themensshops</div>
+            <div className="categorie">
+              <h5>Kategorien</h5>
+              <ul>
+                <li>
+                  <Link
+                    to="/"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                    className="text-link"
+                  >
+                    <span>Alle</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                    className="text-link"
+                  >
+                    <img src={officevec} alt="office" />
+                    <span>Erste</span>
+                    <i>
+                      <BsArrowBarRight />
+                    </i>
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </Col>
         <Col md="10">
