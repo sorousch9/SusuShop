@@ -5,8 +5,9 @@ import { TopRecommendations } from "./TopRecommendations/TopRecommendations";
 import { TopSales } from "./TopSales/TopSales";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { BsArrowBarRight } from "react-icons/bs";
-import officevec from "../../assets/office1.png";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { categories } from "../../data";
+
 export const Main = () => {
   return (
     <Container>
@@ -16,34 +17,34 @@ export const Main = () => {
             <button className="glow" type="button">
               GRATIS FÜR SIE
             </button>
-            <div className="categorie-1">Aktionsartikel</div>
-            <div className="categorie-1">B-Ware</div>
-            <div className="categorie-1">Themensshops</div>
+            <div className="categorie-1">   <Link
+                      to="/"
+                      style={{ color: "inherit", textDecoration: "inherit" }}
+                    >Aktionsartikel</Link></div>
+            <div className="categorie-1">   <Link
+                      to="/"
+                      style={{ color: "inherit", textDecoration: "inherit" }}
+                    >B-Ware</Link></div>
+            <div className="categorie-1">   <Link
+                      to="/"
+                      style={{ color: "inherit", textDecoration: "inherit" }}
+                    >Themens Shops</Link></div>
             <div className="categorie">
               <h5>Kategorien</h5>
               <ul>
-                <li>
-                  <Link
-                    to="/"
-                    style={{ color: "inherit", textDecoration: "inherit" }}
-                    className="text-link"
-                  >
-                    <span>Alle</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/"
-                    style={{ color: "inherit", textDecoration: "inherit" }}
-                    className="text-link"
-                  >
-                    <img src={officevec} alt="office" />
-                    <span>Erste</span>
-                    <i>
-                      <BsArrowBarRight />
-                    </i>
-                  </Link>
-                </li>
+                {categories.map((item) => (
+                  <li key={item.id}>
+                    <Link
+                      to="/"
+                      style={{ color: "inherit", textDecoration: "inherit" }}
+                    >
+                      <span>{item.title}</span>
+                      <i>
+                        <MdKeyboardArrowRight />
+                      </i>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

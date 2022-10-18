@@ -1,0 +1,107 @@
+.main-slider {
+  background-color: #e2e2e2;
+  display: flex;
+  border-radius: 10px;
+  height: 25vh;
+}
+
+.img-wrapper {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 80%;
+    transition: transform 1s ease;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+.info-wrapper{
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.title-banner h6{
+  font-size: 2rem;
+  font-weight: 400;
+  flex: 50%;
+  text-align: end;
+ }
+.desc-banner{
+ display: flex;
+ justify-content: flex-end;
+ flex-direction: column;
+ align-items: flex-end;
+  > span {
+    color: var(--color-org2);
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    align-items: flex-end;
+    &::after {
+      content: "pro Stück| inkl. MwSt.| zzgl. Versand";
+      font-size: 0.6rem;
+      color: gray;
+    }
+  }
+  p {
+    color: var(--color-ger2);
+    margin-top: .7rem;
+    align-items: flex-end;
+  }
+
+  .banner-amont {
+    display: flex;
+    justify-content: flex-end;
+    span{
+      padding: 0.2rem 0.8rem;
+      margin: 0rem 0.3rem;
+      font-size: 1.3rem;
+      box-shadow: inset 0px 0px 9px 0.5px #afafaf;
+    }
+    i {
+      cursor: pointer;
+      padding: 0.3rem 0.8rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 0px 9px 0.5px #afafaf;
+      &:hover {
+        box-shadow: inset 0px 0px 9px 0.5px #afafaf;
+      }
+    }
+    .banner-btn {
+      background-color: var(--primaryBG);
+      opacity: 0.9;
+      align-items: center;
+      border: none;
+      margin-left: 0.5rem;
+      padding: 0.5rem 0.8rem;
+      border-radius: 5px;
+      box-shadow: 0px 0px 9px 0.5px #afafaf;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+.main-slider2 {
+  display: flex;
+  border-radius: 10px;
+  height: 25vh;
+  position: relative;
+  img {
+    border-radius: 10px;
+    width: 100vw;
+    height: 25vh;
+  }
+  h6{
+    position: absolute;
+    right: 0px;
+    width: 300px;
+  }
+}
