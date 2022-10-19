@@ -1,0 +1,25 @@
+.carausel-Top-Rec{
+    margin: 1rem 0rem;
+    line-height: 1;
+    img{
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    h4{
+        font-size: 1rem; 
+    }
+    span{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-right: 1rem;
+        p{
+            font-size: 1rem;
+            font-weight: 300;
+            margin-right: .3rem;
+        }
+    }
+}

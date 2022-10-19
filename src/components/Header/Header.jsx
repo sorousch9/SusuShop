@@ -9,7 +9,6 @@ import { IoBusinessSharp } from "react-icons/io5";
 import { GoLocation } from "react-icons/go";
 import { VscSignOut, VscHeart } from "react-icons/vsc";
 import { categories } from "../../data";
-import { TempleBuddhist } from "@mui/icons-material";
 export const Header = () => {
   return (
     <Container>
