@@ -8,6 +8,8 @@ import { AiOutlineUser, AiOutlineShoppingCart } from "react-icons/ai";
 import { IoBusinessSharp } from "react-icons/io5";
 import { GoLocation } from "react-icons/go";
 import { VscSignOut, VscHeart } from "react-icons/vsc";
+import { categories } from "../../data";
+import { TempleBuddhist } from "@mui/icons-material";
 export const Header = () => {
   return (
     <Container>
@@ -24,18 +26,10 @@ export const Header = () => {
             <div className="header-center">
               <div className="search-style">
                 <form>
+                 
                   <select className="select-active" defaultValue="Alle Kategorien">
-                    <option>Alle Kategorien</option>
-                    <option>Women's</option>
-                    <option>Men's</option>
-                    <option>Cellphones</option>
-                    <option>Computer</option>
-                    <option>Electronics</option>
-                    <option> Accessories</option>
-                    <option>Home & Garden</option>
-                    <option>Luggage</option>
-                    <option>Shoes</option>
-                    <option>Mother & Kids</option>
+                  {categories.map((item)=>( <option key={item.id}>{item.title}</option>
+                    ))}
                   </select>
                   <div className="input-item">
                     <i>

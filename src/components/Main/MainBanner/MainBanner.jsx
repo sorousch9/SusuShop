@@ -1,14 +1,14 @@
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import "./mainBanner.scss";
-import simg from "../../../assets/smallBanner.jpg";
 import pimg from "../../../assets/p1.png";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 export const MainBanner = () => {
   return (
+    <Container>
     <Row>
       <h4>AKTIONSARTIKEL</h4>
-      <Col md="9">
+      <Col xl="9" md="12">
         <div className="main-slider">
           <div className="img-wrapper">
             <img src={pimg} alt="product" />
@@ -38,12 +38,11 @@ export const MainBanner = () => {
           </div>
         </div>
       </Col>
-      <Col md="3">
+      <Col xl="3" md="4">
         <div className="main-slider2">
-          <img src={simg} alt="banner" />
           <h6>Neuheiten</h6>
         </div>
       </Col>
-    </Row>
+    </Row></Container>
   );
 };

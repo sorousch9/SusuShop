@@ -12,23 +12,38 @@ export const Main = () => {
   return (
     <Container>
       <Row>
-        <Col md="2">
+        <Col xl="2">
           <div className="sideBar">
             <button className="glow" type="button">
               GRATIS FÜR SIE
             </button>
-            <div className="categorie-1">   <Link
-                      to="/"
-                      style={{ color: "inherit", textDecoration: "inherit" }}
-                    >Aktionsartikel</Link></div>
-            <div className="categorie-1">   <Link
-                      to="/"
-                      style={{ color: "inherit", textDecoration: "inherit" }}
-                    >B-Ware</Link></div>
-            <div className="categorie-1">   <Link
-                      to="/"
-                      style={{ color: "inherit", textDecoration: "inherit" }}
-                    >Themens Shops</Link></div>
+            <div className="categorie-1">
+              {" "}
+              <Link
+                to="/"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                Aktionsartikel
+              </Link>
+            </div>
+            <div className="categorie-1">
+              {" "}
+              <Link
+                to="/"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                B-Ware
+              </Link>
+            </div>
+            <div className="categorie-1">
+              {" "}
+              <Link
+                to="/"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                Themens Shops
+              </Link>
+            </div>
             <div className="categorie">
               <h5>Kategorien</h5>
               <ul>
@@ -49,10 +64,10 @@ export const Main = () => {
             </div>
           </div>
         </Col>
-        <Col md="10">
+        <Col xl="10" md="12">
           <MainBanner />
-          <CustomerOpinions />
           <TopRecommendations />
+          <CustomerOpinions />
           <TopSales />
         </Col>
       </Row>
