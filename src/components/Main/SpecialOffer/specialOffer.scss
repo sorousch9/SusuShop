@@ -1,0 +1,124 @@
+.header-so {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin: 1.5rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  h4 {
+    display: flex;
+    font-family: Inter;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #233a95;
+    letter-spacing: 0;
+    margin-bottom: 0;
+    p {
+      color: #ed174a;
+      font-size: 1.6rem;
+      margin: 0rem 0.3rem;
+    }
+  }
+  span {
+    display: inline-block;
+    font-size: 0.9375rem;
+    color: #9b9bb4;
+    width: 100%;
+    text-align: right;
+  }
+}
+.column1 {
+  justify-content: flex-start;
+  background-color: antiquewhite;
+}
+.body-so {
+  border: 2px solid #ed174a;
+  border-radius: 8px;
+  .product-so {
+    position: relative;
+    flex: 1 1 0%;
+    min-width: 0;
+    z-index: 1;
+    width: 100%;
+    border-right: 1px solid #edeef5;
+    border-bottom: 1px solid #edeef5;
+    transition: z-index 0.2s cubic-bezier(0.28, 0.12, 0.22, 1);
+  }
+  .product-wrapper {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+  .thumbnail-wrapper {
+    padding: 1.25rem;
+    .product-badges {
+      position: absolute;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      top: 1.125rem;
+      left: 1.125rem;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .badge1,
+    .badge2 {
+      margin-top: 0.2rem;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
+      border: none;
+      width: auto;
+      max-height: 1.5rem;
+      border-radius: 5px;
+      padding: 0.375rem 0.75rem;
+      color: #fff;
+      background-color: #797979;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    }
+    .badge2 {
+      background-color: #ea1e4e;
+    }
+    .badge1 {
+      background-color: #58ce53;
+    }
+  }
+  .p-img {
+    height: auto;
+    max-width: 100%;
+  }
+  .product-buttons {
+    position: absolute;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    flex-direction: column;
+    top: 0.9375rem;
+    right: 0.9375rem;
+  }
+  .product-buttons > * {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    color: var(--color-text-light);
+    background-color: #fff;
+    border: 1px solid var(--color-border-light);
+    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.25s cubic-bezier(0.17, 0.62, 0.44, 0.99),
+      transform 0.25s cubic-bezier(0.17, 0.62, 0.44, 0.99);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

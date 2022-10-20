@@ -7,6 +7,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { categories } from "../../data";
+import { SpecialOffer } from "./SpecialOffer/SpecialOffer";
 
 export const Main = () => {
   return (
@@ -66,6 +67,7 @@ export const Main = () => {
         </Col>
         <Col xl="10" md="12">
           <MainBanner />
+          <SpecialOffer/>
           <TopRecommendations />
           <CustomerOpinions />
           <TopSales />
