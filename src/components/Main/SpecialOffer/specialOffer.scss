@@ -44,7 +44,7 @@
   .module-body {
     display: flex;
     flex-flow: row wrap;
-    border: 2px solid var(  --color-red);
+    border: 2px solid var(--color-red);
     border-radius: 7px;
   }
   // Star Rating
@@ -193,14 +193,20 @@
       background-color: var(--color-warning);
     }
     &.recommend {
-      font-size: 0.625rem;
-      font-weight: 700;
+      padding: 0.5rem 0.6rem;
+      font-weight: 500;
       background-color: var(--color-text-light);
     }
     &.consistent {
-      padding: 0.5rem 0.9rem;
+      padding: 0.5rem 0.6rem;
       color: var(--color-text-light);
       background-color: var(--primaryBG);
+    }
+    &.best {
+      padding: 0.5rem 0.6rem;
+      color: var(--color-background);
+      background-color: var(--color-ger1);
+     
     }
   }
 
@@ -220,7 +226,7 @@
       color: var(--color-text-light);
       background-color: #fff;
       border: 1px solid var(--color-border-light);
-      box-shadow: 0 3px 5px rgba($color: #000000, $alpha: 0.1);
+      box-shadow: 0 3px 5px  rgba( #000000, 0.1);
       opacity: 0;
       transform: translateX(10px);
       transition: opacity 0.25s cubic-bezier(0.17, 0.62, 0.44, 0.99),

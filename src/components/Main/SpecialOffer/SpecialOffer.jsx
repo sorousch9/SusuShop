@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "./specialOffer.scss";
-import ptest from "../../../assets/products-img/ptest.png";
 import { Col, Row } from "react-bootstrap";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
+import { productsOnSale } from "../../../data";
 export const SpecialOffer = () => {
   return (
     <div className="spacial-offer">
@@ -26,20 +26,21 @@ export const SpecialOffer = () => {
       </Row>
 
       <div className="module-body products align-center">
-        <div className="product product-type-simple">
-          <div className="product-wrapper product-type-3">
+        {productsOnSale.map((item)=>( 
+        <div className="product product-type-simple" key={item.id}>
+          <div className="product-wrapper product-type-3" >
             <div className="thumbnail-wrapper">
               <div className="product-badges">
-                <span className="badge style-1 onsale">20%</span>
-                <span className="badge style-2 consistent">
-                  Sofort lieferbar
+                <span className="badge style-1 onsale">{item.sale}%</span>
+                <span className={item.available[1]}>
+                 {item.available[0]}
                 </span>
               </div>
               <Link
                 to="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
-                <img className="p-img" src={ptest} alt="sas" />
+                <img className="p-img" src={item.img} alt="sas" />
               </Link>
               <div className="product-buttons">
                 <Link
@@ -50,17 +51,15 @@ export const SpecialOffer = () => {
                     style={{ color: "inherit", textDecoration: "inherit" }}
                   />
                 </Link>
-                
-                  <Link
-                    to="/"
-                    className="detail-bnt quick-view-button"
-                    style={{ color: "inherit", textDecoration: "inherit" }}
-                  >
-                    <BsHeart />
-                  </Link>
-                
+
+                <Link
+                  to="/"
+                  className="detail-bnt quick-view-button"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <BsHeart />
+                </Link>
               </div>
-              
             </div>
             <div className="content-wrapper">
               <span className="price">
@@ -68,15 +67,15 @@ export const SpecialOffer = () => {
                   <span className="amount">
                     <bdi>
                       <span className=""></span>
-                      240.00€
+                      {item.price}€
                     </bdi>
                   </span>
                 </del>{" "}
                 <ins>
                   <span className="amount">
                     <bdi>
-                      <span>€</span>
-                      190.50
+                      <span>{parseFloat(item.price-(item.price * item.sale/100)).toFixed(2)}€</span>
+                      {item.saleprice}
                     </bdi>
                   </span>
                 </ins>
@@ -87,7 +86,7 @@ export const SpecialOffer = () => {
                   style={{ color: "inherit", textDecoration: "inherit" }}
                   title="testing product"
                 >
-                  Multifunktionsgerät Brother MFC L3750CDW
+                 {item.title}
                 </Link>
               </h3>
               <div className="product-meta">
@@ -106,7 +105,6 @@ export const SpecialOffer = () => {
                 </div>
               </div>
               <div className="product-count">
-                
                 <div className="product-pcs">
                   die verfügbaren produkten : <span>26</span>
                 </div>
@@ -117,12 +115,13 @@ export const SpecialOffer = () => {
             </div>
           </div>
         </div>
+        )) }
         <div
-          className="product-content-fade border-info"
-          style={{ marginBottom: "-49px" }}
+        className="product-content-fade border-info"
+        style={{ marginBottom: "-49px" }}
         ></div>
         <div className="product-content-fade"></div>
-      </div>
-    </div>
+        </div>
+        </div>
   );
 };
