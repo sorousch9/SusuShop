@@ -11,15 +11,19 @@
     }
     h4{
         font-size: 1rem; 
+        margin-left: .5rem;
     }
     span{
         display: flex;
-        justify-content: flex-end;
+        justify-content: left;
         align-items: center;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        color: var(--color-price);
         font-weight: 500;
         margin-right: 1rem;
+        margin-left: .5rem;
         p{
+            color: black;
             font-size: 1rem;
             font-weight: 300;
             margin-right: .3rem;

@@ -21,6 +21,10 @@ export const TopRecommendations = () => {
         navigation
        
         breakpoints={{
+          380:{
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
           640: {
             slidesPerView: 2,
             spaceBetween: 20,
@@ -43,7 +47,8 @@ export const TopRecommendations = () => {
               <img src={item.img} alt="product" />
               <h4>{item.title}</h4>
               <span>
-                <p>Price ab</p>
+                <p>Preis</p>
+               
                 {item.price}€
               </span>
             </div>
