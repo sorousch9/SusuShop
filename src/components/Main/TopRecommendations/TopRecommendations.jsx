@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import "swiper/scss/autoplay";
-import { Autoplay, Navigation, Pagination } from "swiper";
+import { Autoplay, Navigation } from "swiper";
 import { products } from "../../../data";
 import "swiper/scss/navigation";
 
@@ -19,9 +19,7 @@ export const TopRecommendations = () => {
         slidesPerView={1}
         spaceBetween={10}
         navigation
-        pagination={{
-          clickable: true,
-        }}
+       
         breakpoints={{
           640: {
             slidesPerView: 2,
@@ -36,7 +34,7 @@ export const TopRecommendations = () => {
             spaceBetween: 50,
           },
         }}
-        modules={[Pagination, Navigation, Autoplay]}
+        modules={[Navigation, Autoplay]}
         className="mySwiper"
       >
         {products.map((item) => (

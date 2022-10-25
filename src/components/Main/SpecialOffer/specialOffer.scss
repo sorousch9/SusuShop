@@ -39,7 +39,6 @@
   }
   .column-countdown {
     justify-content: flex-start;
-    background-color: antiquewhite;
   }
   .module-body {
     display: flex;
@@ -439,6 +438,7 @@
         position: relative;
         display: block;
         img {
+         padding-block: 2rem;
           width: 100%;
         }
       }
