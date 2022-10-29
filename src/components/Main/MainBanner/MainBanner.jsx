@@ -1,48 +1,54 @@
-import { Col, Container, Row } from "react-bootstrap";
 import "./mainBanner.scss";
-import pimg from "../../../assets/p1.png";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { FiShoppingCart } from "react-icons/fi";
+import pimg from "../../../assets/banner.webp";
+import pimg2 from "../../../assets/slider3.jpg";
+import { Link } from "react-router-dom";
 export const MainBanner = () => {
   return (
-    <Container>
-    <Row>
-      <h4>AKTIONSARTIKEL</h4>
-      <Col xl="9" md="12">
-        <div className="main-slider">
-          <div className="img-wrapper">
-            <img src={pimg} alt="product" />
-          </div>
-          <div className="info-wrapper">
-            <div className="title-banner">
-              <h6>Schubladenbox Böttcher AG</h6>
-              <p>A4, Kunststoff, 5 Fächer, halboffen, bunt / anthrazit</p>
+    <div className="module-main-banner">
+      <div className="module-banner">
+        <div className="main-right">
+          <div className="main-slider">
+            <div className="content-wrapper">
+              <div className="content-header">
+                <div className="content-description">Exclusives Angebot</div>
+                <div className="content-discount">-18% Rabatt</div>
+              </div>
+              <div className="content-body">
+                <h3 className="entry-title">
+                  Machen Ihre<br></br> Arbeitsatmosphäre angenehmer
+                </h3>
+                <div className="content-text">
+                  Nur diese Woche. Verpassen Sie nicht ...
+                </div>
+              </div>
+              <div className="content-footer">
+                <span className="price-text">ab</span>
+                <span className="price">0,99 €</span>
+              </div>
+              <button className="banner-btn">Jetzt einkaufen</button>
             </div>
-            <div className="desc-banner">
-              <span>11.89 €</span>
-              <p>Lieferzeit: sofort lieferbar</p>
-              <div className="banner-amont">
-                <i>
-                  <AiOutlineMinus />
-                </i>
-                <span>1</span>
-                <i>
-                  <AiOutlinePlus />
-                </i>
-                <button className="banner-btn">
-                  In den Warenkorb
-                  <FiShoppingCart />
-                </button>
+            <div className="img-wrapper">
+              <img src={pimg} alt="office supplies" />
+            </div>
+            <Link to="/" className="overlay-link"></Link>
+          </div>
+        </div>
+        <div className="main-left">
+          <div className="main-slider2">
+            <div className="content-wrapper">
+              <div className="content-title">Böttcher AG</div>
+              <div className="content-details">
+                <div className="content-details c1">Unsere </div>
+                <div className="content-details c2">Produkte</div>
               </div>
             </div>
+            <div className="img-wrapper">
+              <img src={pimg2} alt="ag" />
+            </div>
+            <Link to="/" className="overlay-link"></Link>
           </div>
         </div>
-      </Col>
-      <Col xl="3" md="4">
-        <div className="main-slider2">
-          <h6>Neuheiten</h6>
-        </div>
-      </Col>
-    </Row></Container>
+      </div>
+    </div>
   );
 };

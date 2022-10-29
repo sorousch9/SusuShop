@@ -67,7 +67,7 @@ export const Main = () => {
         </Col>
         <Col xl="10" md="12">
           <MainBanner />
-          <SpecialOffer/>
+          <SpecialOffer />
           <TopRecommendations />
           <CustomerOpinions />
           <TopSales />

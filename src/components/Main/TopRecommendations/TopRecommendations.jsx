@@ -10,7 +10,6 @@ import "swiper/scss/navigation";
 export const TopRecommendations = () => {
   return (
     <div>
-      {" "}
       <Swiper
         autoplay={{
           pauseOnMouseEnter: true,

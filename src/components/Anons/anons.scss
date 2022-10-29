@@ -3,7 +3,7 @@
   padding: 0;
 }
 .anons-info {
-  background: rgb(250, 226, 137);
+  background: rgb(234, 234, 234);
   display: flex;
   justify-content: space-around;
   p {
@@ -12,8 +12,31 @@
     span {
       color: var(--bs-gray-800);
     }
+    
+  }
+  .bussiness-shop{
+    font-size: 1rem;
+    
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &::after{
+      content:'\e8ad\e88d';
+      font-family:"Raw";
+      padding: 0rem .3rem;
+      color: var( --color-warning-dark);
+      animation: blink 3s forwards infinite;
+    }
+    &:hover{
+      font-size: larger;
+    }
   }
 }
-@media screen and (max-width: 700px) {
-  .anons-info {display: none; };
+@keyframes blink{
+  0%{opacity: 0;}
+ 
+  100%{opacity: 1;}
+}
+
+@media screen and (max-width: 890px) {
+  .anons-info span,p {display: none; };
 }

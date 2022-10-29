@@ -2,7 +2,6 @@ import { Container, Row } from "react-bootstrap";
 import "./anons.scss";
 import { BsTruck, BsPeople } from "react-icons/bs";
 import {
-  RiArrowGoBackLine,
   RiMedal2Fill,
   RiShieldKeyholeLine,
 } from "react-icons/ri";
@@ -25,12 +24,9 @@ export const Anons = () => {
             </span>
           </p>
 
-          <p>
-            Rücksendung kostenlos{" "}
-            <span>
-              <RiArrowGoBackLine />
-            </span>
-          </p>
+          <i className="bussiness-shop">
+            zum Geschäftskundenshop
+          </i>
 
           <p>
             über 200.000 Artikel{" "}

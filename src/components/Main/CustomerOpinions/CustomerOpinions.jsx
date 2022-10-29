@@ -1,8 +1,193 @@
-import "./customerOpinions.scss"
-import { Row } from "react-bootstrap"
+import "./customerOpinions.scss";
+import { Link } from "react-router-dom";
+import { productsOnSale } from "../../../data";
+import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
+import p7718687 from "../../../assets/7718687.jpg";
 
 export const CustomerOpinions = () => {
   return (
-    <Row>CustomerOpinions</Row>
-  )
-}
+    <div className="module-categor-products style-raw">
+      <div className="module-header">
+        <div className="column">
+          <h4 className="entry-title">Bei unseren Kunden beliebt</h4>
+          <div className="entry-description">
+            zweite Reihe Aktionen und Angebote "Bei unseren Kunden beliebt"
+          </div>
+        </div>
+        <div className="column">
+          <Link
+            className="button"
+            style={{ color: "inherit", textDecoration: "inherit" }}
+          >
+            Alle ansehen
+            <i></i>
+          </Link>
+        </div>
+      </div>
+      <div className="module-body">
+        <div className="column left">
+          <div className="cell">
+            <div className="categories-links">
+              {productsOnSale.map((item) => (
+                <ul key={item.id}>
+                  <li>
+                    <Link
+                      style={{ color: "inherit", textDecoration: "inherit" }}
+                      to="/"
+                    >
+                      {item.category[0]}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      style={{ color: "inherit", textDecoration: "inherit" }}
+                      to="/"
+                    >
+                      {item.category[1]}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      style={{ color: "inherit", textDecoration: "inherit" }}
+                      to="/"
+                    >
+                      {item.category[2]}
+                    </Link>
+                  </li>
+                </ul>
+              ))}
+            </div>
+          </div>
+          <div className="cell banner">
+            <div className="module-banner align-left full-text">
+              <div className="module-body">
+                <div className="banner-wrapper">
+                  <div className="banner-content">
+                    <div className="content-header">
+                      <div className="category-text color-danger">
+                      Qualität
+                      </div>
+                    </div>
+                    <div className="content-main">
+                      <h4 className="entry-subtitle">Die Zuverlässigkeit </h4>
+                      <h3 className="entry-title color-text-light">
+                      aller Produkte
+                      </h3>
+                      <div className="entry-store color-info-dark">
+                        Nur in Böttcher AG
+                      </div>
+                    </div>
+                  </div>
+                  <div className="banner-thumbnail">
+                    <img src={p7718687} alt="tets" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="column right">
+          <div className="products mobile-column-2 column-3">
+            {productsOnSale.map((item) => (
+              <div className="product product-type-simple" key={item.id}>
+                <div className="product-wrapper product-type-3">
+                  <div className="thumbnail-wrapper">
+                    <div className="product-badges">
+                      <span className="badge style-1 onsale">{item.sale}%</span>
+                      <span className={item.available[1]}>
+                        {item.available[0]}
+                      </span>
+                    </div>
+                    <Link
+                      to="/"
+                      style={{ color: "inherit", textDecoration: "inherit" }}
+                    >
+                      <img className="p-img" src={item.img} alt="sas" />
+                    </Link>
+                    <div className="product-buttons">
+                      <Link
+                        to="/"
+                        style={{ color: "inherit", textDecoration: "inherit" }}
+                      >
+                        <BsArrowsFullscreen
+                          style={{
+                            color: "inherit",
+                            textDecoration: "inherit",
+                          }}
+                        />
+                      </Link>
+
+                      <Link
+                        to="/"
+                        className="detail-bnt quick-view-button"
+                        style={{ color: "inherit", textDecoration: "inherit" }}
+                      >
+                        <BsHeart />
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="content-wrapper">
+                    <span className="price">
+                      <del aria-hidden="true">
+                        <span className="amount">
+                          <bdi>
+                            <span className=""></span>
+                            {item.price}€
+                          </bdi>
+                        </span>
+                      </del>{" "}
+                      <ins>
+                        <span className="amount">
+                          <bdi>
+                            <span>
+                              {parseFloat(
+                                item.price - (item.price * item.sale) / 100
+                              ).toFixed(2)}
+                              €
+                            </span>
+                            {item.saleprice}
+                          </bdi>
+                        </span>
+                      </ins>
+                    </span>
+                    <h3 className="product-title">
+                      <Link
+                        to="/"
+                        style={{ color: "inherit", textDecoration: "inherit" }}
+                        title="testing product"
+                      >
+                        {item.title}
+                      </Link>
+                    </h3>
+                    <div className="product-meta">
+                      <div className="product-available in-stock">
+                        AUF LAGER
+                      </div>
+                    </div>
+                    <div className="product-rating">
+                      <div
+                        className="star-rating"
+                        role="img"
+                        aria-label="Rated 5.00 out of 5"
+                      >
+                        <span style={{ width: "100%" }}></span>
+                      </div>
+                      <div className="count-rating">
+                        58 <span className="rating-text">Ratings</span>
+                      </div>
+                    </div>
+                    <div className="product-fade-block">
+                      <button className="product-btn-fade">
+                        In den Warenkorb
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
