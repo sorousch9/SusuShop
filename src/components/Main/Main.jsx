@@ -2,12 +2,12 @@ import "./main.scss";
 import { CustomerOpinions } from "./CustomerOpinions/CustomerOpinions";
 import { MainBanner } from "./MainBanner/MainBanner";
 import { TopRecommendations } from "./TopRecommendations/TopRecommendations";
-import { TopSales } from "./TopSales/TopSales";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { categories } from "../../data";
 import { SpecialOffer } from "./SpecialOffer/SpecialOffer";
+import { Widget } from "./Widget/Widget";
 
 export const Main = () => {
   return (
@@ -68,9 +68,9 @@ export const Main = () => {
         <Col xl="10" md="12">
           <MainBanner />
           <SpecialOffer />
+          <Widget />
           <TopRecommendations />
           <CustomerOpinions />
-          <TopSales />
         </Col>
       </Row>
     </Container>
