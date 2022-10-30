@@ -1,18 +1,28 @@
 .widget-container {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 2rem 0rem;
+  margin-bottom: 0rem;
   position: relative;
   .widget-wrapper {
-    display: flex;
+    flex-wrap: wrap;
     margin-right: auto;
     margin-left: auto;
     position: relative;
     justify-content: space-between;
+    display: flex;
+    @media (max-width: 768px) {
+      justify-content: center
+    }
     .widget-col {
       width: 32%;
       position: relative;
-      flex-wrap: wrap;
-      padding-top: 0.9rem;
+      display: flex;
+      padding: 0.9rem 0.3rem;
+      @media (max-width: 768px) {
+        width: 50%;
+      }
+      @media (max-width: 500px) {
+        width: 100%;
+      }
 
       .banner-content {
         width: 100%;
@@ -53,6 +63,7 @@
           align-items: center;
           display: flex;
           justify-content: center;
+          cursor: pointer;
           opacity: 50%;
           transition: all 0.3s ease-in-out;
           &::after {

@@ -68,8 +68,8 @@ export const Main = () => {
         <Col xl="10" md="12">
           <MainBanner />
           <SpecialOffer />
-          <Widget />
           <TopRecommendations />
+          <Widget />
           <CustomerOpinions />
         </Col>
       </Row>
