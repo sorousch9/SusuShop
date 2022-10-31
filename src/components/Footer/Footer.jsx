@@ -5,10 +5,10 @@ import { Subscribe } from "./Subscribe/Subscribe";
 
 export const Footer = () => {
   return (
-    <div>
+    <div className="footer">
+      <Subscribe />
       <Bottom />
       <IconBoxes />
-      <Subscribe />
     </div>
   );
 };

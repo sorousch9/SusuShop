@@ -1,0 +1,86 @@
+.footer-subscribe {
+  background-color: var(--primaryBG);
+  .subscribe-content {
+    padding: 2.5rem 1rem;
+    font-family: "Lato";
+    .entry-subtitle {
+      font-weight: 300;
+    }
+    .entry-title {
+      font-size: 1.625rem;
+      font-weight: 600;
+      margin-bottom: 0.9375rem;
+    }
+    .entry-teaser {
+      max-width: 18.75rem;
+      opacity: 0.5;
+      margin-bottom: 1.875rem;
+      p {
+        font-size: 0.8125rem;
+      }
+    }
+  }
+  .form-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .form {
+      width: 100%;
+      .form-fields {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        span{
+            position: absolute;
+            font-size: 1.125rem;
+            color: var(--color-info);
+            left: 1.25rem;
+            z-index: 3;
+            &::before{
+                content: "\e84f";
+                font-family: "Raw";
+              }
+        }
+        .subscribe-input {
+          height: 3.5rem;
+          display: inline-flex;
+          align-items: center;
+          font-family: var(--font-primary);
+          font-size: 0.93rem;
+          width: 100%;
+          padding: 0 0.93rem;
+          color: var(--color-text);
+          background-color: var(--color-form-background);
+          border: none;
+          border-radius: 7px;
+          transition: all 0.2s cubic-bezier(0.28, 0.12, 0.22, 1);
+          padding-left: 3.125rem;
+        }
+        .subscribe-input-submit {
+          position: absolute;
+          font-size: .9rem;
+          font-weight: 700;
+          height: auto;
+          top: 4px;
+          bottom: 4px;
+          right: 4px;
+          border: 0;
+          background-color: var(--color-primary);
+          color: #fff;
+          border-radius: 7px;
+          padding: 0rem 1rem;
+          
+        }
+      }
+    }
+  }
+}
+.subscribe-image {
+  justify-content: flex-end;
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+}
