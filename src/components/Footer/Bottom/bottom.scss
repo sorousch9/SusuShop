@@ -1,0 +1,69 @@
+.footer-bottom {
+  padding-left:1rem;
+  .container {
+    padding-top: 2.5rem;
+    .footer-widgets {
+      font-size: 0.8125rem;
+      margin-bottom: 1.875rem;
+      position: relative;
+      color: var(--color-text-lighter);
+      .widgets-title {
+        h4 {
+          color: #202435;
+          font-size: 0.9375rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0;
+          margin-bottom: 1.25rem;
+        }
+      }
+      .widgets-content {
+        ul {
+          font-size: 0.875rem;
+          font-weight: 400;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          li {
+            color: #71778e;
+            cursor: pointer;
+            margin: 0.5rem 0rem;
+            img{
+              width: auto;
+              height: 1.5rem;
+            }
+
+            .send {
+              &::after {
+                content: "\e855";
+                color: var(--color-success);
+                font-family: "Raw";
+              }
+            }
+            .back {
+              &::after {
+                content: "\e8a3";
+                color: var(--color-success);
+                font-family: "Raw";
+              }
+            }
+            .customer {
+              &::after {
+                content: "\e8e1";
+                color: var(--color-success);
+                font-family: "Raw";
+              }
+            }
+            .article {
+              &::after {
+                content: "\e889";
+                font-family: "Raw";
+                color: var(--color-success);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

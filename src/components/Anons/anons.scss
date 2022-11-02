@@ -9,6 +9,9 @@
   p {
     align-items: center;
     font-size: 0.9rem;
+    @media screen and (max-width: 890px) {
+      display: none;
+    }
     span {
       color: var(--bs-gray-800);
     }
@@ -37,6 +40,4 @@
   100%{opacity: 1;}
 }
 
-@media screen and (max-width: 890px) {
-  .anons-info span,p {display: none; };
-}
+

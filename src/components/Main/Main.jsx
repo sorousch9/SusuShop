@@ -73,6 +73,7 @@ export const Main = () => {
           <CustomerOpinions />
         </Col>
       </Row>
+      <a href="#" className="scrollToTop"></a>
     </Container>
   );
 };
