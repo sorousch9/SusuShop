@@ -45,7 +45,7 @@ export const Header = () => {
           <div className="header-action">
             <div className="header-action-icon">
               <Link
-                to="/"
+                to="/cart"
                 style={{ color: "inherit", textDecoration: "inherit" }}
                 className="text-link"
               >
