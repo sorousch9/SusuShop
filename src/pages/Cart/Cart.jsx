@@ -84,7 +84,25 @@ export const Cart = () => {
                         </td>
                       </tr>
 
-                      <tr className="cart-coupon"></tr>
+                      <tr className="cart-coupon">
+                        <td className="actions">
+                          <div className="actions-wrapper">
+                            <div className="coupon">
+                              <input
+                                type="text"
+                                className="input-text"
+                                placeholder="Gutscheincode"
+                              />
+                              <button type="submit" className="coupon-btn">
+                                Gutschein anwenden
+                              </button>
+                            </div>
+                            <button type="submit" className="coupon-btn">
+                              Warenkorb aktualisieren
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </form>
