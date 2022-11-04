@@ -1,0 +1,107 @@
+.cart-breadcrumb {
+  padding: 0.625rem 0;
+  ul {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      color: var(--color-info-dark);
+      a {
+        color: var(--color-text-light);
+        text-decoration: none;
+      }
+      span:after {
+        font-family: "Raw";
+        font-size: 1rem;
+        content: "\e8d3";
+        margin-left: 0.625rem;
+        margin-right: 0.625rem;
+      }
+    }
+  }
+}
+.single-product-wrapper {
+  .product-wrapper {
+    padding: 2.5rem;
+    .product-header {
+      width: 100%;
+      margin-bottom: 1.875rem;
+      .product-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.9375rem;
+        font-family: "Lato";
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+      .product-meta {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        font-size: 0.75rem;
+        .product-brand {
+          display: inline-flex;
+          align-items: center;
+          table {
+            max-width: 100%;
+            background-color: transparent;
+            width: 100%;
+            tr {
+              display: inline-block;
+              th {
+                color: var(--color-info-dark);
+                margin-right: 4px;
+                border: none;
+                padding: 0;
+                font-size: 0.75rem;
+                font-weight: 400;
+              }
+              td {
+                text-align: left;
+                p {
+                  margin: 0;
+                  font-weight: 500;
+                  color: var(--color-text-light);
+                  font-size: 0.75rem;
+                  padding-left: 0.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .product-content {
+      .photo-gallery {
+        opacity: 1;
+    transition: opacity 0.25s ease-in-out 0s;
+        .product-badges {
+            position: absolute;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 1.125rem;
+    left: 1.125rem;
+    pointer-events: none;
+    z-index: 1;
+          .badge {
+            .style-1 {
+            }
+            .onsale {
+            }
+          }
+        }
+        .slider-wrapper {}
+      }
+    }
+  }
+}

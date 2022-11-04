@@ -153,7 +153,7 @@ export const Cart = () => {
                     </table>
                     <div className="checkout">
                       <Link to={"/checkout"}>
-                        <button className="to-checkout">Checkout</button>
+                        <button className="to-checkout">weiter zur Kasse</button>
                       </Link>
                     </div>
                   </div>
