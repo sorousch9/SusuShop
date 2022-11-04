@@ -97,7 +97,7 @@ export default function Product() {
                       </span>
                     </div>
                     <div className="product-share">
-                    Teilen :
+                      Teilen :
                       <div className="social-share">
                         <ul>
                           <li>
@@ -117,28 +117,28 @@ export default function Product() {
                     </div>
                   </div>
                   <div className="info-content">
-                    <div className="alart-message">Lieferzeit: sofort lieferbar</div>
+                    <div className="alart-message">
+                      Lieferzeit: sofort lieferbar
+                    </div>
                     <div className="icon-messages">
                       <ul>
                         <li>
-                          <span className="icon"></span>
+                          <span className="icon shipping"></span>
                           <div className="message">
                             Kostenloser Versand gilt für alle Bestellungen über
                             50 €
                           </div>
                         </li>
                         <li>
-                          <span className="icon"></span>
+                          <span className="icon orginal"></span>
                           <div className="message">
-                            Kostenloser Versand gilt für alle Bestellungen über
-                            50 €
+                            die Echtheit des Produkts garantiert
                           </div>
                         </li>
                         <li>
-                          <span className="icon"></span>
+                          <span className="icon return"></span>
                           <div className="message">
-                            Kostenloser Versand gilt für alle Bestellungen über
-                            50 €
+                            14 Tag Rückgaberecht, wenn Sie Ihre Meinung ändern
                           </div>
                         </li>
                       </ul>
