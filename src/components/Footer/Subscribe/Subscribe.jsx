@@ -7,15 +7,18 @@ export const Subscribe = () => {
     <div className="footer-subscribe">
       <Container>
         <Row>
-          <Col xl="5">
+          <Col md="5">
             <div className="subscribe-content">
               <h6 className="entry-subtitle">
                 %20 Rabatt für Ihre erste Bestellung
               </h6>
-              <h3 className="entry-title">Abonnieren Sie unseren Newsletter ...</h3>
+              <h3 className="entry-title">
+                Abonnieren Sie unseren Newsletter ...
+              </h3>
               <div className="entry-teaser">
                 <p>
-                Melden Sie sich jetzt für unser E-Mail-Abonnement an, um Updates zu Werbeaktionen und Coupons zu erhalten.
+                  Melden Sie sich jetzt für unser E-Mail-Abonnement an, um
+                  Updates zu Werbeaktionen und Coupons zu erhalten.
                 </p>
               </div>
               <div className="form-wrapper">
@@ -39,7 +42,7 @@ export const Subscribe = () => {
               </div>
             </div>
           </Col>
-          <Col xl="7">
+          <Col md="7">
             <div className="subscribe-image">
               <img src={coupon} alt="subscribe" />
             </div>

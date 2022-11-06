@@ -4,8 +4,19 @@ import { Anons } from "../../components/Anons/Anons";
 import { Header } from "../../components/Header/Header";
 import { Link } from "react-router-dom";
 import { Footer } from "../../components/Footer/Footer";
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/thumbs";
+import { FreeMode, Thumbs } from "swiper";
+import photo1 from "../../assets/products-img/bohrschrauber.png";
+import photo2 from "../../assets/products-img/Brother.png";
+import photo3 from "../../assets/products-img/dewalt_dcd991nt.png";
+import photo4 from "../../assets/products-img/tresor_burg-waechter_pointsafe.png";
 
 export default function Product() {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <Container>
       <Anons />
@@ -28,12 +39,14 @@ export default function Product() {
             <div className="product-meta">
               <div className="product-brand">
                 <table>
-                  <tr>
-                    <th>Marke:</th>
-                    <td>
-                      <p> cat1 , cat2</p>
-                    </td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <th>Marke:</th>
+                      <td>
+                        <p> cat1 , cat2</p>
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
               <div className="product-rating"></div>
@@ -46,7 +59,67 @@ export default function Product() {
                   <div className="product-badges">
                     <span className="badge style-1 onsale"></span>
                   </div>
-                  <div className="slider-wrapper">swiper api</div>
+                  <div className="slider-wrapper">
+                    <Swiper
+                      spaceBetween={10}
+                      thumbs={{ swiper: thumbsSwiper }}
+                      modules={[FreeMode, Thumbs]}
+                      className="mySwiper2"
+                    >
+                      <SwiperSlide>
+                        <div className="img-warpper">
+                          <img src={photo1} alt="" style={{padding: "2rem"}}/>
+                        </div>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <div className="img-warpper">
+                          <img src={photo2} alt="" style={{padding: "2rem"}}/>
+                        </div>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <div className="img-warpper">
+                          <img src={photo3} alt="" style={{padding: "2rem"}}/>
+                        </div>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <div className="img-warpper">
+                          <img src={photo4} alt="" style={{padding: "2rem"}} />
+                        </div>
+                      </SwiperSlide>
+                    </Swiper>
+                    <Swiper
+                      onSwiper={setThumbsSwiper}
+                      spaceBetween={10}
+                      slidesPerView={4}
+                      freeMode={true}
+                      watchSlidesProgress={true}
+                      modules={[FreeMode, Thumbs]}
+                      className="mySwiper"
+                    >
+                      <SwiperSlide>
+                        <div className="img-warpper">
+                          <img src={photo1} alt="" style={{padding: "0.6rem",marginTop:"rem"}}/>
+                        </div>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <div className="img-warpper">
+                          <img src={photo2} alt="" style={{padding: "0.6rem",marginTop:"rem"}}/>
+                        </div>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <div className="img-warpper">
+                          {" "}
+                          <img src={photo3} alt="" style={{padding: "0.6rem",marginTop:"rem"}}/>
+                        </div>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <div className="img-warpper">
+                          {" "}
+                          <img src={photo4} alt="" style={{padding: "0.6rem",marginTop:"rem"}}/>
+                        </div>
+                      </SwiperSlide>
+                    </Swiper>
+                  </div>
                 </div>
               </Col>
               <Col lg="7">
@@ -149,7 +222,44 @@ export default function Product() {
             </Row>
           </div>
         </div>
-        <div className="tabs-wrapper">aaaaaaaaaaaaaaaaaaa</div>
+        <div className="tabs-wrapper">
+          <Tabs
+            className="tabs"
+            defaultActiveKey="description"
+            id="fill-tab-example"
+            justify
+          >
+            <Tab
+              eventKey="description"
+              title="Description"
+              className="description"
+            >
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint
+                quasi qui expedita, molestias dolores aliquid corrupti, eos
+                voluptatibus placeat ipsum voluptates libero tenetur deserunt
+                aspernatur, quis ducimus animi obcaecati itaque.
+              </p>
+            </Tab>
+            <Tab eventKey="additional" title="Additional information">
+              <div className="additional_information">
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>Marke:</th>
+                      <td>
+                        <p> test , test</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </Tab>
+            <Tab eventKey="reviews" title="Reviews">
+              <div className="tab-panel reviews">Reviews</div>
+            </Tab>
+          </Tabs>
+        </div>
       </div>
       <Footer />
     </Container>

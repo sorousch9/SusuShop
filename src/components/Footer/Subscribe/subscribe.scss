@@ -1,6 +1,9 @@
 .footer-subscribe {
   background-color: var(--primaryBG);
+  position: relative;
+
   .subscribe-content {
+    position: relative;
     padding: 2.5rem 1rem;
     font-family: "Lato";
     .entry-subtitle {
@@ -25,6 +28,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+
     .form {
       width: 100%;
       .form-fields {
@@ -32,16 +36,16 @@
         display: flex;
         align-items: center;
         width: 100%;
-        span{
-            position: absolute;
-            font-size: 1.125rem;
-            color: var(--color-info);
-            left: 1.25rem;
-            z-index: 3;
-            &::before{
-                content: "\e84f";
-                font-family: "Raw";
-              }
+        span {
+          position: absolute;
+          font-size: 1.125rem;
+          color: var(--color-info);
+          left: 1.25rem;
+          z-index: 3;
+          &::before {
+            content: "\e84f";
+            font-family: "Raw";
+          }
         }
         .subscribe-input {
           height: 3.5rem;
@@ -60,7 +64,7 @@
         }
         .subscribe-input-submit {
           position: absolute;
-          font-size: .9rem;
+          font-size: 0.9rem;
           font-weight: 700;
           height: auto;
           top: 4px;
@@ -71,21 +75,24 @@
           color: #fff;
           border-radius: 7px;
           padding: 0rem 1rem;
-          
         }
       }
     }
   }
-}
-.subscribe-image {
-  display: flex;
-  justify-content: flex-end;
-  align-content: flex-end;
-  width: 100%;
-  height: 100%;
+  .subscribe-image {
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    width: 100%;
+    height: 100%;
 
-  img {
-    height: auto;
-    max-width: 100%;
+    img {
+      height: 100%;
+      max-width: 100%;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
   }
 }
