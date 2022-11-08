@@ -67,11 +67,15 @@ export const products = [
     desc: "<h6>DeWalt DCD791P218V / 5,0Ah, mit 2 Akkus und Koffer</h6><br></br><p>Merkmale:<br>Akkuspannung: 18 V<br>Akku-Lieferumfang: 2 Akkus<br>Ladegerät: mit Ladegerät<br>----------------------------------------<br>weitere Produktinformationen:<br>Akkukapazität: 5,0Ah<br>Verwendung: Schrauben und Bohren<br>Drehmomentstufen: 15 + 1 Bohrstufe<br>Drehmoment weich: 27 Nm<br>Drehmoment hart: 70 Nm<br>Bohrfutterspannweite: 1,5-13 mm<br>Getriebe: 2 Gang<br>Drehzahl bis: 2000 U/min<br>Gewicht: 1,7 kg<br>Lieferung: inkl. 2x Akku, Schnellladegerät, Transportkoffer T STAK-Box<br>----------------------------------------<br>sonstiges: mit leuchtstarker LED, äußerst kompakte, ausbalancierte Bauweise mit geringem Gewicht, leicht dosierbare Schalterelektronik für exaktes Anbohren und präzises Schrauben, Problemloser Langzeiteinsatz durch Sicherheitselektronik (permanente Überprüfung von Akku-Temperatur, Stromentnahme und Entladeschutz)</p>",
     amount: 2,
     img: [
-      "https://cdn.bueromarkt-ag.de/product/9541906c312eefa06728d6cbce9ff60024ec4f8f-akku-bohrschrauber_dewalt_dcd791p2.jpg",
-      "https://cdn.bueromarkt-ag.de/product/b0a52b3cdfba68e627314c9f074445614ef86065-akku-bohrschrauber_dewalt_dcd791p2.jpg",
-      "https://cdn.bueromarkt-ag.de/product/40f3ab4dde75a262119583e931935d21237861f6-akku-bohrschrauber_dewalt_dcd791p2.jpg",
-      "https://cdn.bueromarkt-ag.de/product/949fe7baf76eecfa6783fdd7b2d0f6529dfc6fe5-akku-bohrschrauber_dewalt_dcd791p2.jpg",
-      "https://cdn.bueromarkt-ag.de/product/010b25814ebe4f1f443cc31b36cd407477002f66-akku-bohrschrauber_dewalt_dcd791p2.jpg",
+      img1: "https://cdn.bueromarkt-ag.de/product/9541906c312eefa06728d6cbce9ff60024ec4f8f-akku-bohrschrauber_dewalt_dcd791p2.jpg"
+      ,
+      img2: "https://cdn.bueromarkt-ag.de/product/b0a52b3cdfba68e627314c9f074445614ef86065-akku-bohrschrauber_dewalt_dcd791p2.jpg"
+      ,
+      img3: "https://cdn.bueromarkt-ag.de/product/40f3ab4dde75a262119583e931935d21237861f6-akku-bohrschrauber_dewalt_dcd791p2.jpg"
+      ,
+      img4: "https://cdn.bueromarkt-ag.de/product/949fe7baf76eecfa6783fdd7b2d0f6529dfc6fe5-akku-bohrschrauber_dewalt_dcd791p2.jpg"
+     ,
+      img5: "https://cdn.bueromarkt-ag.de/product/010b25814ebe4f1f443cc31b36cd407477002f66-akku-bohrschrauber_dewalt_dcd791p2.jpg"
     ],
     available: "Sofort lieferbar",
     sale: 0,

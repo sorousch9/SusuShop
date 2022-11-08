@@ -16,7 +16,10 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #ededed;
+  background-color: #ffffff;
+  .container {
+    max-width: 1620px;
+  }
   p {
     margin-bottom: 0px;
   }

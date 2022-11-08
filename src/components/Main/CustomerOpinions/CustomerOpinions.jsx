@@ -1,9 +1,11 @@
 import "./customerOpinions.scss";
 import { Link } from "react-router-dom";
-import { productsOnSale } from "../../../data";
+import { products } from "../../../data";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import p7718687 from "../../../assets/7718687.jpg";
-
+var productOnSale =  products.filter(function(products) {
+  return products.onSale === "true";
+});
 export const CustomerOpinions = () => {
   return (
     <div className="module-categor-products style-raw">
@@ -28,7 +30,7 @@ export const CustomerOpinions = () => {
         <div className="column left">
           <div className="cell">
             <div className="categories-links">
-              {productsOnSale.map((item) => (
+              {products.map((item) => (
                 <ul key={item.id}>
                   <li>
                     <Link
@@ -64,14 +66,12 @@ export const CustomerOpinions = () => {
                 <div className="banner-wrapper">
                   <div className="banner-content">
                     <div className="content-header">
-                      <div className="category-text color-danger">
-                      Qualität
-                      </div>
+                      <div className="category-text color-danger">Qualität</div>
                     </div>
                     <div className="content-main">
                       <h4 className="entry-subtitle">Die Zuverlässigkeit </h4>
                       <h3 className="entry-title color-text-light">
-                      aller Produkte
+                        aller Produkte
                       </h3>
                       <div className="entry-store color-info-dark">
                         Nur in Böttcher AG
@@ -88,7 +88,7 @@ export const CustomerOpinions = () => {
         </div>
         <div className="column right">
           <div className="products mobile-column-2 column-3">
-            {productsOnSale.map((item) => (
+            {productOnSale.map((item) => (
               <div className="product product-type-simple" key={item.id}>
                 <div className="product-wrapper product-type-3">
                   <div className="thumbnail-wrapper">
@@ -99,14 +99,14 @@ export const CustomerOpinions = () => {
                       </span>
                     </div>
                     <Link
-                      to="/"
+                      to={`/product/${item.id}`}
                       style={{ color: "inherit", textDecoration: "inherit" }}
                     >
                       <img className="p-img" src={item.img} alt="sas" />
                     </Link>
                     <div className="product-buttons">
                       <Link
-                        to="/"
+                        to={`/product/${item.id}`}
                         style={{ color: "inherit", textDecoration: "inherit" }}
                       >
                         <BsArrowsFullscreen
@@ -152,7 +152,7 @@ export const CustomerOpinions = () => {
                     </span>
                     <h3 className="product-title">
                       <Link
-                        to="/"
+                        to={`/product/${item.id}`}
                         style={{ color: "inherit", textDecoration: "inherit" }}
                         title="testing product"
                       >

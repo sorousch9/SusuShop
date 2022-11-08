@@ -1,6 +1,6 @@
 {
   "name": "bueromarkt",
-  "version": "1.0.0",
+  "version": "1.0.01",
   "private": true,
   "description": "React webseite von böttcher AG ",
   "dependencies": {

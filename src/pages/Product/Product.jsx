@@ -2,21 +2,44 @@ import "./product.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import { Anons } from "../../components/Anons/Anons";
 import { Header } from "../../components/Header/Header";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Footer } from "../../components/Footer/Footer";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/thumbs";
 import { FreeMode, Thumbs } from "swiper";
-import photo1 from "../../assets/products-img/bohrschrauber.png";
-import photo2 from "../../assets/products-img/Brother.png";
-import photo3 from "../../assets/products-img/dewalt_dcd991nt.png";
-import photo4 from "../../assets/products-img/tresor_burg-waechter_pointsafe.png";
-
+import {
+  addProduct,
+  getCartCount,
+  getSubTotal,
+  getTotalAmount,
+} from "../../redux/cartRedux";
+import { publicRequest } from "../../requestMethod";
+import { useDispatch } from "react-redux";
 export default function Product() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [product, setProduct] = useState({});
+  const dispatch = useDispatch();
+  const addToCart = (product) => {
+    dispatch(addProduct({ ...product }));
+    dispatch(getCartCount());
+    dispatch(getSubTotal());
+    dispatch(getTotalAmount());
+  };
+  useEffect(() => {}, [dispatch]);
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/find/" + id);
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
   return (
     <Container>
       <Anons />
@@ -32,10 +55,10 @@ export default function Product() {
           </li>
         </ul>
       </nav>
-      <div className="single-product-wrapper">
+      <div className="single-product-wrapper" key={product.id}>
         <div className="product-wrapper">
           <div className="product-header">
-            <h2 className="product-title">title</h2>
+            <h2 className="product-title">{product.title}</h2>
             <div className="product-meta">
               <div className="product-brand">
                 <table>
@@ -43,7 +66,7 @@ export default function Product() {
                     <tr>
                       <th>Marke:</th>
                       <td>
-                        <p> cat1 , cat2</p>
+                        <p> {product.brand} </p>
                       </td>
                     </tr>
                   </tbody>
@@ -66,26 +89,18 @@ export default function Product() {
                       modules={[FreeMode, Thumbs]}
                       className="mySwiper2"
                     >
-                      <SwiperSlide>
-                        <div className="img-warpper">
-                          <img src={photo1} alt="" style={{padding: "2rem"}}/>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <div className="img-warpper">
-                          <img src={photo2} alt="" style={{padding: "2rem"}}/>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <div className="img-warpper">
-                          <img src={photo3} alt="" style={{padding: "2rem"}}/>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <div className="img-warpper">
-                          <img src={photo4} alt="" style={{padding: "2rem"}} />
-                        </div>
-                      </SwiperSlide>
+                      {product.img && product.img.map((item) => (
+                        <SwiperSlide key={item.id}>
+                          <div className="img-warpper" >
+                            <img
+                              src={item && item.src}
+                              alt={product.title}
+                              style={{ padding: "2rem" }}
+                            />
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                     
                     </Swiper>
                     <Swiper
                       onSwiper={setThumbsSwiper}
@@ -96,28 +111,16 @@ export default function Product() {
                       modules={[FreeMode, Thumbs]}
                       className="mySwiper"
                     >
-                      <SwiperSlide>
+                      {product.img && product.img.map((item) => (
+                      <SwiperSlide key={item.id}>
                         <div className="img-warpper">
-                          <img src={photo1} alt="" style={{padding: "0.6rem",marginTop:"rem"}}/>
+                          <img
+                            src={item && item.src}
+                            alt={product.title}
+                            style={{ padding: "0.6rem", marginTop: "rem" }}
+                          />
                         </div>
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <div className="img-warpper">
-                          <img src={photo2} alt="" style={{padding: "0.6rem",marginTop:"rem"}}/>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <div className="img-warpper">
-                          {" "}
-                          <img src={photo3} alt="" style={{padding: "0.6rem",marginTop:"rem"}}/>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <div className="img-warpper">
-                          {" "}
-                          <img src={photo4} alt="" style={{padding: "0.6rem",marginTop:"rem"}}/>
-                        </div>
-                      </SwiperSlide>
+                      </SwiperSlide> ))}
                     </Swiper>
                   </div>
                 </div>
@@ -126,21 +129,18 @@ export default function Product() {
                 <Row>
                   <div className="column-content">
                     <p className="price">
-                      <del>4.29 €</del>
-                      <ins>3.29 €</ins>
+                      10 €
+                      <del>4 €</del>
+                      <ins>3 €</ins>
                     </p>
                     <div className="product-meta">
                       <div className="product-available in-stock">
-                        AUF LAGER
+                       {product.available}
                       </div>
                     </div>
                     <div className="product-details-short">
                       <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Laboriosam harum minus, ullam, voluptatum ipsum ad
-                        officia voluptate eum exercitationem sed, sit eligendi
-                        voluptatibus? Nulla aliquam cupiditate ducimus quae quis
-                        suscipit?
+                       {product.desc}
                       </p>
                     </div>
                     <form className="cart">
@@ -157,7 +157,13 @@ export default function Product() {
                           <span className="icon-plus"></span>
                         </div>
                       </div>
-                      <button>In den Warenkorb</button>
+                      <button
+                        onClick={() => {
+                          addToCart(product);
+                        }}
+                      >
+                        In den Warenkorb
+                      </button>
                     </form>
                     <div className="product-actions">
                       <button className="wishlist-clear">
@@ -166,7 +172,11 @@ export default function Product() {
                     </div>
                     <div className="product-cat">
                       <span className="post-in">
-                        Kategorie: <Link>cat1</Link>
+                        Kategorie:{" "}
+                        <Link>
+                          {product.category && product.category[0]},
+                          {product.category && product.category[1]}
+                        </Link>
                       </span>
                     </div>
                     <div className="product-share">
@@ -190,9 +200,7 @@ export default function Product() {
                     </div>
                   </div>
                   <div className="info-content">
-                    <div className="alart-message">
-                      Lieferzeit: sofort lieferbar
-                    </div>
+                    <div className="alart-message">Lieferzeit: jjj</div>
                     <div className="icon-messages">
                       <ul>
                         <li>

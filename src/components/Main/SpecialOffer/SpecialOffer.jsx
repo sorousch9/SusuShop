@@ -2,8 +2,12 @@ import { Link } from "react-router-dom";
 import "./specialOffer.scss";
 import { Col, Row } from "react-bootstrap";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
-import { productsOnSale } from "../../../data";
+import { products } from "../../../data";
 import { Timer } from "./Timer";
+
+var productOnSale =  products.filter(function(products) {
+  return products.onSale === "true";
+});
 export const SpecialOffer = () => {
   return (
     <div className="spacial-offer">
@@ -29,7 +33,7 @@ export const SpecialOffer = () => {
       </Row>
 
       <div className="module-body products align-center">
-        {productsOnSale.map((item) => (
+        {productOnSale.map((item) => (
           <div className="product product-type-simple" key={item.id}>
             <div className="product-wrapper product-type-3">
               <div className="thumbnail-wrapper">
@@ -38,14 +42,14 @@ export const SpecialOffer = () => {
                   <span className={item.available[1]}>{item.available[0]}</span>
                 </div>
                 <Link
-                  to="/"
+                  to={`/product/${item.id}`}
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
                   <img className="p-img" src={item.img} alt="sas" />
                 </Link>
                 <div className="product-buttons">
                   <Link
-                    to="/"
+                    to={`/product/${item.id}`}
                     style={{ color: "inherit", textDecoration: "inherit" }}
                   >
                     <BsArrowsFullscreen
@@ -88,7 +92,7 @@ export const SpecialOffer = () => {
                 </span>
                 <h3 className="product-title">
                   <Link
-                    to="/"
+                    to={`/product/${item.id}`}
                     style={{ color: "inherit", textDecoration: "inherit" }}
                     title="testing product"
                   >

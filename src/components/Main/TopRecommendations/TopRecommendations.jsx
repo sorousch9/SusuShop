@@ -6,7 +6,10 @@ import "swiper/scss/autoplay";
 import { Autoplay, Navigation } from "swiper";
 import { products } from "../../../data";
 import "swiper/scss/navigation";
-
+import { Link } from "react-router-dom";
+var productOnSale =  products.filter(function(products) {
+  return products.onSale === "false";
+});
 export const TopRecommendations = () => {
   return (
     <div>
@@ -18,9 +21,8 @@ export const TopRecommendations = () => {
         slidesPerView={1}
         spaceBetween={10}
         navigation
-       
         breakpoints={{
-          380:{
+          380: {
             slidesPerView: 2,
             spaceBetween: 20,
           },
@@ -40,16 +42,17 @@ export const TopRecommendations = () => {
         modules={[Navigation, Autoplay]}
         className="mySwiper"
       >
-        {products.map((item) => (
+        {productOnSale.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="carausel-Top-Rec">
-              <img src={item.img} alt="product" />
-              <h4>{item.title}</h4>
-              <span>
-                <p>Preis</p>
-               
-                {item.price}€
-              </span>
+              <Link to={`/product/${item.id}`}>
+                <img src={item.img} alt="product" />
+                <h4>{item.title}</h4>
+                <span>
+                  <p>Preis</p>
+                  {item.price}€
+                </span>
+              </Link>
             </div>
           </SwiperSlide>
         ))}
