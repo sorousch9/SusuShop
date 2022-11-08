@@ -89,18 +89,18 @@ export default function Product() {
                       modules={[FreeMode, Thumbs]}
                       className="mySwiper2"
                     >
-                      {product.img && product.img.map((item) => (
-                        <SwiperSlide key={item.id}>
-                          <div className="img-warpper" >
-                            <img
-                              src={item && item.src}
-                              alt={product.title}
-                              style={{ padding: "2rem" }}
-                            />
-                          </div>
-                        </SwiperSlide>
-                      ))}
-                     
+                      {product.img &&
+                        product.img.map((item) => (
+                          <SwiperSlide key={item.id}>
+                            <div className="img-warpper">
+                              <img
+                                src={item && item.src}
+                                alt={product.title}
+                                style={{ padding: "2rem" }}
+                              />
+                            </div>
+                          </SwiperSlide>
+                        ))}
                     </Swiper>
                     <Swiper
                       onSwiper={setThumbsSwiper}
@@ -111,16 +111,18 @@ export default function Product() {
                       modules={[FreeMode, Thumbs]}
                       className="mySwiper"
                     >
-                      {product.img && product.img.map((item) => (
-                      <SwiperSlide key={item.id}>
-                        <div className="img-warpper">
-                          <img
-                            src={item && item.src}
-                            alt={product.title}
-                            style={{ padding: "0.6rem", marginTop: "rem" }}
-                          />
-                        </div>
-                      </SwiperSlide> ))}
+                      {product.img &&
+                        product.img.map((item) => (
+                          <SwiperSlide key={item.id}>
+                            <div className="img-warpper">
+                              <img
+                                src={item && item.src}
+                                alt={product.title}
+                                style={{ padding: "0.6rem", marginTop: "rem" }}
+                              />
+                            </div>
+                          </SwiperSlide>
+                        ))}
                     </Swiper>
                   </div>
                 </div>
@@ -129,19 +131,16 @@ export default function Product() {
                 <Row>
                   <div className="column-content">
                     <p className="price">
-                      10 €
-                      <del>4 €</del>
+                      10 €<del>4 €</del>
                       <ins>3 €</ins>
                     </p>
                     <div className="product-meta">
                       <div className="product-available in-stock">
-                       {product.available}
+                        {product.available}
                       </div>
                     </div>
                     <div className="product-details-short">
-                      <p>
-                       {product.desc}
-                      </p>
+                      <p>{product.desc}</p>
                     </div>
                     <form className="cart">
                       <div className="quantity">
@@ -200,7 +199,9 @@ export default function Product() {
                     </div>
                   </div>
                   <div className="info-content">
-                    <div className="alart-message">Lieferzeit: jjj</div>
+                    <div className="alart-message">
+                      Lieferzeit: {product.available}
+                    </div>
                     <div className="icon-messages">
                       <ul>
                         <li>
@@ -243,10 +244,23 @@ export default function Product() {
               className="description"
             >
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint
-                quasi qui expedita, molestias dolores aliquid corrupti, eos
-                voluptatibus placeat ipsum voluptates libero tenetur deserunt
-                aspernatur, quis ducimus animi obcaecati itaque.
+                Damit Ihr indess erkennt, woher dieser ganze Irrthum gekommen
+                ist, und weshalb man die Lust anklagt und den Schmerz lobet, so
+                will ich Euch Alles eröffnen und auseinander setzen, was jener
+                Begründer der Wahrheit und gleichsam Baumeister des glücklichen
+                Lebens selbst darüber gesagt hat. Niemand, sagt er, verschmähe,
+                oder hasse, oder fliehe die Lust als solche, sondern weil grosse
+                Schmerzen ihr folgen, wenn man nicht mit Vernunft ihr
+                nachzugehen verstehe. Ebenso werde der Schmerz als solcher von
+                Niemand geliebt, gesucht und verlangt, sondern weil mitunter
+                solche Zeiten eintreten, dass man mittelst Arbeiten und
+                Schmerzen eine grosse Lust sich zu verschaften suchen müsse. Um
+                hier gleich bei dem Einfachsten stehen zu bleiben, so würde
+                Niemand von uns anstrengende körperliche Übungen vornehmen, wenn
+                er nicht einen Vortheil davon erwartete. Wer dürfte aber wohl
+                Den tadeln, der nach einer Lust verlangt, welcher keine
+                Unannehmlichkeit folgt, oder der einem Schmerze ausweicht, aus
+                dem keine Lust hervorgeht
               </p>
             </Tab>
             <Tab eventKey="additional" title="Additional information">
@@ -256,7 +270,19 @@ export default function Product() {
                     <tr>
                       <th>Marke:</th>
                       <td>
-                        <p> test , test</p>
+                        <p> {product.brand}</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Size:</th>
+                      <td>
+                        <p> {product.size}</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Farbe:</th>
+                      <td>
+                        <p> {product.color}</p>
                       </td>
                     </tr>
                   </tbody>

@@ -6,11 +6,26 @@ import "swiper/scss/autoplay";
 import { Autoplay, Navigation } from "swiper";
 import { products } from "../../../data";
 import "swiper/scss/navigation";
-import { Link } from "react-router-dom";
-var productOnSale =  products.filter(function(products) {
-  return products.onSale === "false";
-});
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { publicRequest } from "../../../requestMethod";
+
 export const TopRecommendations = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [product, setProduct] = useState({});
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products");
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
+  var productOnSale =  products.filter((products)=> {
+    return products.onSale === "false";
+  });
   return (
     <div>
       <Swiper
@@ -45,7 +60,7 @@ export const TopRecommendations = () => {
         {productOnSale.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="carausel-Top-Rec">
-              <Link to={`/product/${item.id}`}>
+              <Link to={item.id}>
                 <img src={item.img} alt="product" />
                 <h4>{item.title}</h4>
                 <span>
