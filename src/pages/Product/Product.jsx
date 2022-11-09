@@ -150,11 +150,15 @@ export default function Product() {
                     </p>
                     <div className="product-meta">
                       <div className="product-available in-stock">
-                        {product.available}
+                        {product.available && product.available[0]}
                       </div>
                     </div>
                     <div className="product-details-short">
-                      <p>{product.desc}</p>
+                      <h6>{product.descShort && product.descShort[0]}</h6>
+                      <p>- {product.descShort && product.descShort[1]}</p>
+                      <p>- {product.descShort && product.descShort[2]}</p>
+                      <p>- {product.descShort && product.descShort[3]}</p>
+                      <p>- {product.descShort && product.descShort[4]}</p>
                     </div>
                     <form className="cart">
                       <div className="quantity">

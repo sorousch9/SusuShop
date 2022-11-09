@@ -1,5 +1,4 @@
 import "./cart.scss";
-
 import React from "react";
 import { Anons } from "../../components/Anons/Anons";
 import { Header } from "../../components/Header/Header";
