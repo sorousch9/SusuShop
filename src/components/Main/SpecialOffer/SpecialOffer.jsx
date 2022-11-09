@@ -4,11 +4,26 @@ import { Col, Row } from "react-bootstrap";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import { products } from "../../../data";
 import { Timer } from "./Timer";
+import { useEffect, useState } from "react";
+import { publicRequest } from "../../../requestMethod";
 
-var productOnSale =  products.filter(function(products) {
-  return products.onSale === "true";
-});
 export const SpecialOffer = () => {
+  const [product, setProduct] = useState({});
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products");
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [product._id]);
+
+  var productOnSale =
+    product.filter &&
+    product.filter((item) => {
+      return item.onSale === "action";
+    });
   return (
     <div className="spacial-offer">
       <Row>
@@ -33,8 +48,8 @@ export const SpecialOffer = () => {
       </Row>
 
       <div className="module-body products align-center">
-        {productOnSale.map((item) => (
-          <div className="product product-type-simple" key={item.id}>
+        {productOnSale?.map((item) => (
+          <div className="product product-type-simple" key={item._id}>
             <div className="product-wrapper product-type-3">
               <div className="thumbnail-wrapper">
                 <div className="product-badges">
@@ -42,14 +57,18 @@ export const SpecialOffer = () => {
                   <span className={item.available[1]}>{item.available[0]}</span>
                 </div>
                 <Link
-                  to={`/product/${item.id}`}
+                  to={`/product/${item._id}`}
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
-                  <img className="p-img" src={item.img} alt="sas" />
+                  <img
+                    className="p-img"
+                    src={item.img[0].src}
+                    alt={item.title}
+                  />
                 </Link>
                 <div className="product-buttons">
                   <Link
-                    to={`/product/${item.id}`}
+                    to={`/product/${item._id}`}
                     style={{ color: "inherit", textDecoration: "inherit" }}
                   >
                     <BsArrowsFullscreen
@@ -92,7 +111,7 @@ export const SpecialOffer = () => {
                 </span>
                 <h3 className="product-title">
                   <Link
-                    to={`/product/${item.id}`}
+                    to={`/product/${item._id}`}
                     style={{ color: "inherit", textDecoration: "inherit" }}
                     title="testing product"
                   >

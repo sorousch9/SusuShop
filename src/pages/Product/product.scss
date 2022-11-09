@@ -32,7 +32,7 @@
 }
 .single-product-wrapper {
   .product-wrapper {
-    background-color: var(--color-light);
+   
     padding: 2.5rem;
     @media screen and (max-width: 512px) {
       padding: 1.5rem;
@@ -142,6 +142,9 @@
           font-size: 1.125rem;
           font-weight: 600;
           margin-bottom: 1.25rem;
+          .noSale{
+            display: none;
+          }
           @media screen and (min-width: 1200px) {
             font-size: 1.625rem;
           }
@@ -149,6 +152,7 @@
             font-size: 75%;
             font-weight: 500;
             color: var(--color-info);
+            
           }
           ins {
             text-decoration: none;

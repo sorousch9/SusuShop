@@ -1,8 +1,10 @@
-import "./productList.scss"
-import React from 'react'
 
-export default function ProductList() {
-  return (
-    <div>ProductList</div>
-  )
-}
+import { Products } from "../../components/Products/Products";
+import "./productList.scss";
+
+export const ProductList = () => {
+
+  return <div>
+        <Products/>
+  </div>;
+};

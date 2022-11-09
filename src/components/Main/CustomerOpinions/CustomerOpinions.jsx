@@ -3,10 +3,28 @@ import { Link } from "react-router-dom";
 import { products } from "../../../data";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import p7718687 from "../../../assets/7718687.jpg";
-var productOnSale =  products.filter(function(products) {
-  return products.onSale === "true";
-});
+import { useEffect, useState } from "react";
+import { publicRequest } from "../../../requestMethod";
+import { Categories } from "../../Categories/Categories";
+
+
+
 export const CustomerOpinions = () => {
+  const [product, setProduct] = useState({});
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products");
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [product._id]);
+ 
+  var productOnSale = product.filter && product.filter((item)=> {
+    return item.onSale === "true";
+  });
+
   return (
     <div className="module-categor-products style-raw">
       <div className="module-header">
@@ -30,34 +48,11 @@ export const CustomerOpinions = () => {
         <div className="column left">
           <div className="cell">
             <div className="categories-links">
-              {products.map((item) => (
-                <ul key={item.id}>
-                  <li>
-                    <Link
-                      style={{ color: "inherit", textDecoration: "inherit" }}
-                      to="/"
-                    >
-                      {item.category[0]}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      style={{ color: "inherit", textDecoration: "inherit" }}
-                      to="/"
-                    >
-                      {item.category[1]}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      style={{ color: "inherit", textDecoration: "inherit" }}
-                      to="/"
-                    >
-                      {item.category[2]}
-                    </Link>
-                  </li>
-                </ul>
-              ))}
+              <ul>
+                <li>
+                  <Categories />
+                </li>
+              </ul>
             </div>
           </div>
           <div className="cell banner">
@@ -88,25 +83,25 @@ export const CustomerOpinions = () => {
         </div>
         <div className="column right">
           <div className="products mobile-column-2 column-3">
-            {productOnSale.map((item) => (
-              <div className="product product-type-simple" key={item.id}>
+          {productOnSale?.map((item) => (
+              <div className="product product-type-simple" key={item._id}>
                 <div className="product-wrapper product-type-3">
                   <div className="thumbnail-wrapper">
                     <div className="product-badges">
                       <span className="badge style-1 onsale">{item.sale}%</span>
                       <span className={item.available[1]}>
-                        {item.available[0]}
+                         {item.available[0]}
                       </span>
                     </div>
                     <Link
-                      to={`/product/${item.id}`}
+                      to={`/product/${item._id}`}
                       style={{ color: "inherit", textDecoration: "inherit" }}
                     >
-                      <img className="p-img" src={item.img} alt="sas" />
+                      <img className="p-img" src={item.img[0].src} alt={item.title} />
                     </Link>
                     <div className="product-buttons">
                       <Link
-                        to={`/product/${item.id}`}
+                        to={`/product/${item._id}`}
                         style={{ color: "inherit", textDecoration: "inherit" }}
                       >
                         <BsArrowsFullscreen
@@ -152,7 +147,7 @@ export const CustomerOpinions = () => {
                     </span>
                     <h3 className="product-title">
                       <Link
-                        to={`/product/${item.id}`}
+                        to={`/product/${item._id}`}
                         style={{ color: "inherit", textDecoration: "inherit" }}
                         title="testing product"
                       >

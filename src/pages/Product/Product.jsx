@@ -18,6 +18,7 @@ import {
 } from "../../redux/cartRedux";
 import { publicRequest } from "../../requestMethod";
 import { useDispatch } from "react-redux";
+
 export default function Product() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const location = useLocation();
@@ -40,6 +41,13 @@ export default function Product() {
     };
     getProduct();
   }, [id]);
+
+  var sale;
+  if (product.sale < 1) {
+    sale = "noSale";
+  } else {
+    sale = "";
+  }
   return (
     <Container>
       <Anons />
@@ -130,9 +138,15 @@ export default function Product() {
               <Col lg="7">
                 <Row>
                   <div className="column-content">
-                    <p className="price">
-                      10 €<del>4 €</del>
-                      <ins>3 €</ins>
+                    <p className="price ">
+                      <del className={`${sale}`}>{product.price} €</del>
+                      <ins>
+                        {" "}
+                        {parseFloat(
+                          product.price - (product.price * product.sale) / 100
+                        ).toFixed(2)}
+                        €
+                      </ins>
                     </p>
                     <div className="product-meta">
                       <div className="product-available in-stock">
