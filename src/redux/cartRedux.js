@@ -68,7 +68,7 @@ const cartSlice = createSlice({
       state.tax = totalTax;
     },
     getTotalAmount: (state) => {
-      state.totalAmount = state.subAmount + 2.99;
+      state.totalAmount = state.subAmount + 3.50;
       // state.totalAmount = state.tax + state.subAmount;
     },
   },

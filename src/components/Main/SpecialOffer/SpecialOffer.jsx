@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./specialOffer.scss";
 import { Col, Row } from "react-bootstrap";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
-import { products } from "../../../data";
 import { Timer } from "./Timer";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../../../requestMethod";

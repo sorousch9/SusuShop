@@ -43,7 +43,7 @@
       position: relative;
       .free-progress-bar {
         padding: 20px;
-        border: 1px solid var(--color-border);
+        border: 1px solid var(--color-border-light);
         margin-bottom: 20px;
         border-radius: 7px;
         width: 100%;
@@ -79,7 +79,7 @@
           tr {
             th {
               border: none;
-              border-bottom: 1px solid var(--color-border);
+              border-bottom: 1px solid var(--color-border-light);
               font-size: 0.75rem;
               font-weight: 600;
               border-top: 0;
@@ -106,12 +106,18 @@
               }
             }
             .product-name {
+             
               font-size: 0.875rem;
               vertical-align: middle;
               padding: 0.75rem;
               a {
                 text-decoration: none;
                 color: currentColor;
+                display: flex;
+                flex-direction: column;
+                span{
+                  font-size: 0.65rem;
+                }
               }
             }
             .product-price {
@@ -227,7 +233,7 @@
             outline: none;
             color: var(--color-text);
             background-color: var(--color-form-background);
-            border: 1px solid transparent;
+            border: 1px solid var(--color-border);
             border-radius: 7px;
             transition: all 0.2s cubic-bezier(0.28, 0.12, 0.22, 1);
           }
@@ -243,7 +249,7 @@
             font-weight: 500;
             text-decoration: none;
             padding: 0 0.9375rem;
-            border: 1px solid;
+            border: 1px solid ;
             color: #fff;
             background-color: var(--color-primary);
             border-radius: 7px;
@@ -261,7 +267,7 @@
   flex: 0 0 20rem;
   max-width: 20rem;
   margin-left: 1.875rem;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-light);
   border-radius: 7px;
   padding: 1.25rem;
   .cart-totals {

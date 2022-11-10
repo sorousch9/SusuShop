@@ -1,13 +1,35 @@
 import "./cart.scss";
-import React from "react";
+import React, { useEffect } from "react";
 import { Anons } from "../../components/Anons/Anons";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import p1 from "../../assets/products-img/bohrschrauber.png";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getTotalAmount,
+  incrementQuantity,
+  decrementQuantity,
+  removeProduct,
+  getCartProducts,
+  getCartCount,
+  getSubTotal,
+} from "../../redux/cartRedux";
 
 export const Cart = () => {
+  const dispatch = useDispatch();
+  const { products, subAmount, tax, totalAmount } = useSelector(
+    (state) => state.cart
+  );
+
+  useEffect(() => {
+    dispatch(getCartProducts());
+    dispatch(getSubTotal());
+    dispatch(getCartCount());
+    dispatch(getTotalAmount());
+  }, [dispatch]);
+
   return (
     <div>
       <Anons />
@@ -20,11 +42,11 @@ export const Cart = () => {
             </li>
             <li>
               <span />
-              <Link>Cart</Link>
+              <Link>warenkorb</Link>
             </li>
           </ul>
         </nav>
-        <div className="cart">
+        <div className="cart" key={products._id}>
           <Row>
             <Col md="12">
               <div className="cart-wrapper">
@@ -53,42 +75,73 @@ export const Cart = () => {
                         <th>&nbsp;</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr className="cart-item">
-                        <td className="product-thumbnail">
-                          <Link to={"/"} target="_blank">
-                            <img className="product-image" src={p1} alt="" />
-                          </Link>
-                        </td>
-                        <td className="product-name">
-                          <Link to={"/"} target="_blank">
-                            Landre Collegeblock 100050247
-                          </Link>
-                        </td>
-                        <td className="product-price">178.22 €</td>
-                        <td className="product-quantity">
-                          <div className="quantity">
-                            <div className="quantity-btn">
-                              <span className="icon-minus"></span>
+                    {products.map((product) => (
+                      <tbody>
+                        <tr className="cart-item">
+                          <td className="product-thumbnail">
+                            <Link to={"/"}>
+                              <img
+                                className="product-image"
+                                src={product.img[0].src}
+                                alt={product.title}
+                              />
+                            </Link>
+                          </td>
+                          <td className="product-name">
+                            <Link to={"/"}>
+                              {product.title}
+                              <span>Produkt ID :{product._id}</span>
+                            </Link>
+                          </td>
+                          <td className="product-price">{product.price} €</td>
+                          <td className="product-quantity">
+                            <div className="quantity">
+                              <div className="quantity-btn">
+                                <span
+                                  className="icon-minus"
+                                  onClick={() => {
+                                    dispatch(decrementQuantity(product._id));
+                                    dispatch(getSubTotal());
+                                    dispatch(getCartCount());
+                                    dispatch(getTotalAmount());
+                                  }}
+                                ></span>
+                              </div>
+                              <input
+                                className="text-input"
+                                type="text"
+                                defaultValue={product.quantity}
+                              />
+                              <div className="quantity-btn">
+                                <span
+                                  className="icon-plus"
+                                  onClick={() => {
+                                    dispatch(incrementQuantity(product._id));
+                                    dispatch(getSubTotal());
+                                    dispatch(getCartCount());
+                                    dispatch(getTotalAmount());
+                                  }}
+                                ></span>
+                              </div>
                             </div>
-                            <input
-                              className="text-input"
-                              type="text"
-                              defaultValue={1}
-                            />
-                            <div className="quantity-btn">
-                              <span className="icon-plus"></span>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="product-subtotal">178.22 €</td>
-                        <td className="product-remove">
-                          <Link>
-                            <span className="icon-cancel"></span>
-                          </Link>
-                        </td>
-                      </tr>
-                    </tbody>
+                          </td>
+                          <td className="product-subtotal">  {parseFloat(product.price * product.quantity).toFixed(2)} €</td>
+                          <td className="product-remove">
+                            <Link>
+                              <span
+                                className="icon-cancel"
+                                onClick={() => {
+                                  dispatch(removeProduct(product._id));
+                                  dispatch(getSubTotal());
+                                  dispatch(getCartCount());
+                                  dispatch(getTotalAmount());
+                                }}
+                              ></span>
+                            </Link>
+                          </td>
+                        </tr>
+                      </tbody>
+                    ))}
                   </table>
                   <div className="actions">
                     <div className="actions-wrapper">
@@ -112,7 +165,7 @@ export const Cart = () => {
                       <tbody>
                         <tr className="cart-subtotal">
                           <th>Zwischensumme</th>
-                          <td className="cart-subtotal-item"> 178 €</td>
+                          <td className="cart-subtotal-item"> {parseFloat(subAmount).toFixed(2)} €</td>
                         </tr>
                         <tr className="cart-shopping-totals">
                           <th>Versand</th>
@@ -124,9 +177,7 @@ export const Cart = () => {
                                   className="shipping-method"
                                   defaultChecked
                                 />
-                                <label
-                                  className="shipping-label"
-                                >
+                                <label className="shipping-label">
                                   Flatrate: <span>3.50 €</span>
                                 </label>
                               </li>
@@ -135,9 +186,7 @@ export const Cart = () => {
                                   type="radio"
                                   className="shipping-method"
                                 />
-                                <label
-                                  className="shipping-label"
-                                >
+                                <label className="shipping-label">
                                   Lokale Aufnahme
                                 </label>
                               </li>
@@ -146,13 +195,15 @@ export const Cart = () => {
                         </tr>
                         <tr className="cart-order-total">
                           <th>Gesamtsumme</th>
-                          <td>178 €</td>
+                          <td>{parseFloat(totalAmount).toFixed(2)} €</td>
                         </tr>
                       </tbody>
                     </table>
                     <div className="checkout">
                       <Link to={"/checkout"}>
-                        <button className="to-checkout">weiter zur Kasse</button>
+                        <button className="to-checkout">
+                          weiter zur Kasse
+                        </button>
                       </Link>
                     </div>
                   </div>

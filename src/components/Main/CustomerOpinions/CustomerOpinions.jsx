@@ -1,6 +1,5 @@
 import "./customerOpinions.scss";
 import { Link } from "react-router-dom";
-import { products } from "../../../data";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import p7718687 from "../../../assets/7718687.jpg";
 import { useEffect, useState } from "react";

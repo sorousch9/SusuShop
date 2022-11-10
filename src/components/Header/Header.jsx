@@ -8,7 +8,12 @@ import { AiOutlineUser } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { VscSignOut, VscHeart } from "react-icons/vsc";
 import { categories } from "../../data";
+import { useSelector } from "react-redux";
+
+
 export const Header = () => {
+  const quantity = useSelector((state) => state.cart.totalCount);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
   return (
     <div className="header-main">
       <div className="container">
@@ -50,7 +55,7 @@ export const Header = () => {
                 className="text-link"
               >
                 <Badge
-                  badgeContent={4}
+                  badgeContent={quantity}
                   color="success"
                   anchorOrigin={{
                     vertical: "top",
@@ -59,7 +64,7 @@ export const Header = () => {
                 >
                   <span className="corb"></span>
                 </Badge>
-                <span className="herder-span ">11.95 €</span>
+                <span className="herder-span ">{totalAmount} €</span>
                 <span className="herder-span price-details">inkl. MwSt.</span>
               </Link>
             </div>
