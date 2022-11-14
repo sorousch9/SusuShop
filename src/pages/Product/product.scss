@@ -194,7 +194,7 @@
           h6 {
             font-weight: 400;
             @media screen and (max-width: 512px) {
-             text-align: center;
+              text-align: center;
             }
           }
           p {
@@ -212,6 +212,7 @@
             flex-flow: row;
             align-items: center;
             margin-bottom: 1.4rem;
+          
 
             .text-input {
               font-size: 0.875rem;
@@ -227,7 +228,6 @@
                 width: 1.875rem;
                 height: 1.875rem;
               }
-             
             }
             .quantity-btn {
               width: 2.875rem;
@@ -238,11 +238,11 @@
               background-color: #dfdfdf;
               box-shadow: 0px 0px 3px #6e6e6ec5;
               border-radius: 50%;
+              font-size: 1.4rem;
               @media screen and (max-width: 512px) {
                 width: 2.3rem;
                 height: 2.3rem;
               }
-             
 
               cursor: pointer;
               &:hover {
@@ -250,27 +250,10 @@
                 box-shadow: outset 3px 1px 3px #000000c5;
               }
 
-              .icon-minus::before {
-                content: "\e8c8";
-                font-family: "Raw";
-                width: 1em;
-                font-weight: bold;
-                text-align: center;
-                font-size: 1.1rem;
-                display: inline-block;
-              }
-
-              .icon-plus::before {
-                content: "\e8c5";
-                font-family: "Raw";
-                width: 1em;
-                text-align: center;
-                font-size: 1.1rem;
-                display: inline-block;
-              }
+              
             }
           }
-          button {
+          .button {
             margin: 2rem;
             display: inline-flex;
             align-items: center;
@@ -334,17 +317,16 @@
           width: 100%;
           border-top: 1px solid var(--color-border);
           padding-top: 1.5rem;
-          
+
           .post-in {
             margin-left: 0;
             color: var(--color-info-dark);
-            font-size: .8rem;
+            font-size: 0.8rem;
             a {
               position: relative;
               font-weight: 500;
               color: var(--color-text-lighter);
               text-decoration: none;
-              
             }
           }
         }

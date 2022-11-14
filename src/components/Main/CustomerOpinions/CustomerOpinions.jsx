@@ -5,10 +5,23 @@ import p7718687 from "../../../assets/7718687.jpg";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../../../requestMethod";
 import { Categories } from "../../Categories/Categories";
-
+import {
+  addProduct,
+  getCartCount,
+  getSubTotal,
+  getTotalAmount,
+} from "../../../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 
 export const CustomerOpinions = () => {
+  const dispatch = useDispatch();
+  const addToCart = (product) => {
+    dispatch(addProduct({ ...product }));
+    dispatch(getCartCount());
+    dispatch(getSubTotal());
+    dispatch(getTotalAmount());
+  };
   const [product, setProduct] = useState({});
   useEffect(() => {
     const getProduct = async () => {
@@ -171,7 +184,10 @@ export const CustomerOpinions = () => {
                       </div>
                     </div>
                     <div className="product-fade-block">
-                      <button className="product-btn-fade">
+                      <button className="product-btn-fade"
+                       onClick={() => {
+                        addToCart(item);
+                      }}>
                         In den Warenkorb
                       </button>
                     </div>

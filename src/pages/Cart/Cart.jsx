@@ -5,7 +5,6 @@ import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import p1 from "../../assets/products-img/bohrschrauber.png";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getTotalAmount,
@@ -19,7 +18,7 @@ import {
 
 export const Cart = () => {
   const dispatch = useDispatch();
-  const { products, subAmount, tax, totalAmount } = useSelector(
+  const { products, subAmount, totalAmount } = useSelector(
     (state) => state.cart
   );
 
@@ -76,19 +75,19 @@ export const Cart = () => {
                       </tr>
                     </thead>
                     {products.map((product) => (
-                      <tbody>
+                      <tbody key={product._id}>
                         <tr className="cart-item">
                           <td className="product-thumbnail">
-                            <Link to={"/"}>
+                            <Link to={`/product/${product._id}`}>
                               <img
                                 className="product-image"
-                                src={product.img[0].src}
+                                src={product.img && product.img[0].src}
                                 alt={product.title}
                               />
                             </Link>
                           </td>
                           <td className="product-name">
-                            <Link to={"/"}>
+                            <Link to={`/product/${product._id}`}>
                               {product.title}
                               <span>Produkt ID :{product._id}</span>
                             </Link>
@@ -96,36 +95,38 @@ export const Cart = () => {
                           <td className="product-price">{product.price} €</td>
                           <td className="product-quantity">
                             <div className="quantity">
-                              <div className="quantity-btn">
-                                <span
-                                  className="icon-minus"
-                                  onClick={() => {
-                                    dispatch(decrementQuantity(product._id));
-                                    dispatch(getSubTotal());
-                                    dispatch(getCartCount());
-                                    dispatch(getTotalAmount());
-                                  }}
-                                ></span>
+                              <div
+                                className="quantity-btn"
+                                onClick={() => {
+                                  dispatch(decrementQuantity(product._id));
+                                  dispatch(getSubTotal());
+                                  dispatch(getCartCount());
+                                  dispatch(getTotalAmount());
+                                }}
+                              >
+                                <span className="icon-minus"></span>
                               </div>
-                              <input
-                                className="text-input"
-                                type="text"
-                                defaultValue={product.quantity}
-                              />
-                              <div className="quantity-btn">
-                                <span
-                                  className="icon-plus"
-                                  onClick={() => {
-                                    dispatch(incrementQuantity(product._id));
-                                    dispatch(getSubTotal());
-                                    dispatch(getCartCount());
-                                    dispatch(getTotalAmount());
-                                  }}
-                                ></span>
+                              <span className="text-input">  {product.quantity}</span>
+                              <div
+                                className="quantity-btn"
+                                onClick={() => {
+                                  dispatch(incrementQuantity(product._id));
+                                  dispatch(getSubTotal());
+                                  dispatch(getCartCount());
+                                  dispatch(getTotalAmount());
+                                }}
+                              >
+                                <span className="icon-plus"></span>
                               </div>
                             </div>
                           </td>
-                          <td className="product-subtotal">  {parseFloat(product.price * product.quantity).toFixed(2)} €</td>
+                          <td className="product-subtotal">
+                            {" "}
+                            {parseFloat(
+                              product.price * product.quantity
+                            ).toFixed(2)}{" "}
+                            €
+                          </td>
                           <td className="product-remove">
                             <Link>
                               <span
@@ -165,7 +166,10 @@ export const Cart = () => {
                       <tbody>
                         <tr className="cart-subtotal">
                           <th>Zwischensumme</th>
-                          <td className="cart-subtotal-item"> {parseFloat(subAmount).toFixed(2)} €</td>
+                          <td className="cart-subtotal-item">
+                            {" "}
+                            {parseFloat(subAmount).toFixed(2)} €
+                          </td>
                         </tr>
                         <tr className="cart-shopping-totals">
                           <th>Versand</th>

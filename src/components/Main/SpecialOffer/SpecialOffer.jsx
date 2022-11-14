@@ -5,8 +5,25 @@ import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import { Timer } from "./Timer";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../../../requestMethod";
+import {
+  addProduct,
+  getCartCount,
+  getSubTotal,
+  getTotalAmount,
+} from "../../../redux/cartRedux";
+import { useDispatch } from "react-redux";
+
+
 
 export const SpecialOffer = () => {
+  
+  const dispatch = useDispatch();
+  const addToCart = (product) => {
+    dispatch(addProduct({ ...product }));
+    dispatch(getCartCount());
+    dispatch(getSubTotal());
+    dispatch(getTotalAmount());
+  };
   const [product, setProduct] = useState({});
   useEffect(() => {
     const getProduct = async () => {
@@ -138,7 +155,10 @@ export const SpecialOffer = () => {
                   </div>
                 </div>
                 <div className="product-fade-block">
-                  <button className="product-btn-fade">In den Warenkorb</button>
+                  <button className="product-btn-fade"
+                  onClick={() => {
+                    addToCart(item);
+                  }}>In den Warenkorb</button>
                 </div>
               </div>
             </div>

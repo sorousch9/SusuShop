@@ -15,9 +15,11 @@ import {
   getCartCount,
   getSubTotal,
   getTotalAmount,
+  incrementQuantity,
+  decrementQuantity,
 } from "../../redux/cartRedux";
 import { publicRequest } from "../../requestMethod";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Product() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -48,6 +50,12 @@ export default function Product() {
   } else {
     sale = "";
   }
+  const { products } = useSelector((state) => state.cart);
+  const quantityProduct = products.filter((item) => {
+    return item._id === product._id;
+  });
+  var quantity = quantityProduct[0]?.quantity;
+ console.log(quantity);
   return (
     <Container>
       <Anons />
@@ -59,7 +67,7 @@ export default function Product() {
           </li>
           <li>
             <span />
-            <Link>Product</Link>
+            <Link>{product.title}</Link>
           </li>
         </ul>
       </nav>
@@ -162,25 +170,47 @@ export default function Product() {
                     </div>
                     <form className="cart">
                       <div className="quantity">
-                        <div className="quantity-btn">
-                          <span className="icon-minus"></span>
-                        </div>
+                        <button
+                          className="quantity-btn"
+                          type="button"
+                          onClick={() => {
+                            dispatch(decrementQuantity(product._id));
+                            dispatch(getSubTotal());
+                            dispatch(getCartCount());
+                            dispatch(getTotalAmount());
+                          }}
+                        >
+                          -
+                        </button>
                         <input
-                          className="text-input"
                           type="text"
-                          defaultValue={1}
+                          aria-label="quantityCount"
+                          defaultValue={quantity == undefined ? 1 : quantity}
+                          readOnly
+                          className="text-input"
                         />
-                        <div className="quantity-btn">
-                          <span className="icon-plus"></span>
-                        </div>
+                        <button
+                          className="quantity-btn"
+                          type="button"
+                          onClick={() => {
+                            dispatch(incrementQuantity(product._id));
+                            dispatch(getSubTotal());
+                            dispatch(getCartCount());
+                            dispatch(getTotalAmount());
+                          }}
+                        >
+                          +
+                        </button>
                       </div>
-                      <button
-                        onClick={() => {
-                          addToCart(product);
-                        }}
+                      <Link
+                      to={"/cart"}
+                       onClick={() => {
+                        addToCart(product);
+                      }}
+                        className="button"
                       >
                         In den Warenkorb
-                      </button>
+                      </Link>
                     </form>
                     <div className="product-actions">
                       <button className="wishlist-clear">
