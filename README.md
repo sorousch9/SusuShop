@@ -1,3 +1,17 @@
+
+![full Home Page](/client/public/screenshots/capture_15-11-2022_161047_localhost.jpeg?raw=true "full Home Page")
+
+![mobile Page](/client/public/screenshots/mobile.png?raw=true "mobile Page")
+
+![Cart Page](/client/public/screenshots/capture_15-11-2022_161013_localhost.jpeg?raw=true "Cart Page")
+
+![product Page](/client/public/screenshots/capture_15-11-2022_161146_localhost.jpeg?raw=true "product Page")
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
