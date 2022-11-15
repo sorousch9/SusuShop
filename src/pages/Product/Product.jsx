@@ -55,7 +55,6 @@ export default function Product() {
     return item._id === product._id;
   });
   var quantity = quantityProduct[0]?.quantity;
- console.log(quantity);
   return (
     <Container>
       <Anons />
@@ -185,7 +184,7 @@ export default function Product() {
                         <input
                           type="text"
                           aria-label="quantityCount"
-                          defaultValue={quantity == undefined ? 1 : quantity}
+                          defaultValue={quantity === undefined ? 1 : quantity}
                           readOnly
                           className="text-input"
                         />

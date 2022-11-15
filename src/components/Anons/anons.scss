@@ -15,6 +15,9 @@
   }
   .bussiness-shop{
     font-size: 1rem;
+    @media screen and (max-width: 560px) {
+      font-size: .8rem;
+    }
     
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -26,7 +29,8 @@
       animation: blink 3s forwards infinite;
     }
     &:hover{
-      font-size: larger;
+      font-size: 1.2;
+   
     }
   }
 }

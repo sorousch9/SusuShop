@@ -1,19 +1,15 @@
 import "./header.scss";
 import { Link } from "react-router-dom";
 import logo from "../../assets/LOGO.png";
-import { Badge } from "@mui/material";
 import { BsSearch, BsCheck2Square } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
-
 import { GoLocation } from "react-icons/go";
 import { VscSignOut, VscHeart } from "react-icons/vsc";
 import { categories } from "../../data";
 import { useSelector } from "react-redux";
 
-
 export const Header = () => {
   const quantity = useSelector((state) => state.cart.totalCount);
-  const totalAmount = useSelector((state) => state.cart.totalAmount);
   return (
     <div className="header-main">
       <div className="container">
@@ -31,13 +27,12 @@ export const Header = () => {
         <div className="center">
           <div className="search-style">
             <form>
-              <select className="select-active" defaultValue="Alle Kategorien">
+              <select className="select-active"  defaultValue="Alle Kategorien">
                 {categories.map((item) => (
                   <option key={item.id}>{item.title}</option>
                 ))}
               </select>
               <div className="input-item">
-                
                 <input type="text" placeholder="Suche" />
                 <i>
                   <BsSearch />
@@ -48,53 +43,28 @@ export const Header = () => {
         </div>
         <div className="right">
           <div className="header-action">
-            <div className="header-action-icon">
-              <Link
-                to="/cart"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-                className="text-link"
-              >
-                <Badge
-                  badgeContent={quantity}
-                  color="success"
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "left",
-                  }}
-                >
-                  <span className="corb"></span>
-                </Badge>
-                <span className="herder-span ">{totalAmount} €</span>
-                <span className="herder-span price-details">inkl. MwSt.</span>
-              </Link>
-            </div>
-            <div className="header-action-icon wishlist">
+          
+
+            <div className="header-action-icon service">
               <Link
                 to="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
                 className="text-link"
               >
-                <Badge
-                  badgeContent={4}
-                  color="success"
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "left",
-                  }}
-                >
-                  <span className="wishlist"></span>
-                </Badge>
+                <span className="wishlist"></span>
 
-                <span className="herder-span">Einkaufslisten</span>
+                <span className="herder-span">Service</span>
               </Link>
             </div>
+
+           
             <div className="header-action-icon account">
               <Link
                 to="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
                 className="text-link"
               >
-                <span className="herder-span">Account</span>
+                <span className="herder-span">Mein Konto</span>
               </Link>
 
               <div className="cart-dropdown-wrap">
@@ -124,7 +94,7 @@ export const Header = () => {
                       className="text-link"
                     >
                       <i className="tab-ico">
-                      <GoLocation />
+                        <GoLocation />
                       </i>
                       Order Tracking
                     </Link>
@@ -177,6 +147,27 @@ export const Header = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+            <div className="header-action-icon wishlist">
+              <Link
+                to="/"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+                className="text-link"
+              >
+                <span className="wishlist count-style">2</span>
+                <span className="herder-span">Einkaufslisten</span>
+              </Link>
+            </div>
+            <div className="header-action-icon corb">
+              <Link
+                to="/cart"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+                className="text-link"
+              >
+                <span className="corb count-style" > {quantity}</span>
+                <span className="herder-span ">Warenkorb
+                </span>
+              </Link>
             </div>
           </div>
         </div>

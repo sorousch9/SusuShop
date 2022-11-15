@@ -1,12 +1,15 @@
 .header-main {
   background-color: var(--primaryBG);
+  z-index: 99;
   .container {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;  
+       
+
     .left {
-      order: 1;
+      flex: 20%;
       display: inline-flex;
       justify-content: flex-start;
       align-items: center;
@@ -36,11 +39,11 @@
     }
   }
   .center {
-    order: 2;
+    flex: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+   
     .search-style {
       width: 100%;
       form {
@@ -87,7 +90,7 @@
     }
   }
   .right {
-    order: 3;
+    flex: 30%;
     margin-left: 1.875rem;
     display: flex;
     margin-right: 1rem;
@@ -96,6 +99,7 @@
     .header-action {
       display: flex;
       align-items: center;
+
       .cart-dropdown-wrap {
         position: absolute;
         background-color: #ededed;
@@ -129,34 +133,66 @@
       .header-action-icon {
         padding-left: 1rem;
         position: relative;
-
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         align-items: center;
         color: var(--color-text-light);
+        .herder-span {
+          display: inline-block;
+          font-size: 0.875rem;
 
-        .price-details {
-          font-size: 0.6rem;
-          font-weight: 700;
         }
-
         &.account::before {
+          content: "\F007";
           padding-right: 0.2rem;
           font-family: "Raw";
-          content: "\e807";
           font-size: 1.6rem;
         }
-        .wishlist::before {
+        &.wishlist::before {
+          content: "\E472";
           font-family: "Raw";
-          content: "\e847";
           font-size: 1.6rem;
           padding-right: 0.2rem;
+          display: inline-block;
         }
-        .corb::before {
+        &.service::before {
+          content: "\E1E7";
           font-family: "Raw";
-          content: "\e8b4";
           font-size: 1.6rem;
           padding-right: 0.2rem;
+          display: inline-block;
+        }
+        &.corb::before {
+          font-family: "Raw";
+          content: "\F290";
+          font-size: 1.6rem;
+          padding-right: 0.2rem;
+          display: inline-block;
+          position: relative;
+        }
+
+        .count-style {
+          position: absolute;
+          top: 15px;
+          right: 14px;
+          background-color: rgb(111, 0, 202);
+          color: #fff;
+          display: inline-block;
+          width: 21px;
+          height: 21px;
+          border-radius: 100%;
+          line-height: 21px;
+          font-size: .8rem;
+          text-align: center;
+          @media screen and (max-width: 687px) {
+            top: 18px;
+            right: 20px;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            font-size: .6rem;
+           
+          }
         }
       }
     }
@@ -177,29 +213,36 @@
 @media screen and (max-width: 1200px) {
   .header-main .container {
     justify-content: center;
-    .left {
-      order: 1;
-    }
     .right {
-      order: 2;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
     }
-    .center {
-      order: 3;
-    }
-  }
-
-  .price-details {
-    display: block;
   }
   .select-active {
+    max-width: 12rem;
     font-size: 0.8rem;
     padding: 0.1rem 0rem 0.1rem 0.1rem;
   }
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 1200px) {
+  .header-main .container {
+    justify-content: center;
+    .left {order: 1;
+    }
+    .right {
+      order: 2;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .center {
+      order: 3;
+      flex: 90%;
+    }
+  }}
+@media screen and (max-width: 687px) {
   .left {
+    flex: 25%;
+    padding: .1rem;
     .logo {
       width: 100%;
       a {
@@ -207,7 +250,7 @@
       }
       img {
         margin-left: 0rem !important;
-        width: 60%;
+        width: 7rem;
       }
       span {
         display: none !important;
@@ -215,8 +258,10 @@
     }
   }
   .center {
+    display: block;
     .search-style {
       margin-bottom: 0.3rem;
+      width: 100%;
     }
     .select-active {
       font-size: 0.8rem;
@@ -224,14 +269,23 @@
     }
   }
   .right {
-
+    margin-left: 0rem !important;
+    .header-action{
+      padding-top: 0rem !important;
+    }
     align-items: flex-end;
-    .herder-span {
-      display: none;
+    .header-action-icon {
+      display: flex;
+   
+      a {
+        .herder-span {
+          display: none !important;
+        }
+      }
     }
     .header-action {
       padding-top: 0.8rem;
-      flex-direction: row-reverse;
+      flex-direction: row;
       justify-content: space-evenly;
     }
 
