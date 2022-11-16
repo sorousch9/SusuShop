@@ -4,21 +4,21 @@ import { publicRequest } from "../../requestMethod";
 import { Link } from "react-router-dom";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 
-export const Products = () => {
-  const [product, setProduct] = useState({});
+export const Products = ({cat , filters}) => {
+  const [products, setProducts] = useState({});
   useEffect(() => {
     const getProduct = async () => {
       try {
         const res = await publicRequest.get("/products");
-        setProduct(res.data);
-      } catch {}
+        setProducts(res.data);
+      } catch (err) {}
     };
     getProduct();
-  }, [product._id]);
+  }, [cat]);
 
   return (
     <div className="products mobile-column-3 column-5">
-      {product.map && product.map((item) => (
+      {products.map && products.map((item) =>
         <div className="product product-type-simple" key={item._id}>
           <div className="product-wrapper product-type-3">
             <div className="thumbnail-wrapper">
@@ -108,7 +108,8 @@ export const Products = () => {
             </div>
           </div>
         </div>
-      ))}
+
+      )}
     </div>
   );
 };
