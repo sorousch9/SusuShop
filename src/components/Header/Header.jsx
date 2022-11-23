@@ -7,7 +7,6 @@ import { GoLocation } from "react-icons/go";
 import { VscSignOut, VscHeart } from "react-icons/vsc";
 import { categories } from "../../data";
 import { useSelector } from "react-redux";
-import { SiSwiper } from "react-icons/si";
 export const Header = () => {
   const quantity = useSelector((state) => state.cart.totalCount);
   return (

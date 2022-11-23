@@ -8,7 +8,7 @@
     display: flex;
     position: relative;
     align-items: center;
-    padding: .5rem 0rem;
+    padding: 0.5rem 0rem;
     @media screen and (max-width: 769px) {
       flex-direction: column;
     }
@@ -126,7 +126,7 @@
       padding: 4px 10px;
       background-color: var(--color-success-light);
       border-radius: 1.875rem;
-      
+
       &.in-stock {
         color: var(--color-success);
       }
@@ -167,7 +167,7 @@
     left: 1.125rem;
     pointer-events: none;
     z-index: 1;
-    color:transparent;
+    color: transparent;
 
     @media screen and (max-width: 320px) {
       top: 0.625rem;
@@ -186,8 +186,7 @@
     padding: 0.375rem 0.75rem;
     color: #fff;
     background-color: var(--color-info);
-   
-    
+
     & + .badge {
       margin-top: 3px;
     }
@@ -205,7 +204,6 @@
     }
     &.onsale {
       background-color: var(--color-warning);
-      
     }
     &.recommend {
       padding: 0.5rem 0.6rem;
@@ -221,7 +219,6 @@
       padding: 0.5rem 0.6rem;
       color: var(--color-background);
       background-color: var(--color-ger1);
-     
     }
   }
 

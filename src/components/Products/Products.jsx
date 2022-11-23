@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { publicRequest } from "../../requestMethod";
 import { SingelProduct } from "./SingelProduct";
 import "./products.scss";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 export const Products = ({ cat, filters }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -27,15 +27,32 @@ export const Products = ({ cat, filters }) => {
         )
       );
   }, [products, cat, filters]);
+  console.log(filteredProducts)
   return (
-    <Container>
-      {cat
-        ? filteredProducts.map((item) => (
-            <SingelProduct item={item} key={item._id} />
-          ))
-        : products
-            .slice(0, 8)
-            .map((item) => <SingelProduct item={item} key={item._id} />)}
-    </Container>
+    <div className="products-list">
+      <Container>
+        <Row>
+            {cat
+              ? filteredProducts.map((item) => (
+                  <Col
+                    key={item._id}
+                    className="products-list-item"
+                    xs={12}
+                    md={6}
+                    lg={4}
+                  >
+                    <SingelProduct item={item} />
+                  </Col>
+                ))
+              : products
+                  .slice(0, 8)
+                  .map((item) => <Col  key={item._id}  className="products-list-item"
+                  xs={12}
+                  md={6}
+                  lg={3}><SingelProduct item={item} /></Col>)}
+       
+        </Row>
+      </Container>
+    </div>
   );
 };

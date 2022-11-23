@@ -17,7 +17,7 @@ export const ProductList = () => {
       [e.target.name]: value,
     });
   };
-
+  console.log(filters);
   return (
     <div>
       <Anons />
@@ -42,7 +42,9 @@ export const ProductList = () => {
         <div className="filterWrapper">
           <div className="categories-filter">
             <h4 className="pro-sidebar-title">Filter mit Kategorien:</h4>
-            <select name="category" onChange={handleFilters}>
+            <label htmlFor="state"></label>
+            <select name="category" aria-label="State" onChange={handleFilters}>
+              <option value="all">Alle</option>
               <option>Werkzeug & Baumarkt</option>
               <option>Akku-Bohrschrauber</option>
               <option>Bürobedarf</option>
@@ -69,7 +71,9 @@ export const ProductList = () => {
               <option>Stabmixer</option>
             </select>
             <h4 className="pro-sidebar-title">Marke:</h4>
+            <label htmlFor="state"></label>
             <select name="brand" onChange={handleFilters}>
+              <option value={filters}>Alle Marke</option>
               <option>DeWalt</option>
               <option>Bosch</option>
               <option>G&G</option>
