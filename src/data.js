@@ -1,47 +1,79 @@
 export const categories = [
   {
-    "id": 1,
-    "title": "Alle Kategorien",
+    id: 1,
+    title: "Etikettendrucker",
   },
   {
-    "id": 2,
-    "title": "Bürobedarf",
+    id: 2,
+    title: "Akku-Bohrschrauber",
   },
   {
-    "id": 3,
-    "title": "Papiere & Etiketten",
+    id: 3,
+    title: "Schreiben",
   },
   {
-    "id": 4,
-    "title": "Schreiben ",
+    id: 5,
+    title: "Stühle",
   },
   {
-    "id": 5,
-    "title": "Verpackung",
+    id: 6,
+    title: "Multifunktionsgerät",
   },
   {
-    "id": 6,
-    "title": "Präsentation",
+    id: 7,
+    title: "Elektronik",
   },
   {
-    "id": 7,
-    "title": "Druckerpatronen",
+    id: 9,
+    title: "Computer",
   },
   {
-    "id": 8,
-    "title": "Elektronik",
+    id: 10,
+    title: "Tablet",
   },
   {
-    "id": 9,
-    "title": "Büromöbel",
+    id: 11,
+    title: "Rollcontainer ",
   },
   {
-    "id": 10,
-    "title": "Lebensmittel",
+    id: 12,
+    title: "Koffer ",
   },
   {
-    "id": 11,
-    "title": "Werkzeug ",
+    id: 13,
+    title: "Rucksäcke ",
+  },
+  {
+    id: 14,
+    title: "Büromöbel ",
+  },
+  {
+    id: 15,
+    title: "Stahlschränke ",
+  },
+  {
+    id: 16,
+    title: "Taschenmesser ",
+  },
+  {
+    id: 17,
+    title: "Tinte ",
+  },
+  {
+    id: 18,
+    title: "Druckerpatronen ",
+  },
+  {
+    id: 19,
+    title: "Haushalt ",
+  },
+  {
+    id: 20,
+    title: "Küche ",
+  },
+  {
+    id: 21,
+    title: "Stabmixer ",
   },
 ];
 

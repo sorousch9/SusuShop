@@ -5,11 +5,13 @@ import "./productList.scss";
 import { useState } from "react";
 import { Products } from "../../components/Products/Products";
 import { Link, useLocation } from "react-router-dom";
+import { categories } from "../../data";
 
 export const ProductList = () => {
   const location = useLocation();
   const cat = location.pathname.split("/")[2];
   const [filters, setFilters] = useState({});
+  const [sort, setSort] = useState("neuheiten");
   const handleFilters = (e) => {
     const value = e.target.value;
     setFilters({
@@ -17,7 +19,7 @@ export const ProductList = () => {
       [e.target.name]: value,
     });
   };
-  console.log(filters);
+
   return (
     <div>
       <Anons />
@@ -31,7 +33,9 @@ export const ProductList = () => {
               </li>
               <li>
                 <span />
-                <Link to={"/products"}>Shop</Link>
+                <Link to={"/products"}>
+                  Shop {cat !== undefined ? <span /> : " "}
+                </Link>
               </li>
               <li>
                 <Link>{cat}</Link>
@@ -43,37 +47,19 @@ export const ProductList = () => {
           <div className="categories-filter">
             <h4 className="pro-sidebar-title">Filter mit Kategorien:</h4>
             <label htmlFor="state"></label>
-            <select name="category" aria-label="State" onChange={handleFilters}>
-              <option value="all">Alle</option>
-              <option>Werkzeug & Baumarkt</option>
-              <option>Akku-Bohrschrauber</option>
-              <option>Bürobedarf</option>
-              <option>Etikettendrucker</option>
-              <option>Schreiben</option>
-              <option>Stühle</option>
-              <option>Multifunktionsgerät</option>
-              <option>Elektronik</option>
-              <option>Computer</option>
-              <option>Hängeordner</option>
-              <option>Papiere & Etiketten</option>
-              <option>Tablet</option>
-              <option>Rollcontainer</option>
-              <option>Koffer</option>
-              <option>Rucksäcke</option>
-              <option>Büromöbel</option>
-              <option>Stahlschränke</option>
-              <option>Taschenmesser</option>
-              <option>Freizeit</option>
-              <option>Tinte</option>
-              <option>Druckerpatronen</option>
-              <option>Haushalt</option>
-              <option>Küche</option>
-              <option>Stabmixer</option>
-            </select>
+              <select
+               
+               name="category"
+               aria-label="State"
+               onChange={handleFilters}
+               >
+               {categories.map((item) => (
+                <option  key={item.id}>{item.title}</option>
+                ))}
+              </select>
             <h4 className="pro-sidebar-title">Marke:</h4>
             <label htmlFor="state"></label>
             <select name="brand" onChange={handleFilters}>
-              <option value={filters}>Alle Marke</option>
               <option>DeWalt</option>
               <option>Bosch</option>
               <option>G&G</option>
@@ -90,9 +76,14 @@ export const ProductList = () => {
               <option>Faber-Castell</option>
               <option>Hauptstadtkoffer</option>
             </select>
+            <select onChange={(e) => setSort(e.target.value)}>
+              <option value="neuheiten"> Neuheiten</option>
+              <option value="prise-n">Preis : niedrigster zu erst</option>
+              <option value="prise-h">Preis : höchster zu erst</option>
+            </select>
           </div>
         </div>
-        <Products filters={filters} cat={cat} />
+        <Products filters={filters} cat={cat} sort={sort} />
       </div>
       <Footer />
     </div>

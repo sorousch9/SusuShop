@@ -1,20 +1,36 @@
 import "./singelProduct.scss";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {
+  addProduct,
+  getCartCount,
+  getSubTotal,
+  getTotalAmount,
+} from "../../redux/cartRedux";
 
 export const SingelProduct = ({ item }) => {
+  const dispatch = useDispatch();
+  const addToCart = (product) => {
+    dispatch(addProduct({ ...product }));
+    dispatch(getCartCount());
+    dispatch(getSubTotal());
+    dispatch(getTotalAmount());
+  };
   return (
-    <div className="product-wrapper product-type-3">
-      <div className="thumbnail-wrapper">
+    <div className="list-product-wrapper product-type-3">
+      <div className="list-thumbnail-wrapper">
         <div className="product-badges">
-          <span className={item.sale > 0 ?"badge style-1 onsale" : ""}>{item.sale}%</span>
+          <span className={item.sale > 0 ? "badge style-1 onsale" : ""}>
+            {item.sale}%
+          </span>
           <span className={item.available}></span>
         </div>
         <Link
           to={`/product/${item._id}`}
           style={{ color: "inherit", textDecoration: "inherit" }}
         >
-          <img className="p-img" src={item.img[0].src} alt="sas" />
+          <img src={item.img[0].src} alt="sas" />
         </Link>
         <div className="product-buttons">
           <Link
@@ -38,14 +54,11 @@ export const SingelProduct = ({ item }) => {
           </Link>
         </div>
       </div>
-      <div className="content-wrapper">
+      <div className="list-content-wrapper">
         <span className="price">
           <del aria-hidden="true">
             <span className="amount">
-              <bdi>
-                <span className=""></span>
-                {item.price}€
-              </bdi>
+              <bdi>{item.price}€</bdi>
             </span>
           </del>{" "}
           <ins>
@@ -62,7 +75,7 @@ export const SingelProduct = ({ item }) => {
             </span>
           </ins>
         </span>
-        <h3 className="product-title">
+        <h3 className="list-product-title">
           <Link
             to={`/product/${item.id}`}
             style={{ color: "inherit", textDecoration: "inherit" }}
@@ -86,7 +99,14 @@ export const SingelProduct = ({ item }) => {
             58 <span className="rating-text">Ratings</span>
           </div>
         </div>
-        <button className="product-btn-fade">In den Warenkorb</button>
+        <button
+          className="list-product-btn-fade"
+          onClick={() => {
+            addToCart(item);
+          }}
+        >
+          In den Warenkorb
+        </button>
       </div>
     </div>
   );
