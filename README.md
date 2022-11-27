@@ -1,11 +1,11 @@
 
-![full Home Page](/client/public/screenshots/capture_15-11-2022_161047_localhost.jpeg)
+![full Home Page](/public/screenshots/capture_15-11-2022_161047_localhost.jpeg)
 
-![mobile Page](/client/public/screenshots/mobile.png?raw=true)
+![mobile Page](/public/screenshots/mobile.png?raw=true)
 
-![Cart Page](/client/public/screenshots/capture_15-11-2022_161013_localhost.jpeg?raw=true)
+![Cart Page](/public/screenshots/capture_15-11-2022_161013_localhost.jpeg?raw=true)
 
-![product Page](/client/public/screenshots/capture_15-11-2022_161146_localhost.jpeg?raw=true)
+![product Page](/public/screenshots/capture_15-11-2022_161146_localhost.jpeg?raw=true)
 
 
 
