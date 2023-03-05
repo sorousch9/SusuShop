@@ -1,8 +1,8 @@
 {
-  "name": "bueromarkt",
+  "name": "susuShop",
   "version": "1.0.2",
   "private": true,
-  "description": "React webseite von böttcher AG ",
+  "description": "React-Typescript web App",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
     "@testing-library/react": "^13.4.0",
@@ -47,5 +47,5 @@
     ]
   },
   "author": "Soroush Safarkhah",
-  "license": "ISC"
+  "license": "MIT"
 }
