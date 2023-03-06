@@ -2,11 +2,11 @@ import "./product.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import { Anons } from "../../components/Anons/Anons";
 import { Header } from "../../components/Header/Header";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Footer } from "../../components/Footer/Footer";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/thumbs";
 import { FreeMode, Thumbs } from "swiper";
@@ -18,15 +18,14 @@ import {
   incrementQuantity,
   decrementQuantity,
 } from "../../redux/cartRedux";
-
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import axios from "axios";
 import { ProductType } from "../../../interfaces/Products";
+
 export default function Product() {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const location = useLocation();
-  const id = location.pathname.split("/")[2];
-  const [product, setProduct] = useState({});
+  const { id } = useParams<{ id: string }>();
+  const [product, setProduct] = useState<ProductType>();
+  const [currentImage, setCurrentImage] = useState("");
   const dispatch = useDispatch();
   const addToCart = (product: ProductType) => {
     dispatch(addProduct({ ...product }));
@@ -37,24 +36,26 @@ export default function Product() {
   useEffect(() => {}, [dispatch]);
   useEffect(() => {
     axios
-      .get<ProductType>(`http://localhost:3004/products/${id}`)
+      .get<ProductType>(`http://localhost:5000/products/${id}`)
       .then((response) => {
+        console.log(response.data);
         setProduct(response.data);
+        setCurrentImage(response.data.img[0].src)
       });
   }, [id]);
-  console.log(product);
-
+  const handleImageClick = (src: string) => {
+    setCurrentImage(src);
+  };
+  
+  if (!product) {
+    return <h3>Laoding ...</h3>;
+  }
   var sale;
-  if (product.sale < 1) {
+  if (product?.sale < 1) {
     sale = "noSale";
   } else {
     sale = "";
   }
-  const { products } = useSelector((state) => state.cart);
-  const quantityProduct = products.filter((item) => {
-    return item._id === product._id;
-  });
-  var quantity = quantityProduct[0]?.quantity;
   return (
     <Container>
       <Anons />
@@ -66,7 +67,7 @@ export default function Product() {
           </li>
           <li>
             <span />
-            <Link>{product.title}</Link>
+            <p>{product.title}</p>
           </li>
         </ul>
       </nav>
@@ -98,47 +99,24 @@ export default function Product() {
                     <span className="badge style-1 onsale"></span>
                   </div>
                   <div className="slider-wrapper">
-                    <Swiper
-                      spaceBetween={10}
-                      thumbs={{ swiper: thumbsSwiper }}
-                      modules={[FreeMode, Thumbs]}
-                      className="mySwiper2"
-                    >
-                      {product.img &&
-                        product.img.map((item) => (
-                          <SwiperSlide key={item.id}>
-                            <div className="img-warpper">
-                              <img
-                                src={item && item.src}
-                                alt={product.title}
-                                style={{ padding: "2rem" }}
-                              />
-                            </div>
-                          </SwiperSlide>
+                    <div className="photo-section">
+                      <img
+                        className="main-photo"
+                        src={currentImage}
+                        alt={product.title}
+                      />
+                      <div className="thumbnail-list">
+                        {product.img.map((image) => (
+                          <img
+                            key={image.id}
+                            src={image.src}
+                            alt={product.title}
+                            onClick={() => handleImageClick(image.src)}
+                            className="thumbnail"
+                          />
                         ))}
-                    </Swiper>
-                    <Swiper
-                      onSwiper={setThumbsSwiper}
-                      spaceBetween={10}
-                      slidesPerView={4}
-                      freeMode={true}
-                      watchSlidesProgress={true}
-                      modules={[FreeMode, Thumbs]}
-                      className="mySwiper"
-                    >
-                      {product.img &&
-                        product.img.map((item) => (
-                          <SwiperSlide key={item.id}>
-                            <div className="img-warpper">
-                              <img
-                                src={item && item.src}
-                                alt={product.title}
-                                style={{ padding: "0.6rem", marginTop: "rem" }}
-                              />
-                            </div>
-                          </SwiperSlide>
-                        ))}
-                    </Swiper>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Col>
@@ -148,11 +126,7 @@ export default function Product() {
                     <p className="price ">
                       <del className={`${sale}`}>{product.price} €</del>
                       <ins>
-                        {" "}
-                        {parseFloat(
-                          product.price - (product.price * product.sale) / 100
-                        ).toFixed(2)}
-                        €
+                        {((product.price * product.sale) / 100).toFixed(2)}€
                       </ins>
                     </p>
                     <div className="product-meta">
@@ -173,7 +147,7 @@ export default function Product() {
                           className="quantity-btn"
                           type="button"
                           onClick={() => {
-                            dispatch(decrementQuantity(product._id));
+                            dispatch(decrementQuantity(product.id));
                             dispatch(getSubTotal());
                             dispatch(getCartCount());
                             dispatch(getTotalAmount());
@@ -184,7 +158,6 @@ export default function Product() {
                         <input
                           type="text"
                           aria-label="quantityCount"
-                          defaultValue={quantity === undefined ? 1 : quantity}
                           readOnly
                           className="text-input"
                         />
@@ -192,7 +165,7 @@ export default function Product() {
                           className="quantity-btn"
                           type="button"
                           onClick={() => {
-                            dispatch(incrementQuantity(product._id));
+                            dispatch(incrementQuantity(product.id));
                             dispatch(getSubTotal());
                             dispatch(getCartCount());
                             dispatch(getTotalAmount());
@@ -219,10 +192,10 @@ export default function Product() {
                     <div className="product-cat">
                       <span className="post-in">
                         Kategorie:{" "}
-                        <Link>
+                        <p>
                           {product.category && product.category[0]},
                           {product.category && product.category[1]}
-                        </Link>
+                        </p>
                       </span>
                     </div>
                     <div className="product-share">
@@ -230,16 +203,16 @@ export default function Product() {
                       <div className="social-share">
                         <ul>
                           <li>
-                            <Link className="whatsapp"></Link>
+                            <p className="whatsapp"></p>
                           </li>
                           <li>
-                            <Link className="facebook"></Link>
+                            <p className="facebook"></p>
                           </li>
                           <li>
-                            <Link className="instagram"></Link>
+                            <p className="instagram"></p>
                           </li>
                           <li>
-                            <Link className="linkdin"></Link>
+                            <p className="linkdin"></p>
                           </li>
                         </ul>
                       </div>

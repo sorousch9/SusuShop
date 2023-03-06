@@ -27,7 +27,7 @@ export const SingelProduct = ({ item }) => {
           <span className={item.available}></span>
         </div>
         <Link
-          to={`/product/${item._id}`}
+            to={`http://localhost:5000/product/${item.id}`}
           style={{ color: "inherit", textDecoration: "inherit" }}
         >
           <img src={item.img[0].src} alt="sas" />
@@ -77,7 +77,7 @@ export const SingelProduct = ({ item }) => {
         </span>
         <h3 className="list-product-title">
           <Link
-            to={`/product/${item.id}`}
+              to={`http://localhost:5000/product/${item.id}`}
             style={{ color: "inherit", textDecoration: "inherit" }}
             title="testing product"
           >
