@@ -18,7 +18,7 @@ export const Header = () => {
               to="/"
               style={{ color: "inherit", textDecoration: "inherit" }}
             >
-              <img src={logo} alt="beuroMarkt AG" />
+              <img src={logo} alt="Susu shop" />
               <span>die Nr. 1 für B2B Kunden mit günstigen Preisen</span>
             </Link>
           </div>

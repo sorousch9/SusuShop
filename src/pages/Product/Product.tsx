@@ -18,16 +18,17 @@ import {
   incrementQuantity,
   decrementQuantity,
 } from "../../redux/cartRedux";
-import { publicRequest } from "../../requestMethod";
-import { useDispatch, useSelector } from "react-redux";
 
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import { ProductType } from "../../../interfaces/Products";
 export default function Product() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState({});
   const dispatch = useDispatch();
-  const addToCart = (product) => {
+  const addToCart = (product: ProductType) => {
     dispatch(addProduct({ ...product }));
     dispatch(getCartCount());
     dispatch(getSubTotal());
@@ -35,14 +36,13 @@ export default function Product() {
   };
   useEffect(() => {}, [dispatch]);
   useEffect(() => {
-    const getProduct = async () => {
-      try {
-        const res = await publicRequest.get("/products/find/" + id);
-        setProduct(res.data);
-      } catch {}
-    };
-    getProduct();
+    axios
+      .get<ProductType>(`http://localhost:3004/products/${id}`)
+      .then((response) => {
+        setProduct(response.data);
+      });
   }, [id]);
+  console.log(product);
 
   var sale;
   if (product.sale < 1) {
@@ -202,10 +202,10 @@ export default function Product() {
                         </button>
                       </div>
                       <Link
-                      to={"/cart"}
-                       onClick={() => {
-                        addToCart(product);
-                      }}
+                        to={"/cart"}
+                        onClick={() => {
+                          addToCart(product);
+                        }}
                         className="button"
                       >
                         In den Warenkorb

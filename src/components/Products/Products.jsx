@@ -1,33 +1,24 @@
 import { useEffect, useState } from "react";
-import { publicRequest } from "../../requestMethod";
 import { SingelProduct } from "./SingelProduct";
 import "./products.scss";
 import { Col, Container, Row } from "react-bootstrap";
+import axios from "axios";
+
 export const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await publicRequest.get(
-          cat ? `products?category=${cat}` : "products"
+        const res = await axios.get(
+          "http://localhost:5000/products"
         );
         setProducts(res.data);
-      } catch (err) {}
+      } catch (err) { }
     };
     getProduct();
-  }, [cat]);
-  useEffect(() => {
-    cat &&
-      setFilteredProducts(
-        products.filter((item) =>
-          Object.entries(filters).every(([key, value]) =>
-            item[key].includes(value)
-          )
-        )
-      );
-  }, [products, cat, filters]);
- 
+  }, []);
+
   useEffect(() => {
     if (sort === "neuheiten") {
       setFilteredProducts((prev) =>
@@ -43,34 +34,22 @@ export const Products = ({ cat, filters, sort }) => {
       );
     }
   }, [sort]);
-  console.log(products);
+
   return (
     <div className="products-list">
       <Container>
         <Row>
-          {cat
-            ? filteredProducts.map((item) => (
-                <Col
-                  key={item._id}
-                  className="products-list-item"
-                  xs={12}
-                  md={6}
-                  lg={3}
-                >
-                  <SingelProduct item={item} />
-                </Col>
-              ))
-            : products.map((item) => (
-                <Col
-                  key={item._id}
-                  className="products-list-item"
-                  xs={12}
-                  md={6}
-                  lg={3}
-                >
-                  <SingelProduct item={item} />
-                </Col>
-              ))}
+          {products.map((item) => (
+            <Col
+              key={item.id}
+              className="products-list-item"
+              xs={12}
+              md={6}
+              lg={3}
+            >
+              <SingelProduct item={item} />
+            </Col>
+          ))}
         </Row>
       </Container>
     </div>
