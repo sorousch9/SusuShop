@@ -14,8 +14,11 @@ export interface ProductType {
   img: Img[];
   available: string;
   sale: number;
-  onSale: string;
+  onSale: boolean;
   size: string[];
   color: string[];
   quantity: number;
 }
+export type Props = {
+  product: ProductType[];
+};

@@ -40,13 +40,13 @@ export default function Product() {
       .then((response) => {
         console.log(response.data);
         setProduct(response.data);
-        setCurrentImage(response.data.img[0].src)
+        setCurrentImage(response.data.img[0].src);
       });
   }, [id]);
   const handleImageClick = (src: string) => {
     setCurrentImage(src);
   };
-  
+
   if (!product) {
     return <h3>Laoding ...</h3>;
   }
@@ -126,12 +126,16 @@ export default function Product() {
                     <p className="price ">
                       <del className={`${sale}`}>{product.price} €</del>
                       <ins>
-                        {((product.price * product.sale) / 100).toFixed(2)}€
+                        {(
+                          product.price -
+                          (product.price * product.sale) / 100
+                        ).toFixed(2)}
+                        €
                       </ins>
                     </p>
                     <div className="product-meta">
                       <div className="product-available in-stock">
-                        {product.available && product.available[0]}
+                        {product.available[0]}
                       </div>
                     </div>
                     <div className="product-details-short">
@@ -156,10 +160,15 @@ export default function Product() {
                           -
                         </button>
                         <input
-                          type="text"
+                          type="number"
                           aria-label="quantityCount"
                           readOnly
                           className="text-input"
+                          value={
+                            product.quantity === undefined
+                              ? 1
+                              : product.quantity
+                          }
                         />
                         <button
                           className="quantity-btn"

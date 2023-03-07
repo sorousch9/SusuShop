@@ -39,9 +39,9 @@
           "src": "https://cdn.bueromarkt-ag.de/product/010b25814ebe4f1f443cc31b36cd407477002f66-akku-bohrschrauber_dewalt_dcd791p2.jpg"
         }
       ],
-      "available": "Sofort lieferbar",
+      "available": ["Sofort lieferbar"],
       "sale": 0,
-      "onSale": "false",
+      "onSale": false,
       "size": [
         "1,7 kg"
       ],
@@ -84,9 +84,9 @@
           "src": "https://cdn.bueromarkt-ag.de/product/34516113d6e1b408c5ef8e98be7386460cb10f09-akku-bohrschrauber_bosch_gsr_18v-55_professional.jpg"
         }
       ],
-      "available": "Sofort lieferbar",
+      "available": ["Sofort lieferbar"],
       "sale": 0,
-      "onSale": "false",
+      "onSale": false,
       "size": [
         " 1 kg"
       ],
@@ -129,9 +129,9 @@
           "src": "https://cdn.bueromarkt-ag.de/product/2f6b47d26c0f455b7edd4a6f13bf1d8858fab05b-etikettendrucker_gg-image_gg-d1200cw.jpg"
         }
       ],
-      "available": "Sofort lieferbar",
+      "available": ["Sofort lieferbar"],
       "sale": 0,
-      "onSale": "false",
+      "onSale": false,
       "size": [
         "(BxHxT) 22,2 x 9,2 x 10,5 cm"
       ],
@@ -174,9 +174,9 @@
           "src": "https://cdn.bueromarkt-ag.de/product/37922b4ecb61a58e168a02868254eb622d5550b3-stiftehalter_boettcher-ag_mesh_line_drehbar.jpg"
         }
       ],
-      "available": "Sofort lieferbar",
+      "available": ["Sofort lieferbar"],
       "sale": 0,
-      "onSale": "true",
+      "onSale": true,
       "size": [
         " 17,5 x 11 cm (ØxH)"
       ],
@@ -219,9 +219,9 @@
           "src": "https://cdn.bueromarkt-ag.de/product/bf43b0efe1c31e9d0eef75f480f297433c9be272-buerostuhl_boettcher-ag_h-8078f-21322.jpg"
         }
       ],
-      "available": "Sofort lieferbar",
+      "available": ["Sofort lieferbar"],
       "sale": 0,
-      "onSale": "false",
+      "onSale": false,
       "size": [
         " 46 - 56 cm"
       ],
@@ -261,9 +261,9 @@
           "src": "https://cdn.bueromarkt-ag.de/product/74d887d507646cbc674fa20eddbd727bd8041313-multifunktionsgeraet_canon_pixma_ts5150_black.jpg"
         }
       ],
-      "available": "Derzeit nicht verfügbar",
+      "available": ["Derzeit nicht verfügbar"],
       "sale": 0,
-      "onSale": "false",
+      "onSale": false,
       "size": [
         ""
       ],
@@ -307,9 +307,9 @@
           "src": "https://cdn.bueromarkt-ag.de/product/8f1a4cf4745b829402dd43f72b366f0282884563-haengeordner_elba_81417_rado_a4.jpg"
         }
       ],
-      "available": "Sofort lieferbar",
+      "available": ["Sofort lieferbar"],
       "sale": 0,
-      "onSale": "false",
+      "onSale": false,
       "size": [
         "a4"
       ],
@@ -354,7 +354,7 @@
         "badge style-2 consistent"
       ],
       "sale": 20,
-      "onSale": "true",
+      "onSale": true,
       "size": [
         "(BxTxH) 41 x 47,5 x 41,4 cm"
       ],
@@ -402,7 +402,7 @@
         "badge  best"
       ],
       "sale": 19,
-      "onSale": "true",
+      "onSale": true,
       "size": [
         "10,9 Zoll"
       ],
@@ -441,9 +441,9 @@
           "src": "https://cdn.bueromarkt-ag.de/product/6bcf0b30d227182499c477b3c67590544869ca52-rollcontainer_flexispot_cb8_metall_schwarz.jpg"
         }
       ],
-      "available": "",
+      "available": [""],
       "sale": 29,
-      "onSale": "true",
+      "onSale": true,
       "size": [
         "(BxHxT) 40 x 50 x 40 cm"
       ],
@@ -488,7 +488,7 @@
         "badge style-2 recommend"
       ],
       "sale": 10,
-      "onSale": "true",
+      "onSale": true,
       "size": [
         "43 x 41 x 31 cm (BxHxT)"
       ],
@@ -531,9 +531,9 @@
           "src": "https://cdn.bueromarkt-ag.de/product/fbbe47e512a54f756db33ba95a15af068a899676-tresor_burg-waechter_pointsafe_p_2_e_fs.jpg"
         }
       ],
-      "available": "",
+      "available": [""],
       "sale": 20,
-      "onSale": "true",
+      "onSale": true,
       "size": [
         "25,5 x 35cm"
       ],
@@ -568,7 +568,7 @@
           "src": "https://cdn.bueromarkt-ag.de/product/ce30541f859b273440fec63da69f8ebf51d4a537-taschenmesser_victorinox_work_champ_0.8564.jpg"
         }
       ],
-      "available": "Sofort lieferbar",
+      "available": ["Sofort lieferbar"],
       "sale": 20,
       "onSale": "action",
       "size": [
@@ -608,7 +608,7 @@
           "src": "https://cdn.bueromarkt-ag.de/product/282b90e3a200054608fe73b3654c0708bfb42f62-tinte_canon_pgi-580pgbk_plus_cli-581_bk_c_m_y.jpg"
         }
       ],
-      "available": "Sofort lieferbar",
+      "available": ["Sofort lieferbar"],
       "sale": 9,
       "onSale": "action",
       "size": [
@@ -648,7 +648,7 @@
           "src": "https://cdn.bueromarkt-ag.de/product/d26d3d42c3fe52b4b41f435ff0e45fcb3b90182e-erweiterungsmodul_yealink_exp50.jpg"
         }
       ],
-      "available": "Sofort lieferbar",
+      "available": ["Sofort lieferbar"],
       "sale": 10,
       "onSale": "action",
       "size": [
@@ -693,7 +693,7 @@
           "src": "https://cdn.bueromarkt-ag.de/product/3f1e5b797402c9f5eb1fa2c01c7f7b9fd5bcf857-buntstifte_faber-castell_polychromos_110013.jpg"
         }
       ],
-      "available": "Sofort lieferbar",
+      "available": ["Sofort lieferbar"],
       "sale": 19,
       "onSale": "action",
       "size": [
@@ -738,9 +738,9 @@
           "src": "https://cdn.bueromarkt-ag.de/product/b593a68f1ca9ad3e03c202bf24385c5558f457ce-reisekoffer_hauptstadtkoffer_x_koelln_hartschale.jpg"
         }
       ],
-      "available": "Lieferung direkt ab Werk",
+      "available": ["Lieferung direkt ab Werktag"],
       "sale": 10,
-      "onSale": "true",
+      "onSale": true,
       "size": [
         "40 x 55 x 23 cm (BxHxT)"
       ],
@@ -783,7 +783,7 @@
           "src": "https://cdn.bueromarkt-ag.de/product/17bd67fd12e59852c5a82524faf63e30a8f7b99c-stabmixer_bosch_msm66120_ergomixx_set.jpg"
         }
       ],
-      "available": "Sofort lieferbar",
+      "available": ["Sofort lieferbar"],
       "sale": 13,
       "onSale": "action",
       "size": [

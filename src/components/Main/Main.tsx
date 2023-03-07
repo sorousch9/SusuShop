@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./main.scss";
 import { CustomerOpinions } from "./CustomerOpinions/CustomerOpinions";
 import { MainBanner } from "./MainBanner/MainBanner";
@@ -8,8 +9,20 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { categories } from "../../data";
 import { SpecialOffer } from "./SpecialOffer/SpecialOffer";
 import { Widget } from "./Widget/Widget";
+import { fetchData } from "../../hooks/apiService";
+import { ProductType } from "../../../interfaces/Products";
 
 export const Main = () => {
+  const [product, setProduct] = useState<ProductType[]>([]);
+
+  useEffect(() => {
+    const fetchDataAsync = async () => {
+      const response = await fetchData("http://localhost:5000/products");
+      setProduct(response);
+    };
+    fetchDataAsync();
+  }, []);
+
   return (
     <Container>
       <Row>
@@ -19,7 +32,6 @@ export const Main = () => {
               GRATIS FÜR SIE
             </button>
             <div className="categorie-1">
-              {" "}
               <Link
                 to="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -28,7 +40,6 @@ export const Main = () => {
               </Link>
             </div>
             <div className="categorie-1">
-              {" "}
               <Link
                 to="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -37,7 +48,6 @@ export const Main = () => {
               </Link>
             </div>
             <div className="categorie-1">
-              {" "}
               <Link
                 to="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -70,10 +80,12 @@ export const Main = () => {
           <SpecialOffer />
           <TopRecommendations />
           <Widget />
-          <CustomerOpinions />
+          <CustomerOpinions product={product} />
         </Col>
       </Row>
-      <a href="/" className="scrollToTop"> </a>
+      <a href="/" className="scrollToTop">
+        {" "}
+      </a>
     </Container>
   );
 };

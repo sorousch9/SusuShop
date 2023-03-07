@@ -126,7 +126,7 @@
               justify-content: center;
 
               .thumbnail {
-                padding: .3rem;
+                padding: 0.3rem;
                 width: 5rem;
                 height: 5rem;
                 margin-right: 0.5rem;
@@ -345,6 +345,7 @@
           .social-share {
             ul {
               display: flex;
+              justify-content: space-around;
               align-items: center;
               flex-flow: row wrap;
               margin: 0;

@@ -2,8 +2,6 @@ import "./customerOpinions.scss";
 import { Link } from "react-router-dom";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import p7718687 from "../../../assets/7718687.jpg";
-import { useEffect, useState } from "react";
-import { publicRequest } from "../../../requestMethod";
 import { Categories } from "../../Categories/Categories";
 import {
   addProduct,
@@ -12,29 +10,19 @@ import {
   getTotalAmount,
 } from "../../../redux/cartRedux";
 import { useDispatch } from "react-redux";
+import { ProductType, Props } from "../../../../interfaces/Products";
 
-
-export const CustomerOpinions = () => {
+export const CustomerOpinions = ({ product }: Props) => {
   const dispatch = useDispatch();
-  const addToCart = (product) => {
+  const addToCart = (product: ProductType) => {
     dispatch(addProduct({ ...product }));
     dispatch(getCartCount());
     dispatch(getSubTotal());
     dispatch(getTotalAmount());
   };
-  const [product, setProduct] = useState({});
-  useEffect(() => {
-    const getProduct = async () => {
-      try {
-        const res = await publicRequest.get("/products");
-        setProduct(res.data);
-      } catch {}
-    };
-    getProduct();
-  }, [product._id]);
- 
-  var productOnSale = product.filter && product.filter((item)=> {
-    return item.onSale === "true";
+  console.log(product);
+  const productOnSale = product.filter((item) => {
+    return item.onSale === true;
   });
 
   return (
@@ -47,13 +35,7 @@ export const CustomerOpinions = () => {
           </div>
         </div>
         <div className="column">
-          <Link
-            className="button"
-            style={{ color: "inherit", textDecoration: "inherit" }}
-          >
-            Alle ansehen
-            <i></i>
-          </Link>
+          <i> Alle ansehen</i>
         </div>
       </div>
       <div className="module-body">
@@ -95,25 +77,29 @@ export const CustomerOpinions = () => {
         </div>
         <div className="column right">
           <div className="products mobile-column-2 column-3">
-          {productOnSale?.map((item) => (
-              <div className="product product-type-simple" key={item._id}>
+            {productOnSale?.map((item) => (
+              <div className="product product-type-simple" key={item.id}>
                 <div className="product-wrapper product-type-3">
                   <div className="thumbnail-wrapper">
                     <div className="product-badges">
                       <span className="badge style-1 onsale">{item.sale}%</span>
                       <span className={item.available[1]}>
-                         {item.available[0]}
+                        {item.available[0]}
                       </span>
                     </div>
                     <Link
-                      to={`/product/${item._id}`}
+                      to={`/product/${item.id}`}
                       style={{ color: "inherit", textDecoration: "inherit" }}
                     >
-                      <img className="p-img" src={item.img[0].src} alt={item.title} />
+                      <img
+                        className="p-img"
+                        src={item.img[0].src}
+                        alt={item.title}
+                      />
                     </Link>
                     <div className="product-buttons">
                       <Link
-                        to={`/product/${item._id}`}
+                        to={`/product/${item.id}`}
                         style={{ color: "inherit", textDecoration: "inherit" }}
                       >
                         <BsArrowsFullscreen
@@ -147,19 +133,20 @@ export const CustomerOpinions = () => {
                         <span className="amount">
                           <bdi>
                             <span>
-                              {parseFloat(
-                                item.price - (item.price * item.sale) / 100
+                              {(
+                                item.price -
+                                (item.price * item.sale) / 100
                               ).toFixed(2)}
                               €
                             </span>
-                            {item.saleprice}
+                            1515
                           </bdi>
                         </span>
                       </ins>
                     </span>
                     <h3 className="product-title">
                       <Link
-                        to={`/product/${item._id}`}
+                        to={`/product/${item.id}`}
                         style={{ color: "inherit", textDecoration: "inherit" }}
                         title="testing product"
                       >
@@ -184,10 +171,12 @@ export const CustomerOpinions = () => {
                       </div>
                     </div>
                     <div className="product-fade-block">
-                      <button className="product-btn-fade"
-                       onClick={() => {
-                        addToCart(item);
-                      }}>
+                      <button
+                        className="product-btn-fade"
+                        onClick={() => {
+                          addToCart(item);
+                        }}
+                      >
                         In den Warenkorb
                       </button>
                     </div>

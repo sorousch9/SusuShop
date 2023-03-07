@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import axios from "axios";
 
 export const Products = ({ cat, filters, sort }) => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState ([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   useEffect(() => {
     const getProduct = async () => {
