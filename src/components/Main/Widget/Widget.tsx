@@ -19,7 +19,6 @@ export const Widget = () => {
           <div className="banner-thumbnail">
             <img src={banner1} alt="banner" />
           </div>
-
         </div>
         <div className="widget-col">
           <div className="banner-content">
@@ -33,7 +32,6 @@ export const Widget = () => {
           <div className="banner-thumbnail">
             <img src={banner2} alt="banner" />
           </div>
-   
         </div>{" "}
         <div className="widget-col">
           <div className="banner-content">
@@ -47,7 +45,6 @@ export const Widget = () => {
           <div className="banner-thumbnail">
             <img src={banner3} alt="banner" />
           </div>
-
         </div>
       </div>
     </div>

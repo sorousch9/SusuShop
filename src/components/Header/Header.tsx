@@ -6,9 +6,10 @@ import { AiOutlineUser } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { VscSignOut, VscHeart } from "react-icons/vsc";
 import { categories } from "../../data";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../hooks/hooks";
+
 export const Header = () => {
-  const quantity = useSelector((state) => state.cart.totalCount);
+  const quantity = useAppSelector((state) => state.cart.total);
   return (
     <div className="header-main">
       <div className="container">
