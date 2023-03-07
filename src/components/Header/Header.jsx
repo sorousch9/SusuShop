@@ -26,7 +26,7 @@ export const Header = () => {
         <div className="center">
           <div className="search-style">
             <form>
-              <select className="select-active"  defaultValue="Alle Kategorien">
+              <select className="select-active" defaultValue="Alle Kategorien">
                 {categories.map((item) => (
                   <option key={item.id}>{item.title}</option>
                 ))}
@@ -42,8 +42,6 @@ export const Header = () => {
         </div>
         <div className="right">
           <div className="header-action">
-          
-
             <div className="header-action-icon service">
               <Link
                 to="/"
@@ -56,7 +54,6 @@ export const Header = () => {
               </Link>
             </div>
 
-           
             <div className="header-action-icon account">
               <Link
                 to="/"
@@ -163,9 +160,8 @@ export const Header = () => {
                 style={{ color: "inherit", textDecoration: "inherit" }}
                 className="text-link"
               >
-                <span className="corb count-style" > {quantity}</span>
-                <span className="herder-span ">Warenkorb
-                </span>
+                <span className="corb count-style"> {quantity}</span>
+                <span className="herder-span ">Warenkorb</span>
               </Link>
             </div>
           </div>
