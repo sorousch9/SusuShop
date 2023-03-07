@@ -20,7 +20,6 @@ export const CustomerOpinions = ({ product }: Props) => {
     dispatch(getSubTotal());
     dispatch(getTotalAmount());
   };
-  console.log(product);
   const productOnSale = product.filter((item) => {
     return item.onSale === true;
   });

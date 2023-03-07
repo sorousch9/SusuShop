@@ -1,11 +1,10 @@
 import "./cart.scss";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Anons } from "../../components/Anons/Anons";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import {
   getTotalAmount,
   incrementQuantity,
@@ -15,13 +14,13 @@ import {
   getCartCount,
   getSubTotal,
 } from "../../redux/cartRedux";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 
 export const Cart = () => {
-  const dispatch = useDispatch();
-  const { products, subAmount, totalAmount } = useSelector(
+  const dispatch = useAppDispatch();
+  const { products, subAmount, totalAmount } = useAppSelector(
     (state) => state.cart
   );
-
   useEffect(() => {
     dispatch(getCartProducts());
     dispatch(getSubTotal());
@@ -41,11 +40,11 @@ export const Cart = () => {
             </li>
             <li>
               <span />
-              <Link>warenkorb</Link>
+              <p>warenkorb</p>
             </li>
           </ul>
         </nav>
-        <div className="cart" key={products._id}>
+        <div className="cart">
           <Row>
             <Col md="12">
               <div className="cart-wrapper">
@@ -75,10 +74,10 @@ export const Cart = () => {
                       </tr>
                     </thead>
                     {products.map((product) => (
-                      <tbody key={product._id}>
+                      <tbody key={product.id}>
                         <tr className="cart-item">
                           <td className="product-thumbnail">
-                            <Link to={`/product/${product._id}`}>
+                            <Link to={`/products/${product.id}`}>
                               <img
                                 className="product-image"
                                 src={product.img && product.img[0].src}
@@ -87,9 +86,9 @@ export const Cart = () => {
                             </Link>
                           </td>
                           <td className="product-name">
-                            <Link to={`/product/${product._id}`}>
+                            <Link to={`/products/${product.id}`}>
                               {product.title}
-                              <span>Produkt ID :{product._id}</span>
+                              <span>Produkt ID :{product.id}</span>
                             </Link>
                           </td>
                           <td className="product-price">{product.price} €</td>
@@ -98,7 +97,7 @@ export const Cart = () => {
                               <div
                                 className="quantity-btn"
                                 onClick={() => {
-                                  dispatch(decrementQuantity(product._id));
+                                  dispatch(decrementQuantity(product.id));
                                   dispatch(getSubTotal());
                                   dispatch(getCartCount());
                                   dispatch(getTotalAmount());
@@ -106,11 +105,14 @@ export const Cart = () => {
                               >
                                 <span className="icon-minus"></span>
                               </div>
-                              <span className="text-input">  {product.quantity}</span>
+                              <span className="text-input">
+                                {" "}
+                                {product.quantity}
+                              </span>
                               <div
                                 className="quantity-btn"
                                 onClick={() => {
-                                  dispatch(incrementQuantity(product._id));
+                                  dispatch(incrementQuantity(product.id));
                                   dispatch(getSubTotal());
                                   dispatch(getCartCount());
                                   dispatch(getTotalAmount());
@@ -122,23 +124,20 @@ export const Cart = () => {
                           </td>
                           <td className="product-subtotal">
                             {" "}
-                            {parseFloat(
-                              product.price * product.quantity
-                            ).toFixed(2)}{" "}
-                            €
+                            {(product.price * product.quantity).toFixed(2)} €
                           </td>
                           <td className="product-remove">
-                            <Link>
+                            <p>
                               <span
                                 className="icon-cancel"
                                 onClick={() => {
-                                  dispatch(removeProduct(product._id));
+                                  dispatch(removeProduct(product.id));
                                   dispatch(getSubTotal());
                                   dispatch(getCartCount());
                                   dispatch(getTotalAmount());
                                 }}
                               ></span>
-                            </Link>
+                            </p>
                           </td>
                         </tr>
                       </tbody>
@@ -167,8 +166,7 @@ export const Cart = () => {
                         <tr className="cart-subtotal">
                           <th>Zwischensumme</th>
                           <td className="cart-subtotal-item">
-                            {" "}
-                            {parseFloat(subAmount).toFixed(2)} €
+                            {subAmount.toFixed(2)} €
                           </td>
                         </tr>
                         <tr className="cart-shopping-totals">
@@ -199,7 +197,7 @@ export const Cart = () => {
                         </tr>
                         <tr className="cart-order-total">
                           <th>Gesamtsumme</th>
-                          <td>{parseFloat(totalAmount).toFixed(2)} €</td>
+                          <td>{totalAmount.toFixed(2)} €</td>
                         </tr>
                       </tbody>
                     </table>

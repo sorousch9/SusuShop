@@ -3,8 +3,6 @@ import "./specialOffer.scss";
 import { Col, Row } from "react-bootstrap";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import { Timer } from "./Timer";
-import { useEffect, useState } from "react";
-import { publicRequest } from "../../../requestMethod";
 import {
   addProduct,
   getCartCount,
