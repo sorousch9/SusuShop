@@ -6,28 +6,15 @@ import "swiper/scss/autoplay";
 import { Autoplay, Navigation } from "swiper";
 import "swiper/scss/navigation";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { publicRequest } from "../../../requestMethod";
+import { Props } from "../../../../interfaces/Products";
 
-export const TopRecommendations = () => {
-  const [product, setProduct] = useState({});
-  useEffect(() => {
-    const getProduct = async () => {
-      try {
-        const res = await publicRequest.get("/products");
-        setProduct(res.data);
-      } catch {}
-    };
-    getProduct();
-  }, [product._id]);
-  const topProduct = product 
-  var productOnSale = topProduct.filter && topProduct.filter((item)=> {
-    return item.onSale === "false";
+export const TopRecommendations = ({ product }: Props) => {
+  const topProduct = product;
+  var productOnSale = topProduct.filter((item) => {
+    return item.onSale === false;
   });
 
-
   return (
-  
     <div>
       <Swiper
         autoplay={{
@@ -59,9 +46,9 @@ export const TopRecommendations = () => {
         className="mySwiper"
       >
         {productOnSale?.map((item) => (
-          <SwiperSlide key={item._id}>
+          <SwiperSlide key={item.id}>
             <div className="carausel-Top-Rec">
-              <Link to={`/product/${item._id}`}>
+              <Link to={`/products/${item.id}`}>
                 <img src={item.img[0].src} alt={item.title} />
                 <h4>{item.title}</h4>
                 <span>

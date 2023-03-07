@@ -63,7 +63,7 @@ export const CustomerOpinions = ({ product }: Props) => {
                         aller Produkte
                       </h3>
                       <div className="entry-store color-info-dark">
-                        Nur in Böttcher AG
+                        Nur in Susu shop
                       </div>
                     </div>
                   </div>
@@ -88,7 +88,7 @@ export const CustomerOpinions = ({ product }: Props) => {
                       </span>
                     </div>
                     <Link
-                      to={`/product/${item.id}`}
+                      to={`/products/${item.id}`}
                       style={{ color: "inherit", textDecoration: "inherit" }}
                     >
                       <img
@@ -99,7 +99,7 @@ export const CustomerOpinions = ({ product }: Props) => {
                     </Link>
                     <div className="product-buttons">
                       <Link
-                        to={`/product/${item.id}`}
+                        to={`/products/${item.id}`}
                         style={{ color: "inherit", textDecoration: "inherit" }}
                       >
                         <BsArrowsFullscreen
@@ -139,14 +139,14 @@ export const CustomerOpinions = ({ product }: Props) => {
                               ).toFixed(2)}
                               €
                             </span>
-                            1515
+                        
                           </bdi>
                         </span>
                       </ins>
                     </span>
                     <h3 className="product-title">
                       <Link
-                        to={`/product/${item.id}`}
+                        to={`/products/${item.id}`}
                         style={{ color: "inherit", textDecoration: "inherit" }}
                         title="testing product"
                       >

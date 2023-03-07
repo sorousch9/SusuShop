@@ -12,34 +12,20 @@ import {
   getTotalAmount,
 } from "../../../redux/cartRedux";
 import { useDispatch } from "react-redux";
+import { ProductType, Props } from "../../../../interfaces/Products";
 
-
-
-export const SpecialOffer = () => {
-  
+export const SpecialOffer = ({ product }: Props) => {
   const dispatch = useDispatch();
-  const addToCart = (product) => {
+  const addToCart = (product: ProductType) => {
     dispatch(addProduct({ ...product }));
     dispatch(getCartCount());
     dispatch(getSubTotal());
     dispatch(getTotalAmount());
   };
-  const [product, setProduct] = useState({});
-  useEffect(() => {
-    const getProduct = async () => {
-      try {
-        const res = await publicRequest.get("/products");
-        setProduct(res.data);
-      } catch {}
-    };
-    getProduct();
-  }, [product._id]);
 
-  var productOnSale =
-    product.filter &&
-    product.filter((item) => {
-      return item.onSale === "action";
-    });
+  var productOnSale = product.filter((item) => {
+    return item.sale > 10;
+  });
   return (
     <div className="spacial-offer">
       <Row>
@@ -65,7 +51,7 @@ export const SpecialOffer = () => {
 
       <div className="module-body products align-center">
         {productOnSale?.map((item) => (
-          <div className="product product-type-simple" key={item._id}>
+          <div className="product product-type-simple" key={item.id}>
             <div className="product-wrapper product-type-3">
               <div className="thumbnail-wrapper">
                 <div className="product-badges">
@@ -73,7 +59,7 @@ export const SpecialOffer = () => {
                   <span className={item.available[1]}>{item.available[0]}</span>
                 </div>
                 <Link
-                  to={`/product/${item._id}`}
+                  to={`/products/${item.id}`}
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
                   <img
@@ -84,7 +70,7 @@ export const SpecialOffer = () => {
                 </Link>
                 <div className="product-buttons">
                   <Link
-                    to={`/product/${item._id}`}
+                    to={`/products/${item.id}`}
                     style={{ color: "inherit", textDecoration: "inherit" }}
                   >
                     <BsArrowsFullscreen
@@ -115,19 +101,19 @@ export const SpecialOffer = () => {
                     <span className="amount">
                       <bdi>
                         <span>
-                          {parseFloat(
-                            item.price - (item.price * item.sale) / 100
+                          {(
+                            item.price -
+                            (item.price * item.sale) / 100
                           ).toFixed(2)}
                           €
                         </span>
-                        {item.saleprice}
                       </bdi>
                     </span>
                   </ins>
                 </span>
                 <h3 className="product-title">
                   <Link
-                    to={`/product/${item._id}`}
+                    to={`/products/${item.id}`}
                     style={{ color: "inherit", textDecoration: "inherit" }}
                     title="testing product"
                   >
@@ -155,10 +141,14 @@ export const SpecialOffer = () => {
                   </div>
                 </div>
                 <div className="product-fade-block">
-                  <button className="product-btn-fade"
-                  onClick={() => {
-                    addToCart(item);
-                  }}>In den Warenkorb</button>
+                  <button
+                    className="product-btn-fade"
+                    onClick={() => {
+                      addToCart(item);
+                    }}
+                  >
+                    In den Warenkorb
+                  </button>
                 </div>
               </div>
             </div>

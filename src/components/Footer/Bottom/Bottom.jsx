@@ -71,7 +71,7 @@ export const Bottom = () => {
           <Col>
             <div className="footer-widgets">
               <div className="widgets-title">
-                <h4>Böttcher AG</h4>
+                <h4>Susu shop</h4>
               </div>
               <div className="widgets-content">
                 <ul>

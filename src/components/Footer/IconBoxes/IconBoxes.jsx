@@ -7,7 +7,7 @@ export const IconBoxes = () => {
   return (
     <div className="footer-box">
       <div className="footer-info">
-        <h3>Böttcher AG</h3>
+        <h3>Susu Shop</h3>
         <p>
           Deutschlands Nr. 1 für B2B Kunden mit über 7 Mio. zufriedenen Kunden.
           Günstige Preise direkt vom Großhandel und GRATIS Kekse, Fruchtgummis &
@@ -25,7 +25,7 @@ export const IconBoxes = () => {
           B2B-Onlineshop für Gewerbe zeichnen aber nicht nur ein großes
           Produktsortiment und günstige Preise aus, sondern auch schnelle
           Lieferzeiten. Bei einer Online-Bestellung bis 17.00 Uhr (Montag bis
-          Freitag) geht Lagerware bei der Böttcher AG noch am selben Tag in den
+          Freitag) geht Lagerware bei der SusuShop noch am selben Tag in den
           Versand. So sind Ihre Artikel nicht nur schnell und einfach online
           bestellt, sondern auch im Handumdrehen auf dem Weg zu Ihnen. Auch
           vielfältige Zahlungsmöglichkeiten spielen bei der Auswahl des

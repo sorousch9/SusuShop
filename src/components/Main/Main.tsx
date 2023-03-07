@@ -77,8 +77,8 @@ export const Main = () => {
         </Col>
         <Col xl="10" md="12">
           <MainBanner />
-          <SpecialOffer />
-          <TopRecommendations />
+          <SpecialOffer product={product} />
+          <TopRecommendations product={product}  />
           <Widget />
           <CustomerOpinions product={product} />
         </Col>
