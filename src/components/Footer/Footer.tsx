@@ -50,7 +50,9 @@ export const Footer = () => {
               .
             </a>
           </p>
-          <Link to="/" className="redirect">zum Privatkundenshop</Link>
+          <Link to="/" className="redirect">
+            zum Privatkundenshop
+          </Link>
         </div>
       </div>
     </Container>

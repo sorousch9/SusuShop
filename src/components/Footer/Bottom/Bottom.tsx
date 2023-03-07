@@ -1,31 +1,37 @@
 import "./bottom.scss";
-import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import paypal from "../../../assets/paypal.png"
-import visa from "../../../assets/Visa.png"
-import giro from "../../../assets/Giro.png"
-import sofort from "../../../assets/sofort.png"
+import paypal from "../../../assets/paypal.png";
+import visa from "../../../assets/Visa.png";
+import giro from "../../../assets/Giro.png";
+import sofort from "../../../assets/sofort.png";
 
 export const Bottom = () => {
   return (
     <div className="footer-bottom">
       <Container>
         <Row>
-        <Col>
+          <Col>
             <div className="footer-widgets">
               <div className="widgets-title">
                 <h4>Zahlungsmöglichkeiten</h4>
               </div>
               <div className="widgets-content">
                 <ul>
-                 <li>Rechnung</li>
-                 <li>Lastschrift</li>
-                 <li>Vorkasse</li>
-                 <li><img src={paypal} alt="paypal"/></li>
-                 <li><img src={visa} alt="visa"/></li>
-                 <li><img src={giro} alt="giro"/></li>
-                 <li><img src={sofort} alt="sofort"/></li>
-
+                  <li>Rechnung</li>
+                  <li>Lastschrift</li>
+                  <li>Vorkasse</li>
+                  <li>
+                    <img src={paypal} alt="paypal" />
+                  </li>
+                  <li>
+                    <img src={visa} alt="visa" />
+                  </li>
+                  <li>
+                    <img src={giro} alt="giro" />
+                  </li>
+                  <li>
+                    <img src={sofort} alt="sofort" />
+                  </li>
                 </ul>
               </div>
             </div>

@@ -75,4 +75,4 @@ export const categories = [
     id: 21,
     title: "Stabmixer ",
   },
-]
+];
