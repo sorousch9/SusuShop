@@ -7,9 +7,6 @@ import { Footer } from "../../components/Footer/Footer";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css/thumbs";
-import { FreeMode, Thumbs } from "swiper";
 import {
   addProduct,
   getCartCount,
@@ -19,8 +16,8 @@ import {
   decrementQuantity,
 } from "../../redux/cartRedux";
 import { useDispatch } from "react-redux";
-import axios from "axios";
 import { ProductType } from "../../../interfaces/Products";
+import { fetchData } from "../../hooks/apiService";
 
 export default function Product() {
   const { id } = useParams<{ id: string }>();
@@ -34,7 +31,7 @@ export default function Product() {
     dispatch(getTotalAmount());
   };
   useEffect(() => {}, [dispatch]);
-  useEffect(() => {
+/*   useEffect(() => {
     axios
       .get<ProductType>(`http://localhost:5000/products/${id}`)
       .then((response) => {
@@ -42,7 +39,17 @@ export default function Product() {
         setProduct(response.data);
         setCurrentImage(response.data.img[0].src);
       });
+  }, [id]); */
+
+  useEffect(() => {
+    const fetchDataAsync = async () => {
+      const response = await fetchData(`http://localhost:5000/products/${id}`);
+      setProduct(response);
+      setCurrentImage(response.img[0].src);
+    };
+    fetchDataAsync();
   }, [id]);
+
   const handleImageClick = (src: string) => {
     setCurrentImage(src);
   };
