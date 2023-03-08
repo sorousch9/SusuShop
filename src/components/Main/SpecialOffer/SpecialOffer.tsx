@@ -12,7 +12,7 @@ import {
 import { useDispatch } from "react-redux";
 import { ProductType, Props } from "../../../../interfaces/Products";
 
-export const SpecialOffer = ({ product }: Props) => {
+export const SpecialOffer = ({ products }: Props) => {
   const dispatch = useDispatch();
   const addToCart = (product: ProductType) => {
     dispatch(addProduct({ ...product }));
@@ -21,7 +21,7 @@ export const SpecialOffer = ({ product }: Props) => {
     dispatch(getTotalAmount());
   };
 
-  var productOnSale = product.filter((item) => {
+  var productOnSale = products.filter((item) => {
     return item.sale > 10;
   });
   return (

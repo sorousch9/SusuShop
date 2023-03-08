@@ -8,9 +8,8 @@ import "swiper/scss/navigation";
 import { Link } from "react-router-dom";
 import { Props } from "../../../../interfaces/Products";
 
-export const TopRecommendations = ({ product }: Props) => {
-  const topProduct = product;
-  var productOnSale = topProduct.filter((item) => {
+export const TopRecommendations = ({ products }: Props) => {
+  const productOnSale = products.filter((item) => {
     return item.onSale === false;
   });
 

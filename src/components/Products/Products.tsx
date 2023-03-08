@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./products.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
@@ -10,11 +9,9 @@ import {
   getSubTotal,
   getTotalAmount,
 } from "../../redux/cartRedux";
-import { ProductType } from "../../../interfaces/Products";
-import { fetchData } from "../../hooks/apiService";
+import { ProductType, Props } from "../../../interfaces/Products";
 
-export const Products = () => {
-  const [products, setProducts] = useState<ProductType[]>([]);
+export const Products = ({ products }: Props) => {
   const dispatch = useDispatch();
   const addToCart = (product: ProductType) => {
     dispatch(addProduct({ ...product }));
@@ -22,14 +19,6 @@ export const Products = () => {
     dispatch(getSubTotal());
     dispatch(getTotalAmount());
   };
-
-  useEffect(() => {
-    const fetchDataAsync = async () => {
-      const response = await fetchData("http://localhost:5000/products/");
-      setProducts(response);
-    };
-    fetchDataAsync();
-  }, []);
 
   return (
     <div className="products-list">

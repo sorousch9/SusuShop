@@ -20,5 +20,5 @@ export interface ProductType {
   quantity: number;
 }
 export type Props = {
-  product: ProductType[];
+  products: ProductType[];
 };

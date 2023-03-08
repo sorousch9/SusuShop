@@ -13,12 +13,14 @@ import { fetchData } from "../../hooks/apiService";
 import { ProductType } from "../../../interfaces/Products";
 
 export const Main = () => {
-  const [product, setProduct] = useState<ProductType[]>([]);
+  const [products, setProducts] = useState<ProductType[]>([]);
 
   useEffect(() => {
     const fetchDataAsync = async () => {
       const response = await fetchData("http://localhost:5000/products");
-      setProduct(response);
+      if (response !== undefined) {
+        setProducts(response);
+      }
     };
     fetchDataAsync();
   }, []);
@@ -77,10 +79,10 @@ export const Main = () => {
         </Col>
         <Col xl="10" md="12">
           <MainBanner />
-          <SpecialOffer product={product} />
-          <TopRecommendations product={product}  />
+          <SpecialOffer products={products} />
+          <TopRecommendations products={products} />
           <Widget />
-          <CustomerOpinions product={product} />
+          <CustomerOpinions products={products} />
         </Col>
       </Row>
       <a href="/" className="scrollToTop">

@@ -17,7 +17,7 @@ import {
 } from "../../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import { ProductType } from "../../../interfaces/Products";
-import { fetchData } from "../../hooks/apiService";
+import { fetchSingleData } from "../../hooks/apiService";
 
 export default function Product() {
   const { id } = useParams<{ id: string }>();
@@ -31,21 +31,15 @@ export default function Product() {
     dispatch(getTotalAmount());
   };
   useEffect(() => {}, [dispatch]);
-/*   useEffect(() => {
-    axios
-      .get<ProductType>(`http://localhost:5000/products/${id}`)
-      .then((response) => {
-        console.log(response.data);
-        setProduct(response.data);
-        setCurrentImage(response.data.img[0].src);
-      });
-  }, [id]); */
-
   useEffect(() => {
     const fetchDataAsync = async () => {
-      const response = await fetchData(`http://localhost:5000/products/${id}`);
-      setProduct(response);
-      setCurrentImage(response.img[0].src);
+      const response = await fetchSingleData(
+        `http://localhost:5000/products/${id}`
+      );
+      if (response !== undefined) {
+        setProduct(response);
+        setCurrentImage(response.img[0].src);
+      }
     };
     fetchDataAsync();
   }, [id]);
@@ -55,7 +49,18 @@ export default function Product() {
   };
 
   if (!product) {
-    return <h3>Laoding ...</h3>;
+    return (
+      <div className="d-flex justify-content-center m-5">
+        <button className="btn btn-primary" type="button" disabled>
+          <span
+            className="spinner-grow spinner-grow-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+          Loading...
+        </button>
+      </div>
+    );
   }
   var sale;
   if (product?.sale < 1) {

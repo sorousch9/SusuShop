@@ -17,6 +17,8 @@
 }
 body {
   background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   .container {
     max-width: 1620px;
   }
@@ -26,7 +28,7 @@ body {
   margin: 0;
   font-family: "Inter", "Lato", "Raw", sans-serif;
   color: #0f0f0f;
-  -webkit-font-smoothing: antialiased;
+
   .overlay-link {
     position: absolute;
     top: 0;

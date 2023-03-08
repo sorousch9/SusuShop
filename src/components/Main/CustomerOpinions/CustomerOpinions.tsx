@@ -12,7 +12,7 @@ import {
 import { useDispatch } from "react-redux";
 import { ProductType, Props } from "../../../../interfaces/Products";
 
-export const CustomerOpinions = ({ product }: Props) => {
+export const CustomerOpinions = ({ products }: Props) => {
   const dispatch = useDispatch();
   const addToCart = (product: ProductType) => {
     dispatch(addProduct({ ...product }));
@@ -20,7 +20,7 @@ export const CustomerOpinions = ({ product }: Props) => {
     dispatch(getSubTotal());
     dispatch(getTotalAmount());
   };
-  const productOnSale = product.filter((item) => {
+  const productOnSale = products.filter((item) => {
     return item.onSale === true;
   });
 
@@ -138,7 +138,6 @@ export const CustomerOpinions = ({ product }: Props) => {
                               ).toFixed(2)}
                               €
                             </span>
-                        
                           </bdi>
                         </span>
                       </ins>
