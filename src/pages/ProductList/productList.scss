@@ -1,64 +1,32 @@
-.filterContainer {
-  .breadcrumb {
-    padding: 0.625rem 0;
-    ul {
-      display: flex;
-      align-items: center;
-      flex-flow: row wrap;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      li {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        font-size: 0.75rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0;
-        color: var(--color-info-dark);
-        a {
-          color: var(--color-text-light);
-          text-decoration: none;
-        }
-        span:after {
-          font-family: "Raw";
-          font-size: 1rem;
-          content: "\e8d3";
-          margin-left: 0.625rem;
-          margin-right: 0.625rem;
-        }
-      }
-    }
-  }
-  .categories-filter {
-    margin-right: 50px;
+.breadcrumb {
+  margin: 1rem;
+  ul {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    color: #606060;
-    .pro-sidebar-title{
-      font-size: 1rem;
-      display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      position: relative;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      margin: 0rem;
-      padding-right: .2rem;
-    }
-    select {
-      border: 1px solid var(--color-border);
-      font-size: 14px;
-      color: #606060;
-      font-size: 14px;
-      min-width: 143px;
-      padding: 5px;
-      margin-right: 2rem;
-      option{
-        background: #fff;
-        border: 0 solid var(--color-border);
-        font-size: .9rem;
-      };
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      color: var(--color-info-dark);
+      a {
+        color: var(--color-text-light);
+        text-decoration: none;
+      }
+      span:after {
+        font-family: "Raw";
+        font-size: 1rem;
+        content: "\e8d3";
+        margin-left: 0.625rem;
+        margin-right: 0.625rem;
+      }
     }
   }
 }
