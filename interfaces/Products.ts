@@ -12,7 +12,7 @@ export interface ProductType {
   category: string[];
   amount: number;
   img: Img[];
-  available: string;
+  available: string[];
   sale: number;
   onSale: boolean;
   size: string[];

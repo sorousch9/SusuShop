@@ -21,8 +21,6 @@ export const Anons = () => {
             </span>
           </p>
 
-          <i className="bussiness-shop">zum Geschäftskundenshop</i>
-
           <p>
             über 200.000 Artikel{" "}
             <span>
