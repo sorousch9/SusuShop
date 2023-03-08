@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchData } from "../../hooks/apiService";
 import { ProductType } from "../../../interfaces/Products";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 
 export const ProductList = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -25,8 +25,8 @@ export const ProductList = () => {
     <Container>
       <Anons />
       <Header />
-      <div className="filterContainer">
-        <div className="breadcrumb">
+      <Row>
+        <Row className="breadcrumb">
           <nav className="">
             <ul>
               <li>
@@ -38,9 +38,14 @@ export const ProductList = () => {
               </li>
             </ul>
           </nav>
-        </div>
-        <Products products={products} />
-      </div>
+        </Row>
+        <Col xs={12} md={9} lg={9} >
+          <Products products={products} />
+        </Col>
+        <Col xs={12} md={3} lg={3} style={{backgroundColor:"red"}}>
+          a
+        </Col>
+      </Row>
       <Footer />
     </Container>
   );
