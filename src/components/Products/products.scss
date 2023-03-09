@@ -6,10 +6,10 @@
   }
 }
 .card-title a {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter";
   max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -17,10 +17,18 @@
   transition: all 0.1s ease-out;
   &:hover,
   &:focus {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
   }
 }
-
+.cart-image {
+  overflow: hidden;
+  height: 32vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
 .card-text {
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -28,10 +36,14 @@
   font-family: "Lato";
 }
 .cart-price {
-  font-size: 1.25rem;
+  font-size: .750rem;
+  bdi{
+    font-size: 1.15rem;
+  }
   ins {
     margin-left: 0.5rem;
     color: var(--color-price);
+    font-size: 1.15rem;
   }
   del {
     font-size: 1rem;

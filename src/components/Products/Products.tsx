@@ -21,15 +21,14 @@ export const Products = ({ products }: Props) => {
 
   return (
     <Container className="my-3">
-      <Row xs={2} md={3} lg={4} className="g-4">
+      <Row xs={1} md={2} lg={3} className="g-4">
         {products.map((item) => (
           <Col key={item.id}>
             <Card>
-              <Card.Img
-                variant="center"
-                style={{ padding: "1.3rem" }}
-                src={item.img[0].src}
-              />
+              <div className="cart-image">
+                <Card.Img src={item.img[0].src} style={{ padding: "1rem" }} />
+              </div>
+
               <Card.Body>
                 <Card.Title className="text-truncate">
                   <Link
@@ -39,7 +38,7 @@ export const Products = ({ products }: Props) => {
                     {item.title}
                   </Link>
                 </Card.Title>
-                <Card.Text className="card-text">{item.brand}</Card.Text>
+                <Card.Text className="card-text" style={{fontWeight:"bold"}}>{item.brand.toUpperCase()}</Card.Text>
                 <Card.Text className="card-text">
                   <span className="cart-price">
                     Prise:
@@ -64,10 +63,7 @@ export const Products = ({ products }: Props) => {
                       </span>
                     )}
                   </span>
-                  <div className="product-meta">
-                    {"->"}
-                    {item.available[0]}
-                  </div>
+                  <div className="product-meta">{item.available}</div>
                 </Card.Text>
                 <div className="d-grid">
                   <Button

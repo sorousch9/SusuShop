@@ -23,6 +23,24 @@ interface Filters {
   _sort: string;
   _order: string;
 }
+const color = [
+  "White",
+  "Blue",
+  "Black",
+  "Pink",
+  "Red",
+  "Gray",
+  "Green",
+  "Brown",
+  "Purple",
+];
+const cat = [
+  "Fitnessschuhe",
+  "Sportschuhe",
+  "Laufschuhe",
+  "Neutralschuhe",
+  "Trailrunning-Schuhe",
+];
 export const ProductList = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [filters, setFilters] = useState<Filters>({
