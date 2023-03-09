@@ -35,13 +35,6 @@ export const MainBanner = () => {
         </div>
         <div className="main-left">
           <div className="main-slider2">
-            <div className="content-wrapper">
-              <div className="content-title">Böttcher AG</div>
-              <div className="content-details">
-                <div className="content-details c1">Unsere </div>
-                <div className="content-details c2">Produkte</div>
-              </div>
-            </div>
             <div className="img-wrapper">
               <img src={pimg2} alt="ag" />
             </div>

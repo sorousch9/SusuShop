@@ -84,31 +84,27 @@ export default function Product() {
       </nav>
       <div className="single-product-wrapper" key={product.id}>
         <div className="product-wrapper">
-          <div className="product-header">
-            <h2 className="product-title">{product.title}</h2>
-            <div className="product-meta">
-              <div className="product-brand">
-                <table>
-                  <tbody>
-                    <tr>
-                      <th>Marke:</th>
-                      <td>
-                        <p> {product.brand} </p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div className="product-rating"></div>
+          <h2 className="product-title">{product.title}</h2>
+          <div className="product-meta">
+            <div className="product-brand">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Marke:</th>
+                    <td>
+                      <p> {product.brand} </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+            <div className="product-rating"></div>
           </div>
           <div className="product-content">
             <Row>
               <Col lg="5">
                 <div className="photo-gallery">
-                  <div className="product-badges">
-                    <span className="badge style-1 onsale"></span>
-                  </div>
+                 
                   <div className="slider-wrapper">
                     <div className="photo-section">
                       <img

@@ -10,9 +10,9 @@ export const Widget = () => {
         <div className="widget-col">
           <div className="banner-content">
             <div className="content-main">
-              <h6 className="b-black"> Neu für Ihr Büro</h6>
-              <h3>Gütes Gefühl am Arbeiten</h3>
-              <p>Freude am Arbeitsumfeld</p>
+              <h6 className="b-black"> Neu für Ihr Sport </h6>
+              <h3>Laufen mit uns</h3>
+              <p>Everything You Need to Know</p>
             </div>
             <div className="button"> entdecken</div>
           </div>
@@ -24,8 +24,11 @@ export const Widget = () => {
           <div className="banner-content">
             <div className="content-main">
               <h6>Neuheiten</h6>
-              <h3>Elegante Haushaltsartikel</h3>
-              <p>Gute Dinge kommen bald... </p>
+              <h3>FINDE DEN RICHTIGEN</h3>
+              <p>
+                Mit dem Online Shoe Advisor findest du das Laufschuh-Modell, das
+                am besten zu dir passt.{" "}
+              </p>
             </div>
             <div className="button"> entdecken</div>
           </div>
@@ -37,8 +40,8 @@ export const Widget = () => {
           <div className="banner-content">
             <div className="content-main">
               <h6> Modernen Produktion</h6>
-              <h3>Nachhaltigkeit</h3>
-              <p>Weniger neue Ressourcen für die Produktion </p>
+              <h3>Die besten Laufschuhe</h3>
+              <p>Hier geht es zu den besten Laufschuhen 2023! </p>
             </div>
             <div className="button"> entdecken</div>
           </div>
