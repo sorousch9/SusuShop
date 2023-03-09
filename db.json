@@ -14,8 +14,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Laufschuhe",
+        "Neutralschuhe"
       ],
       "specifications": [
         {
@@ -86,8 +86,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Basketball Shoes",
-        "Men's Shoes"
+        "Sportschuhe",
+        "Laufschuhe"
       ],
       "specifications": [
         {
@@ -129,7 +129,7 @@
         }
       ],
       "available": "Ships in 2-3 days",
-      "sale": 10,
+      "sale": 0,
       "onSale": false,
       "size": [
         "US 6",
@@ -139,9 +139,8 @@
         "US 10"
       ],
       "color": [
-        "Black",
-        "White",
-        "Blue"
+        "Brown",
+        "Black"
       ]
     },
     {
@@ -158,8 +157,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Men's Shoes"
+        "Fitnessschuhe",
+        "Sportschuhe"
       ],
       "specifications": [
         {
@@ -211,7 +210,6 @@
         "US 12"
       ],
       "color": [
-        "Black",
         "Grey",
         "White"
       ]
@@ -230,8 +228,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Basketball Shoes",
-        "Men's Shoes"
+        "Sportschuhe",
+        "Laufschuhe"
       ],
       "specifications": [
         {
@@ -283,9 +281,8 @@
         "US 12"
       ],
       "color": [
-        "Black",
-        "Grey",
-        "White"
+        "Red",
+        "Gray"
       ]
     },
     {
@@ -301,8 +298,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Dress Shoes",
-        "Men's Shoes"
+        "Sportschuhe",
+        "Laufschuhe"
       ],
       "specifications": [
         {
@@ -351,9 +348,7 @@
         "US 12"
       ],
       "color": [
-        "Black",
-        "Grey",
-        "White"
+        "Brown"
       ]
     },
     {
@@ -370,8 +365,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Trail Running Shoes",
-        "Women's Shoes"
+        "Neutralschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -423,8 +418,6 @@
         "US 10"
       ],
       "color": [
-        "Purple",
-        "Grey",
         "Black"
       ]
     },
@@ -442,8 +435,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Walking Shoes",
-        "Women's Shoes"
+        "Laufschuhe",
+        "Neutralschuhe"
       ],
       "specifications": [
         {
@@ -495,9 +488,7 @@
         "US 10"
       ],
       "color": [
-        "Black",
-        "Grey",
-        "White"
+        "Pink"
       ]
     },
     {
@@ -514,8 +505,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Skate Shoes",
-        "Men's Shoes"
+        "Sportschuhe",
+        "Laufschuhe"
       ],
       "specifications": [
         {
@@ -567,8 +558,7 @@
         "US 10"
       ],
       "color": [
-        "Black",
-        "Grey",
+        "Green",
         "White"
       ]
     },
@@ -585,8 +575,8 @@
         "Variety of colors available"
       ],
       "category": [
-        "Athletic Shoes",
-        "Women's Shoes"
+        "Laufschuhe",
+        "Neutralschuhe"
       ],
       "specifications": [
         {
@@ -627,7 +617,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "In stock",
+      "available": "Sofort lieferbar",
       "sale": 15,
       "onSale": true,
       "size": [
@@ -638,9 +628,7 @@
         "US 10"
       ],
       "color": [
-        "Black",
-        "Pink",
-        "Blue"
+        "Pink"
       ]
     },
     {
@@ -655,8 +643,8 @@
         "Sleek design in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Neutralschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -697,7 +685,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "In stock",
+      "available": "Sofort lieferbar",
       "sale": 15,
       "onSale": true,
       "size": [
@@ -708,8 +696,7 @@
         "US 10"
       ],
       "color": [
-        "Pink",
-        "Blue",
+        "Black",
         "Grey"
       ]
     },
@@ -726,8 +713,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Sneakers",
-        "Women's Shoes"
+        "Neutralschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -766,7 +753,7 @@
         }
       ],
       "available": "Ships in 2-3 days",
-      "sale": 0.1,
+      "sale": 10,
       "onSale": true,
       "size": [
         "US 6",
@@ -777,8 +764,7 @@
       ],
       "color": [
         "White",
-        "Black",
-        "Grey"
+        "Black"
       ]
     },
     {
@@ -793,8 +779,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Fitnessschuhe",
+        "Sportschuhe"
       ],
       "specifications": [
         {
@@ -835,8 +821,8 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "In Stock",
-      "sale": 0.2,
+      "available": "Sofort lieferbar",
+      "sale": 20,
       "onSale": true,
       "size": [
         "US 6",
@@ -846,9 +832,7 @@
         "US 10"
       ],
       "color": [
-        "Pink",
-        "Blue",
-        "Green"
+        "Purple"
       ]
     },
     {
@@ -865,8 +849,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Cross-Training Shoes",
-        "Women's Shoes"
+        "Fitnessschuhe",
+        "Sportschuhe"
       ],
       "specifications": [
         {
@@ -907,14 +891,10 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "In stock",
+      "available": "Sofort lieferbar",
       "sale": 10,
       "onSale": true,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
         "US 10"
       ],
       "color": [
@@ -936,9 +916,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Sneakers",
-        "Casual Shoes",
-        "Women's Shoes"
+        "Neutralschuhe"
       ],
       "specifications": [
         {
@@ -975,7 +953,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "In Stock",
+      "available": "Sofort lieferbar",
       "sale": 10,
       "onSale": true,
       "size": [
@@ -987,8 +965,7 @@
       ],
       "color": [
         "White",
-        "Black",
-        "Pink"
+        "Green"
       ]
     },
     {
@@ -1004,8 +981,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Walking Shoes",
-        "Women's Shoes"
+        "Neutralschuhe",
+        "Fitnessschuhe"
       ],
       "specifications": [
         {
@@ -1046,21 +1023,15 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "In Stock",
+      "available": "Sofort lieferbar",
       "sale": 10,
       "onSale": true,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
         "US 10"
       ],
       "color": [
-        "Black",
-        "Navy",
-        "Gray",
-        "Pink"
+        "Blue",
+        "Gray"
       ]
     },
     {
@@ -1077,8 +1048,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Trailrunning-Schuhe",
+        "Fitnessschuhe"
       ],
       "specifications": [
         {
@@ -1124,15 +1095,12 @@
       "onSale": false,
       "size": [
         "US 6",
-        "US 7",
-        "US 8",
         "US 9",
         "US 10"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Gray",
+        "White"
       ]
     },
     {
@@ -1149,8 +1117,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Fitnessschuhe",
+        "Laufschuhe"
       ],
       "specifications": [
         {
@@ -1202,9 +1170,8 @@
         "US 10"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Black",
+        "Gray"
       ]
     },
     {
@@ -1221,8 +1188,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Laufschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -1269,14 +1236,10 @@
       "size": [
         "US 6",
         "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US 8"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Black"
       ]
     },
     {
@@ -1293,8 +1256,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Laufschuhe"
       ],
       "specifications": [
         {
@@ -1335,20 +1297,18 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Ships in 3 days",
       "sale": 0,
       "onSale": false,
       "size": [
         "US 6",
         "US 7",
         "US 8",
-        "US 9",
         "US 10"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Brown",
+        "Black"
       ]
     },
     {
@@ -1365,8 +1325,11 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Fitnessschuhe",
+        "Sportschuhe",
+        "Laufschuhe",
+        "Neutralschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -1411,16 +1374,12 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
         "US 8",
         "US 9",
         "US 10"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "White"
       ]
     },
     {
@@ -1437,8 +1396,11 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Fitnessschuhe",
+        "Sportschuhe",
+        "Laufschuhe",
+        "Neutralschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -1485,14 +1447,11 @@
       "size": [
         "US 6",
         "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US 8"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Black",
+        "White"
       ]
     },
     {
@@ -1509,8 +1468,9 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Fitnessschuhe",
+        "Laufschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -1552,19 +1512,16 @@
         }
       ],
       "available": "Ships in 2-3 days",
-      "sale": 0,
-      "onSale": false,
+      "sale": 8,
+      "onSale": true,
       "size": [
         "US 6",
-        "US 7",
         "US 8",
-        "US 9",
         "US 10"
       ],
       "color": [
         "Pink",
-        "White",
-        "Blue"
+        "White"
       ]
     },
     {
@@ -1581,8 +1538,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Fitnessschuhe"
       ],
       "specifications": [
         {
@@ -1623,20 +1579,17 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Ships in 7 days",
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
         "US 8",
         "US 9",
         "US 10"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Black",
+        "Gray"
       ]
     },
     {
@@ -1653,8 +1606,9 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Fitnessschuhe",
+        "Sportschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -1706,9 +1660,8 @@
         "US 10"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Gray",
+        "Black"
       ]
     },
     {
@@ -1725,8 +1678,9 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Sportschuhe",
+        "Laufschuhe",
+        "Neutralschuhe"
       ],
       "specifications": [
         {
@@ -1772,15 +1726,12 @@
       "onSale": false,
       "size": [
         "US 6",
-        "US 7",
-        "US 8",
         "US 9",
         "US 10"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Green",
+        "Brown"
       ]
     },
     {
@@ -1797,8 +1748,9 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Fitnessschuhe",
+        "Sportschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -1845,14 +1797,11 @@
       "size": [
         "US 6",
         "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US 8"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Red",
+        "Pink"
       ]
     },
     {
@@ -1869,8 +1818,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Laufschuhe"
       ],
       "specifications": [
         {
@@ -1911,20 +1859,16 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Ships in 5-7 days",
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
         "US 9",
         "US 10"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Black",
+        "White"
       ]
     },
     {
@@ -1941,8 +1885,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Neutralschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -1983,7 +1927,7 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Ships in 3-4 days",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -1995,8 +1939,8 @@
       ],
       "color": [
         "Pink",
-        "White",
-        "Blue"
+        "Red",
+        "White"
       ]
     },
     {
@@ -2013,8 +1957,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Fitnessschuhe",
+        "Sportschuhe"
       ],
       "specifications": [
         {
@@ -2056,8 +2000,8 @@
         }
       ],
       "available": "Ships in 2-3 days",
-      "sale": 0,
-      "onSale": false,
+      "sale": 12,
+      "onSale": true,
       "size": [
         "US 6",
         "US 7",
@@ -2067,8 +2011,7 @@
       ],
       "color": [
         "Pink",
-        "White",
-        "Blue"
+        "Gray"
       ]
     },
     {
@@ -2085,8 +2028,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Fitnessschuhe",
+        "Sportschuhe"
       ],
       "specifications": [
         {
@@ -2133,14 +2076,11 @@
       "size": [
         "US 6",
         "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US 8"
       ],
       "color": [
         "Pink",
-        "White",
-        "Blue"
+        "White"
       ]
     },
     {
@@ -2157,8 +2097,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Neutralschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -2204,15 +2144,12 @@
       "onSale": false,
       "size": [
         "US 6",
-        "US 7",
-        "US 8",
         "US 9",
         "US 10"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Black",
+        "Gray"
       ]
     },
     {
@@ -2229,8 +2166,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Neutralschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -2277,14 +2214,12 @@
       "size": [
         "US 6",
         "US 7",
-        "US 8",
         "US 9",
         "US 10"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Black",
+        "White"
       ]
     },
     {
@@ -2301,8 +2236,8 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Neutralschuhe",
+        "Trailrunning-Schuhe"
       ],
       "specifications": [
         {
@@ -2355,8 +2290,7 @@
       ],
       "color": [
         "Pink",
-        "White",
-        "Blue"
+        "White"
       ]
     },
     {
@@ -2373,8 +2307,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Running Shoes",
-        "Women's Shoes"
+        "Laufschuhe"
       ],
       "specifications": [
         {
@@ -2416,17 +2349,14 @@
         }
       ],
       "available": "Ships in 2-3 days",
-      "sale": 0,
-      "onSale": false,
+      "sale": 8,
+      "onSale": true,
       "size": [
-        "US 6",
-        "US 7",
         "US 8",
         "US 9",
         "US 10"
       ],
       "color": [
-        "Pink",
         "White",
         "Blue"
       ]
