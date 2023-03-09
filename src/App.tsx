@@ -1,9 +1,9 @@
 import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home } from "./pages/Home/Home";
-import { Cart } from "./pages/Cart/Cart";
-import Product from "./pages/Product/Product";
-import { ProductList } from "./pages/ProductList/ProductList";
+import { Home } from "./pages/Home";
+import { Cart } from "./pages/Cart";
+import Product from "./pages/Product";
+import { ProductList } from "./pages/ProductList";
 
 function App() {
   return (

@@ -1,11 +1,10 @@
-import { Anons } from "../../components/Anons/Anons";
-import { Footer } from "../../components/Footer/Footer";
-import { Header } from "../../components/Header/Header";
-import { Products } from "../../components/Products/Products";
+import { Anons } from "../components/Anons/Anons";
+import { Footer } from "../components/Footer/Footer";
+import { Header } from "../components/Header/Header";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchData } from "../../hooks/apiService";
-import { ProductType } from "../../../interfaces/Products";
+import { fetchData } from "../hooks/apiService";
+import { ProductType } from "../../interfaces/Products";
 import {
   Form,
   FormGroup,
@@ -15,6 +14,7 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
+import { Products } from "../components/Main/Products";
 
 interface Filters {
   price_gte: number;

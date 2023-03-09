@@ -1,8 +1,8 @@
-import "./cart.scss";
+
 import { useEffect } from "react";
-import { Anons } from "../../components/Anons/Anons";
-import { Header } from "../../components/Header/Header";
-import { Footer } from "../../components/Footer/Footer";
+import { Anons } from "../components/Anons/Anons";
+import { Header } from "../components/Header/Header";
+import { Footer } from "../components/Footer/Footer";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
@@ -13,8 +13,8 @@ import {
   getCartProducts,
   getCartCount,
   getSubTotal,
-} from "../../redux/cartRedux";
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+} from "../redux/cartRedux";
+import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 
 export const Cart = () => {
   const dispatch = useAppDispatch();

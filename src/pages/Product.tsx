@@ -1,8 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { Anons } from "../../components/Anons/Anons";
-import { Header } from "../../components/Header/Header";
+import { Anons } from "../components/Anons/Anons";
+import { Header } from "../components/Header/Header";
 import { Link, useParams } from "react-router-dom";
-import { Footer } from "../../components/Footer/Footer";
+import { Footer } from "../components/Footer/Footer";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { useEffect, useState } from "react";
@@ -13,10 +13,10 @@ import {
   getTotalAmount,
   incrementQuantity,
   decrementQuantity,
-} from "../../redux/cartRedux";
+} from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
-import { ProductType } from "../../../interfaces/Products";
-import { fetchSingleData } from "../../hooks/apiService";
+import { ProductType } from "../../interfaces/Products";
+import { fetchSingleData } from "../hooks/apiService";
 
 export default function Product() {
   const { id } = useParams<{ id: string }>();
