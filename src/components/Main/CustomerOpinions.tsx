@@ -2,26 +2,33 @@ import { Link } from "react-router-dom";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import p7718687 from "../../assets/7718687.jpg";
 import { Categories } from "../Categories";
+import { useEffect, useState } from "react";
 import {
   addProduct,
   getCartCount,
   getSubTotal,
   getTotalAmount,
 } from "../../redux/cartRedux";
-import { useDispatch } from "react-redux";
 import { ProductType, Props } from "../../../interfaces/Products";
+import { useAppDispatch } from "../../hooks/hooks";
 
 export const CustomerOpinions = ({ products }: Props) => {
-  const dispatch = useDispatch();
-  const addToCart = (product: ProductType) => {
+  const [productOnSale, setProductOnSale] = useState<ProductType[]>([]);
+
+  const dispatch = useAppDispatch();
+  const handleAddToCart = (product: ProductType) => {
     dispatch(addProduct({ ...product }));
     dispatch(getCartCount());
     dispatch(getSubTotal());
     dispatch(getTotalAmount());
   };
-  const productOnSale = products.filter((item) => {
-    return item.onSale === true;
-  });
+
+  useEffect(() => {
+    const filteredProducts = products
+      .slice(0, 10)
+      .filter((item) => item.onSale === true);
+    setProductOnSale(filteredProducts);
+  }, [products]);
 
   return (
     <div className="module-categor-products style-raw">
@@ -86,8 +93,13 @@ export const CustomerOpinions = ({ products }: Props) => {
                       </span>
                     </div>
                     <Link
+                      className="cart-image"
+                      style={{
+                        padding: "0rem",
+                        color: "inherit",
+                        textDecoration: "inherit",
+                      }}
                       to={`/products/${item.id}`}
-                      style={{ color: "inherit", textDecoration: "inherit" }}
                     >
                       <img
                         className="p-img"
@@ -171,7 +183,7 @@ export const CustomerOpinions = ({ products }: Props) => {
                       <button
                         className="product-btn-fade"
                         onClick={() => {
-                          addToCart(item);
+                          handleAddToCart(item);
                         }}
                       >
                         In den Warenkorb

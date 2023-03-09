@@ -24,9 +24,13 @@ export const Products = ({ products }: Props) => {
         {products.map((item) => (
           <Col key={item.id}>
             <Card>
-              <div className="cart-image">
+              <Link
+                className="cart-image"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+                to={`/products/${item.id}`}
+              >
                 <Card.Img src={item.img[0].src} style={{ padding: "1rem" }} />
-              </div>
+              </Link>
               <div className="product-badges">
                 <span className="badge onsale">{item.available}</span>
                 {item.sale > 1 ? (
