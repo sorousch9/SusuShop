@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "./specialOffer.scss";
 import { Col, Row } from "react-bootstrap";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import { Timer } from "./Timer";
@@ -8,9 +7,9 @@ import {
   getCartCount,
   getSubTotal,
   getTotalAmount,
-} from "../../../redux/cartRedux";
+} from "../../redux/cartRedux";
 import { useDispatch } from "react-redux";
-import { ProductType, Props } from "../../../../interfaces/Products";
+import { ProductType, Props } from "../../../interfaces/Products";
 
 export const SpecialOffer = ({ products }: Props) => {
   const dispatch = useDispatch();

@@ -1,4 +1,3 @@
-import "./product.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import { Anons } from "../../components/Anons/Anons";
 import { Header } from "../../components/Header/Header";

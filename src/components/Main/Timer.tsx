@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./timer.scss";
 interface TimerState {
   days: number;
   hours: number;

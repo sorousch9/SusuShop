@@ -1,4 +1,3 @@
-import "./products.scss";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
@@ -28,7 +27,14 @@ export const Products = ({ products }: Props) => {
               <div className="cart-image">
                 <Card.Img src={item.img[0].src} style={{ padding: "1rem" }} />
               </div>
-
+              <div className="product-badges">
+                <span className="badge onsale">{item.available}</span>
+                {item.sale > 1 ? (
+                  <span className="badge onsale">{item.sale}%</span>
+                ) : (
+                  ""
+                )}
+              </div>
               <Card.Body>
                 <Card.Title className="text-truncate">
                   <Link
@@ -38,7 +44,9 @@ export const Products = ({ products }: Props) => {
                     {item.title}
                   </Link>
                 </Card.Title>
-                <Card.Text className="card-text" style={{fontWeight:"bold"}}>{item.brand.toUpperCase()}</Card.Text>
+                <Card.Text className="card-text" style={{ fontWeight: "bold" }}>
+                  {item.brand.toUpperCase()}
+                </Card.Text>
                 <Card.Text className="card-text">
                   <span className="cart-price">
                     Prise:

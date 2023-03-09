@@ -1,4 +1,3 @@
-import "./topRecommendations.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "swiper/scss/pagination";
@@ -6,7 +5,7 @@ import "swiper/scss/autoplay";
 import { Autoplay, Navigation } from "swiper";
 import "swiper/scss/navigation";
 import { Link } from "react-router-dom";
-import { Props } from "../../../../interfaces/Products";
+import { Props } from "../../../interfaces/Products";
 
 export const TopRecommendations = ({ products }: Props) => {
   const productOnSale = products.filter((item) => {

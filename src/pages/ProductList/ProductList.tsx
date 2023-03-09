@@ -1,7 +1,6 @@
 import { Anons } from "../../components/Anons/Anons";
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
-import "./productList.scss";
 import { Products } from "../../components/Products/Products";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";

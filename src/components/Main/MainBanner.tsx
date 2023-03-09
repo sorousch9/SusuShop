@@ -1,6 +1,6 @@
-import "./mainBanner.scss";
-import pimg from "../../../assets/banner.webp";
-import pimg2 from "../../../assets/slider3.jpg";
+
+import pimg from "../../assets/banner.webp";
+import pimg2 from "../../assets/slider3.jpg";
 import { Link } from "react-router-dom";
 export const MainBanner = () => {
   return (

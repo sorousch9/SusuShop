@@ -1,16 +1,15 @@
-import "./customerOpinions.scss";
 import { Link } from "react-router-dom";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
-import p7718687 from "../../../assets/7718687.jpg";
-import { Categories } from "../../Categories/Categories";
+import p7718687 from "../../assets/7718687.jpg";
+import { Categories } from "../Categories/Categories";
 import {
   addProduct,
   getCartCount,
   getSubTotal,
   getTotalAmount,
-} from "../../../redux/cartRedux";
+} from "../../redux/cartRedux";
 import { useDispatch } from "react-redux";
-import { ProductType, Props } from "../../../../interfaces/Products";
+import { ProductType, Props } from "../../../interfaces/Products";
 
 export const CustomerOpinions = ({ products }: Props) => {
   const dispatch = useDispatch();
