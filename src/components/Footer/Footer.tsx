@@ -1,9 +1,8 @@
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Bottom } from "./Bottom/Bottom";
-import "./footer.scss";
-import { IconBoxes } from "./IconBoxes/IconBoxes";
-import { Subscribe } from "./Subscribe/Subscribe";
+import { Bottom } from "./Bottom";
+import { IconBoxes } from "./IconBoxes";
+import { Subscribe } from "./Subscribe";
 
 export const Footer = () => {
   return (

@@ -1,12 +1,11 @@
-import "./header.scss";
 import { Link } from "react-router-dom";
-import logo from "../../assets/LOGO.png";
+import logo from "../assets/LOGO.png";
 import { BsSearch, BsCheck2Square } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { VscSignOut, VscHeart } from "react-icons/vsc";
-import { categories } from "../../data";
-import { useAppSelector } from "../../hooks/hooks";
+import { categories } from "../data";
+import { useAppSelector } from "../hooks/hooks";
 
 export const Header = () => {
   const quantity = useAppSelector((state) => state.cart.total);

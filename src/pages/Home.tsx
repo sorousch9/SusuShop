@@ -1,6 +1,8 @@
-import { Anons } from "../components/Anons/Anons";
+
+import { Anons } from "../components/Anons";
 import { Footer } from "../components/Footer/Footer";
-import { Header } from "../components/Header/Header";
+import { Header } from "../components/Header";
+
 import { Main } from "../components/Main/Main";
 
 export const Home = () => {

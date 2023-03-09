@@ -1,7 +1,6 @@
-
 import { useEffect } from "react";
-import { Anons } from "../components/Anons/Anons";
-import { Header } from "../components/Header/Header";
+import { Anons } from "../components/Anons";
+import { Header } from "../components/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";

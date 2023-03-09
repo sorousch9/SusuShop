@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { categories } from "../../data";
 import { SpecialOffer } from "./SpecialOffer";
-import { Widget } from "./Widget/Widget";
 import { fetchData } from "../../hooks/apiService";
 import { ProductType } from "../../../interfaces/Products";
 import { MainBanner } from "./MainBanner";
 import { TopRecommendations } from "./TopRecommendations";
 import { CustomerOpinions } from "./CustomerOpinions";
+import { Widget } from "./Widget";
 
 export const Main = () => {
   const [products, setProducts] = useState<ProductType[]>([]);

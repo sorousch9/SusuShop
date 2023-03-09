@@ -1,6 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import "./subscribe.scss";
-import coupon from "../../../assets/coupon.png";
+import coupon from "../../assets/coupon.png";
 
 export const Subscribe = () => {
   return (

@@ -1,9 +1,8 @@
-import "./bottom.scss";
 import { Col, Container, Row } from "react-bootstrap";
-import paypal from "../../../assets/paypal.png";
-import visa from "../../../assets/Visa.png";
-import giro from "../../../assets/Giro.png";
-import sofort from "../../../assets/sofort.png";
+import paypal from "../../assets/paypal.png";
+import visa from "../../assets/Visa.png";
+import giro from "../../assets/Giro.png";
+import sofort from "../../assets/sofort.png";
 
 export const Bottom = () => {
   return (

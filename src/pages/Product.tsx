@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { Anons } from "../components/Anons/Anons";
-import { Header } from "../components/Header/Header";
+import { Anons } from "../components/Anons";
+import { Header } from "../components/Header";
 import { Link, useParams } from "react-router-dom";
 import { Footer } from "../components/Footer/Footer";
 import Tab from "react-bootstrap/Tab";
@@ -104,7 +104,6 @@ export default function Product() {
             <Row>
               <Col lg="5">
                 <div className="photo-gallery">
-                 
                   <div className="slider-wrapper">
                     <div className="photo-section">
                       <img

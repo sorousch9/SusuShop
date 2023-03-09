@@ -1,5 +1,4 @@
 import { Container, Row } from "react-bootstrap";
-import "./anons.scss";
 import { BsTruck, BsPeople } from "react-icons/bs";
 import { RiMedal2Fill, RiShieldKeyholeLine } from "react-icons/ri";
 export const Anons = () => {

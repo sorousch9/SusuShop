@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import p7718687 from "../../assets/7718687.jpg";
-import { Categories } from "../Categories/Categories";
+import { Categories } from "../Categories";
 import {
   addProduct,
   getCartCount,
