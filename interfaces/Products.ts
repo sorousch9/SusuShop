@@ -8,11 +8,13 @@ export interface ProductType {
   title: string;
   brand: string;
   price: number;
+  description: string;
   descShort: string[];
   category: string[];
-  amount: number;
+  specifications: string[];
+  inventory: number;
   img: Img[];
-  available: string[];
+  available: string;
   sale: number;
   onSale: boolean;
   size: string[];

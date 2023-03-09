@@ -33,7 +33,7 @@ export const cartSlice = createSlice({
         (product) => product.id === item.id
       );
       if (existingProduct) {
-        if (existingProduct.quantity < item.amount) {
+        if (existingProduct.quantity < item.inventory) {
           state.products = state.products.map((product) =>
             product.id === item.id
               ? { ...product, quantity: product.quantity + 1 }
@@ -42,12 +42,12 @@ export const cartSlice = createSlice({
         } else {
           state.products = state.products.map((product) =>
             product.id === item.id
-              ? { ...product, quantity: item.amount }
+              ? { ...product, quantity: item.inventory }
               : product
           );
         }
       } else {
-        if ( item.amount > 0) {
+        if (item.inventory > 0) {
           state.products.push({ ...item, quantity: 1 });
         }
       }
@@ -73,7 +73,7 @@ export const cartSlice = createSlice({
         (product) => product.id === action.payload
       );
       const product = state.products[index];
-      if (product && product.quantity < product.amount) {
+      if (product && product.quantity < product.inventory) {
         product.quantity += 1;
       }
     },
