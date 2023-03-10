@@ -14,15 +14,38 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-import { Products } from "../components/Main/Products";
+import { Products } from "../components/Products";
 
 interface Filters {
+  size: string[];
   price_gte: number;
   price_lte: number;
+  inStock: boolean;
+  color: string[];
+  brand: string[];
+  category: string[];
   _sort: string;
   _order: string;
 }
-const color = [
+const productsSizeFilter = [
+  "US-6",
+  "US-7",
+  "US-8",
+  "US-9",
+  "US-10",
+  "US-11",
+  "US-12",
+  "US-12.5",
+];
+const productsBrand = [
+  "lacoste",
+  "skechers",
+  "adidas",
+  "nike",
+  "ecco",
+  "under-armour",
+];
+const productsColorFilter = [
   "White",
   "Blue",
   "Black",
@@ -33,7 +56,7 @@ const color = [
   "Brown",
   "Purple",
 ];
-const cat = [
+const productsCatFilter = [
   "Fitnessschuhe",
   "Sportschuhe",
   "Laufschuhe",
@@ -44,11 +67,16 @@ export const ProductList = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [filters, setFilters] = useState<Filters>({
     price_gte: 0,
-    price_lte: 10000,
+    price_lte: 1000,
+    inStock: true,
+    size: [],
+    color: [],
+    brand: [],
+    category: [],
     _sort: "id",
     _order: "asc",
   });
-
+  console.log(filters);
   useEffect(() => {
     const fetchDataAsync = async () => {
       const params = new URLSearchParams();
@@ -74,6 +102,21 @@ export const ProductList = () => {
     const [columnName, sortOrder] = value.split(" ");
     setFilters({ ...filters, _order: sortOrder, _sort: columnName });
   };
+  const handleFiltersChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setFilters({ ...filters, [name]: value });
+  };
+
+  const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    setFilters({ ...filters, price_gte: Number(value) });
+  };
+
+  const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    setFilters({ ...filters, price_lte: Number(value) });
+  };
+
   return (
     <Container>
       <Anons />
@@ -126,15 +169,20 @@ export const ProductList = () => {
         </Row>
         <Col xs={12} md={3} lg={3}>
           <Form>
-            <FormGroup className="d-flex align-items-center">
-              <FormLabel htmlFor="priceInput" className="me-2">
-                price
-              </FormLabel>
-              <FormControl
-                id="priceInput"
-                as="select"
-                className="me-2"
-              ></FormControl>
+            <FormGroup>
+              <FormLabel>Size:</FormLabel>
+              {productsSizeFilter.map((size) => (
+                <Form.Check
+                  key={size}
+                  inline
+                  label={size}
+                  value={size}
+                  name="size"
+                  type="checkbox"
+                  id={`size-${size}`}
+                  onChange={handleFiltersChange}
+                />
+              ))}
             </FormGroup>
           </Form>
         </Col>

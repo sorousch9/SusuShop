@@ -65,7 +65,11 @@ export const SpecialOffer = ({ products }: Props) => {
                   <Link
                     className="cart-image"
                     to={`/products/${item.id}`}
-                    style={{padding: "0rem", color: "inherit", textDecoration: "inherit" }}
+                    style={{
+                      padding: "0rem",
+                      color: "inherit",
+                      textDecoration: "inherit",
+                    }}
                   >
                     <img src={item.img[0].src} alt={item.title} />
                   </Link>
@@ -134,11 +138,6 @@ export const SpecialOffer = ({ products }: Props) => {
                     </div>
                     <div className="count-rating">
                       58 <span className="rating-text">Ratings</span>
-                    </div>
-                  </div>
-                  <div className="product-count">
-                    <div className="product-pcs">
-                      die verfügbaren produkten : <span>26</span>
                     </div>
                   </div>
                   <div className="product-fade-block">

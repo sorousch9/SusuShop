@@ -14,7 +14,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Laufschuhe",
         "Neutralschuhe"
       ],
       "specifications": [
@@ -60,16 +59,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-10"
       ],
       "color": [
-        "Pink",
-        "White",
-        "Blue"
+        "Pink"
       ]
     },
     {
@@ -86,7 +79,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Sportschuhe",
         "Laufschuhe"
       ],
       "specifications": [
@@ -132,15 +124,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-9"
       ],
       "color": [
-        "Brown",
-        "Black"
+        "Brown"
       ]
     },
     {
@@ -157,7 +144,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Fitnessschuhe",
         "Sportschuhe"
       ],
       "specifications": [
@@ -203,15 +189,10 @@
       "sale": 35,
       "onSale": true,
       "size": [
-        "US 8",
-        "US 9",
-        "US 10",
-        "US 11",
         "US 12"
       ],
       "color": [
-        "Grey",
-        "White"
+        "Grey"
       ]
     },
     {
@@ -228,7 +209,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Sportschuhe",
         "Laufschuhe"
       ],
       "specifications": [
@@ -274,15 +254,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 8",
-        "US 9",
-        "US 10",
-        "US 11",
-        "US 12"
+        "US-8"
       ],
       "color": [
-        "Red",
-        "Gray"
+        "Red"
       ]
     },
     {
@@ -298,7 +273,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Sportschuhe",
         "Laufschuhe"
       ],
       "specifications": [
@@ -341,10 +315,6 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 8",
-        "US 9",
-        "US 10",
-        "US 11",
         "US 12"
       ],
       "color": [
@@ -365,7 +335,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Neutralschuhe",
         "Trailrunning-Schuhe"
       ],
       "specifications": [
@@ -411,11 +380,7 @@
       "sale": 20,
       "onSale": true,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-10"
       ],
       "color": [
         "Black"
@@ -435,7 +400,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Laufschuhe",
         "Neutralschuhe"
       ],
       "specifications": [
@@ -481,11 +445,7 @@
       "sale": 15,
       "onSale": true,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-11"
       ],
       "color": [
         "Pink"
@@ -505,7 +465,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Sportschuhe",
         "Laufschuhe"
       ],
       "specifications": [
@@ -551,15 +510,10 @@
       "sale": 15,
       "onSale": true,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-6"
       ],
       "color": [
-        "Green",
-        "White"
+        "Green"
       ]
     },
     {
@@ -575,8 +529,7 @@
         "Variety of colors available"
       ],
       "category": [
-        "Laufschuhe",
-        "Neutralschuhe"
+        "Laufschuhe"
       ],
       "specifications": [
         {
@@ -621,11 +574,7 @@
       "sale": 15,
       "onSale": true,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-10"
       ],
       "color": [
         "Pink"
@@ -643,7 +592,6 @@
         "Sleek design in multiple colors"
       ],
       "category": [
-        "Neutralschuhe",
         "Trailrunning-Schuhe"
       ],
       "specifications": [
@@ -689,15 +637,10 @@
       "sale": 15,
       "onSale": true,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-8"
       ],
       "color": [
-        "Black",
-        "Grey"
+        "Black"
       ]
     },
     {
@@ -713,8 +656,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Neutralschuhe",
-        "Trailrunning-Schuhe"
+        "Neutralschuhe"
       ],
       "specifications": [
         {
@@ -756,15 +698,10 @@
       "sale": 10,
       "onSale": true,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-9"
       ],
       "color": [
-        "White",
-        "Black"
+        "White"
       ]
     },
     {
@@ -779,8 +716,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Fitnessschuhe",
-        "Sportschuhe"
+        "Fitnessschuhe"
       ],
       "specifications": [
         {
@@ -825,11 +761,7 @@
       "sale": 10,
       "onSale": true,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-9"
       ],
       "color": [
         "Purple"
@@ -849,7 +781,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Fitnessschuhe",
         "Sportschuhe"
       ],
       "specifications": [
@@ -895,12 +826,10 @@
       "sale": 10,
       "onSale": true,
       "size": [
-        "US 10"
+        "US-10"
       ],
       "color": [
-        "Black",
-        "Pink",
-        "Purple"
+        "Black"
       ]
     },
     {
@@ -957,15 +886,10 @@
       "sale": 10,
       "onSale": true,
       "size": [
-        "US 5",
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9"
+        "US-7"
       ],
       "color": [
-        "White",
-        "Green"
+        "White"
       ]
     },
     {
@@ -981,8 +905,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Neutralschuhe",
-        "Fitnessschuhe"
+        "Neutralschuhe"
       ],
       "specifications": [
         {
@@ -1027,11 +950,10 @@
       "sale": 10,
       "onSale": true,
       "size": [
-        "US 10"
+        "US-7"
       ],
       "color": [
-        "Blue",
-        "Gray"
+        "Blue"
       ]
     },
     {
@@ -1048,7 +970,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Trailrunning-Schuhe",
         "Fitnessschuhe"
       ],
       "specifications": [
@@ -1094,13 +1015,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 9",
-        "US 10"
+        "US-6"
       ],
       "color": [
-        "Gray",
-        "White"
+        "Gray"
       ]
     },
     {
@@ -1117,7 +1035,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Fitnessschuhe",
         "Laufschuhe"
       ],
       "specifications": [
@@ -1163,15 +1080,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-9"
       ],
       "color": [
-        "Black",
-        "Gray"
+        "Black"
       ]
     },
     {
@@ -1188,8 +1100,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Laufschuhe",
-        "Trailrunning-Schuhe"
+        "Laufschuhe"
       ],
       "specifications": [
         {
@@ -1234,9 +1145,7 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8"
+        "US-8"
       ],
       "color": [
         "Black"
@@ -1301,14 +1210,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 10"
+        "US-8"
       ],
       "color": [
-        "Brown",
-        "Black"
+        "Brown"
       ]
     },
     {
@@ -1325,11 +1230,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Fitnessschuhe",
-        "Sportschuhe",
-        "Laufschuhe",
-        "Neutralschuhe",
-        "Trailrunning-Schuhe"
+        "Sportschuhe"
       ],
       "specifications": [
         {
@@ -1374,9 +1275,7 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-10"
       ],
       "color": [
         "White"
@@ -1396,11 +1295,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Fitnessschuhe",
-        "Sportschuhe",
-        "Laufschuhe",
-        "Neutralschuhe",
-        "Trailrunning-Schuhe"
+        "Sportschuhe"
       ],
       "specifications": [
         {
@@ -1445,13 +1340,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8"
+        "US-8"
       ],
       "color": [
-        "Black",
-        "White"
+        "Black"
       ]
     },
     {
@@ -1468,8 +1360,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Fitnessschuhe",
-        "Laufschuhe",
         "Trailrunning-Schuhe"
       ],
       "specifications": [
@@ -1515,13 +1405,10 @@
       "sale": 8,
       "onSale": true,
       "size": [
-        "US 6",
-        "US 8",
-        "US 10"
+        "US-6"
       ],
       "color": [
-        "Pink",
-        "White"
+        "Pink"
       ]
     },
     {
@@ -1583,13 +1470,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-8"
       ],
       "color": [
-        "Black",
-        "Gray"
+        "Black"
       ]
     },
     {
@@ -1606,9 +1490,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Fitnessschuhe",
-        "Sportschuhe",
-        "Trailrunning-Schuhe"
+        "Fitnessschuhe"
       ],
       "specifications": [
         {
@@ -1653,15 +1535,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-9"
       ],
       "color": [
-        "Gray",
-        "Black"
+        "Gray"
       ]
     },
     {
@@ -1678,9 +1555,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Sportschuhe",
-        "Laufschuhe",
-        "Neutralschuhe"
+        "Sportschuhe"
       ],
       "specifications": [
         {
@@ -1725,13 +1600,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 9",
-        "US 10"
+        "US-10"
       ],
       "color": [
-        "Green",
-        "Brown"
+        "Green"
       ]
     },
     {
@@ -1748,9 +1620,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Fitnessschuhe",
-        "Sportschuhe",
-        "Trailrunning-Schuhe"
+        "Fitnessschuhe"
       ],
       "specifications": [
         {
@@ -1795,13 +1665,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8"
+        "US-11"
       ],
       "color": [
-        "Red",
-        "Pink"
+        "Red"
       ]
     },
     {
@@ -1863,12 +1730,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 9",
-        "US 10"
+        "US-12.5"
       ],
       "color": [
-        "Black",
-        "White"
+        "Black"
       ]
     },
     {
@@ -1885,8 +1750,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Neutralschuhe",
-        "Trailrunning-Schuhe"
+        "Neutralschuhe"
       ],
       "specifications": [
         {
@@ -1931,16 +1795,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-11"
       ],
       "color": [
-        "Pink",
-        "Red",
-        "White"
+        "Pink"
       ]
     },
     {
@@ -1957,8 +1815,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Fitnessschuhe",
-        "Sportschuhe"
+        "Fitnessschuhe"
       ],
       "specifications": [
         {
@@ -2003,15 +1860,10 @@
       "sale": 12,
       "onSale": true,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-10"
       ],
       "color": [
-        "Pink",
-        "Gray"
+        "Pink"
       ]
     },
     {
@@ -2028,8 +1880,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Fitnessschuhe",
-        "Sportschuhe"
+        "Fitnessschuhe"
       ],
       "specifications": [
         {
@@ -2074,13 +1925,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8"
+        "US-8"
       ],
       "color": [
-        "Pink",
-        "White"
+        "Pink"
       ]
     },
     {
@@ -2097,7 +1945,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Neutralschuhe",
         "Trailrunning-Schuhe"
       ],
       "specifications": [
@@ -2143,13 +1990,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 9",
-        "US 10"
+        "US-10"
       ],
       "color": [
-        "Black",
-        "Gray"
+        "Black"
       ]
     },
     {
@@ -2166,7 +2010,6 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Neutralschuhe",
         "Trailrunning-Schuhe"
       ],
       "specifications": [
@@ -2212,14 +2055,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 9",
-        "US 10"
+        "US-10"
       ],
       "color": [
-        "Black",
-        "White"
+        "Black"
       ]
     },
     {
@@ -2236,8 +2075,7 @@
         "Available in multiple colors"
       ],
       "category": [
-        "Neutralschuhe",
-        "Trailrunning-Schuhe"
+        "Neutralschuhe"
       ],
       "specifications": [
         {
@@ -2282,15 +2120,10 @@
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 6",
-        "US 7",
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-10"
       ],
       "color": [
-        "Pink",
-        "White"
+        "Pink"
       ]
     },
     {
@@ -2352,13 +2185,10 @@
       "sale": 8,
       "onSale": true,
       "size": [
-        "US 8",
-        "US 9",
-        "US 10"
+        "US-12.5"
       ],
       "color": [
-        "White",
-        "Blue"
+        "White"
       ]
     }
   ]

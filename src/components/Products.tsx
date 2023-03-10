@@ -5,9 +5,9 @@ import {
   getCartCount,
   getSubTotal,
   getTotalAmount,
-} from "../../redux/cartRedux";
-import { ProductType, Props } from "../../../interfaces/Products";
-import { useAppDispatch } from "../../hooks/hooks";
+} from "../redux/cartRedux";
+import { ProductType, Props } from "../../interfaces/Products";
+import { useAppDispatch } from "../hooks/hooks";
 
 export const Products = ({ products }: Props) => {
   const dispatch = useAppDispatch();
@@ -75,7 +75,7 @@ export const Products = ({ products }: Props) => {
                       </span>
                     )}
                   </span>
-                  <div className="product-meta">{item.available}</div>
+                  <span className="product-meta">{item.available}</span>
                 </Card.Text>
                 <div className="d-grid">
                   <Button

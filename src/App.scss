@@ -1389,10 +1389,12 @@ code {
         }
       }
       .product-title {
+       
         font-size: 0.875rem;
         font-weight: 500;
         line-height: 1.4;
         a {
+          min-height: 3vh;
           display: flex;
           justify-content: center;
           color: var(--color-text);
