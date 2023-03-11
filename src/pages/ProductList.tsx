@@ -13,9 +13,14 @@ import {
   Container,
   Row,
   Col,
+  Dropdown,
+  ButtonGroup,
 } from "react-bootstrap";
+import React, { MouseEventHandler } from "react";
 import { Products } from "../components/Products";
-
+interface ColorDropdownEvent extends React.MouseEvent<HTMLButtonElement> {
+  target: HTMLInputElement;
+}
 interface Filters {
   size: string[];
   price_gte: number;
@@ -37,7 +42,7 @@ const productsSizeFilter = [
   "US-12",
   "US-12.5",
 ];
-const productsBrand = [
+const productsBrandFilter = [
   "lacoste",
   "skechers",
   "adidas",
@@ -103,11 +108,28 @@ export const ProductList = () => {
     setFilters({ ...filters, _order: sortOrder, _sort: columnName });
   };
   const handleFiltersChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setFilters({ ...filters, [name]: value });
+    const { name, value, checked } = event.target;
+    setFilters((prevFilters) => {
+      switch (name) {
+        case "size":
+        case "color":
+        case "category":
+        case "brand":
+          return {
+            ...prevFilters,
+            [name]: checked
+              ? [...prevFilters[name], value]
+              : prevFilters[name].filter((s) => s !== value),
+          };
+        default:
+          return { ...prevFilters, [name]: value };
+      }
+    });
   };
 
-  const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleMinPriceChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     const { value } = event.target;
     setFilters({ ...filters, price_gte: Number(value) });
   };
@@ -115,6 +137,24 @@ export const ProductList = () => {
   const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setFilters({ ...filters, price_lte: Number(value) });
+  };
+
+  const handleFiltersChangeSelector = (event: ColorDropdownEvent) => {
+    const { name, value } = event.target;
+    setFilters((prevFilters) => {
+      switch (name) {
+        case "size":
+        case "category":
+        case "brand":
+        case "color":
+          return {
+            ...prevFilters,
+            [name]: value,
+          };
+        default:
+          return { ...prevFilters };
+      }
+    });
   };
 
   return (
@@ -142,7 +182,7 @@ export const ProductList = () => {
           className="d-flex justify-content-center align-items-center "
         >
           <Col>
-            <Form>
+            <Form className="my-4">
               <FormGroup className="d-flex justify-content-center align-items-center">
                 <FormLabel
                   htmlFor="sortInput"
@@ -184,6 +224,73 @@ export const ProductList = () => {
                 />
               ))}
             </FormGroup>
+            <FormGroup>
+              <FormLabel>Color:</FormLabel>
+              {productsColorFilter.map((color) => (
+                <Form.Check
+                  key={color}
+                  inline
+                  label={color}
+                  value={color}
+                  name="color"
+                  type="checkbox"
+                  id={`color-${color}`}
+                  onChange={handleFiltersChange}
+                />
+              ))}
+            </FormGroup>
+            <FormGroup>
+              <FormLabel>Color:</FormLabel>
+              {productsCatFilter.map((category) => (
+                <Form.Check
+                  key={category}
+                  inline
+                  label={category}
+                  value={category}
+                  name="category"
+                  type="checkbox"
+                  id={`category-${category}`}
+                  onChange={handleFiltersChange}
+                />
+              ))}
+            </FormGroup>
+            <FormLabel>Color:</FormLabel>
+            <FormGroup controlId="modeSelect">
+              {productsBrandFilter.map((brand) => (
+                <Form.Check
+                  key={brand}
+                  inline
+                  label={brand}
+                  value={brand}
+                  name="brand"
+                  type="checkbox"
+                  id={`brand-${brand}`}
+                  onChange={handleFiltersChange}
+                />
+              ))}
+            </FormGroup>
+          </Form>
+          <Form>
+            <Form.Label>Color Dropdown:</Form.Label>
+            <Form.Group>
+              <Dropdown as={ButtonGroup}>
+                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                  Select Colors
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  {productsColorFilter.map((color) => (
+                    <Dropdown.Item
+                      key={color}
+                      onClick={
+                        handleFiltersChangeSelector as MouseEventHandler<HTMLButtonElement>
+                      }
+                    >
+                      {color}
+                    </Dropdown.Item>
+                  ))}
+                </Dropdown.Menu>
+              </Dropdown>
+            </Form.Group>
           </Form>
         </Col>
         <Col xs={12} md={9} lg={9}>
