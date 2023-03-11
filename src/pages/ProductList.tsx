@@ -15,6 +15,8 @@ import {
   Col,
   Dropdown,
   ButtonGroup,
+  DropdownButton,
+  FormSelect,
 } from "react-bootstrap";
 import React, { MouseEventHandler } from "react";
 import { Products } from "../components/Products";
@@ -139,24 +141,6 @@ export const ProductList = () => {
     setFilters({ ...filters, price_lte: Number(value) });
   };
 
-  const handleFiltersChangeSelector = (event: ColorDropdownEvent) => {
-    const { name, value } = event.target;
-    setFilters((prevFilters) => {
-      switch (name) {
-        case "size":
-        case "category":
-        case "brand":
-        case "color":
-          return {
-            ...prevFilters,
-            [name]: value,
-          };
-        default:
-          return { ...prevFilters };
-      }
-    });
-  };
-
   return (
     <Container>
       <Anons />
@@ -271,26 +255,20 @@ export const ProductList = () => {
             </FormGroup>
           </Form>
           <Form>
-            <Form.Label>Color Dropdown:</Form.Label>
-            <Form.Group>
-              <Dropdown as={ButtonGroup}>
-                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                  Select Colors
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  {productsColorFilter.map((color) => (
-                    <Dropdown.Item
-                      key={color}
-                      onClick={
-                        handleFiltersChangeSelector as MouseEventHandler<HTMLButtonElement>
-                      }
-                    >
-                      {color}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-            </Form.Group>
+            <DropdownButton title="Filter by Size">
+              {productsSizeFilter.map((size) => (
+                <Dropdown.Item key={size}>
+                  <input
+                    onChange={handleFiltersChange}
+                    type="checkbox"
+                    name="size"
+                    value={size}
+                    checked={filters.size.includes(size)}
+                  />
+                  {size}
+                </Dropdown.Item>
+              ))}
+            </DropdownButton>
           </Form>
         </Col>
         <Col xs={12} md={9} lg={9}>
