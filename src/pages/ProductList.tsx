@@ -13,16 +13,9 @@ import {
   Container,
   Row,
   Col,
-  Dropdown,
-  ButtonGroup,
-  DropdownButton,
-  FormSelect,
 } from "react-bootstrap";
-import React, { MouseEventHandler } from "react";
 import { Products } from "../components/Products";
-interface ColorDropdownEvent extends React.MouseEvent<HTMLButtonElement> {
-  target: HTMLInputElement;
-}
+
 interface Filters {
   size: string[];
   price_gte: number;
@@ -73,8 +66,8 @@ const productsCatFilter = [
 export const ProductList = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [filters, setFilters] = useState<Filters>({
-    price_gte: 0,
-    price_lte: 1000,
+    price_gte: 49.99,
+    price_lte: 299.99,
     inStock: true,
     size: [],
     color: [],
@@ -129,9 +122,7 @@ export const ProductList = () => {
     });
   };
 
-  const handleMinPriceChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
+  const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setFilters({ ...filters, price_gte: Number(value) });
   };
@@ -193,12 +184,32 @@ export const ProductList = () => {
         </Row>
         <Col xs={12} md={3} lg={3}>
           <Form>
+            <Row className="mb-3">
+              <Col xs={6}>
+                <Form.Label className="form-label">Minimum Price</Form.Label>
+                <Form.Control
+                  type="number"
+                  name="minPrice"
+                  value={filters.price_gte}
+                  onChange={handleMinPriceChange}
+                />
+              </Col>
+              <Col xs={6}>
+                <Form.Label className="form-label">Maximum Price</Form.Label>
+                <Form.Control
+                  type="number"
+                  name="maxPrice"
+                  value={filters.price_lte}
+                  onChange={handleMaxPriceChange}
+                />
+              </Col>
+            </Row>
+
             <FormGroup>
               <FormLabel>Size:</FormLabel>
               {productsSizeFilter.map((size) => (
                 <Form.Check
                   key={size}
-                  inline
                   label={size}
                   value={size}
                   name="size"
@@ -213,7 +224,6 @@ export const ProductList = () => {
               {productsColorFilter.map((color) => (
                 <Form.Check
                   key={color}
-                  inline
                   label={color}
                   value={color}
                   name="color"
@@ -228,7 +238,6 @@ export const ProductList = () => {
               {productsCatFilter.map((category) => (
                 <Form.Check
                   key={category}
-                  inline
                   label={category}
                   value={category}
                   name="category"
@@ -243,7 +252,6 @@ export const ProductList = () => {
               {productsBrandFilter.map((brand) => (
                 <Form.Check
                   key={brand}
-                  inline
                   label={brand}
                   value={brand}
                   name="brand"
@@ -253,22 +261,6 @@ export const ProductList = () => {
                 />
               ))}
             </FormGroup>
-          </Form>
-          <Form>
-            <DropdownButton title="Filter by Size">
-              {productsSizeFilter.map((size) => (
-                <Dropdown.Item key={size}>
-                  <input
-                    onChange={handleFiltersChange}
-                    type="checkbox"
-                    name="size"
-                    value={size}
-                    checked={filters.size.includes(size)}
-                  />
-                  {size}
-                </Dropdown.Item>
-              ))}
-            </DropdownButton>
           </Form>
         </Col>
         <Col xs={12} md={9} lg={9}>
