@@ -11,6 +11,7 @@ import {
 } from "../../redux/cartRedux";
 import { ProductType, Props } from "../../../interfaces/Products";
 import { useAppDispatch } from "../../hooks/hooks";
+import { Container } from "react-bootstrap";
 
 export const CustomerOpinions = ({ products }: Props) => {
   const [productOnSale, setProductOnSale] = useState<ProductType[]>([]);
@@ -31,7 +32,7 @@ export const CustomerOpinions = ({ products }: Props) => {
   }, [products]);
 
   return (
-    <div className="module-categor-products style-raw">
+    <Container className="module-categor-products style-raw">
       <div className="module-header">
         <div className="column">
           <h4 className="entry-title">Bei unseren Kunden beliebt</h4>
@@ -196,6 +197,6 @@ export const CustomerOpinions = ({ products }: Props) => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
