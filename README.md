@@ -1,6 +1,5 @@
-<h3>Shoe Shop Web App - React & Redux Project</h3>
+Shoe Shop Web App - React & Redux Project
 This is a web application for an online shoe shop that allows users to browse and filter through a list of products and add them to a shopping cart. The app is built using React, Redux, TypeScript, and other third-party libraries.
-
 Installation
 To install this project, follow the steps below:
 
