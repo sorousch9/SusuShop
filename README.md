@@ -1,84 +1,69 @@
+<h3>Shoe Shop Web App - React & Redux Project</h3>
+This is a web application for an online shoe shop that allows users to browse and filter through a list of products and add them to a shopping cart. The app is built using React, Redux, TypeScript, and other third-party libraries.
 
-![full Home Page](/public/screenshots/capture_15-11-2022_161047_localhost.jpeg)
+Installation
+To install this project, follow the steps below:
 
-![mobile Page](/public/screenshots/mobile.png?raw=true)
+Clone the repository to your local machine using the following command:
+bash
+Copy code
+git clone https://github.com/sorousch9/products-list.git
+Navigate to the project directory using the following command:
+bash
+Copy code
+cd products-list
+Install the project dependencies by running the following command:
+Copy code
+npm install
+Install json-server globally by running the following command:
+Copy code
+npm install -g json-server
+Open a new terminal window and start the json-server by running the following command:
+css
+Copy code
+json-server --watch db.json --port 3004
+If you encounter the error "json-server cannot be loaded because running scripts is disabled on this system", open your PowerShell as an administrator or normal and set its execution policy with the following command:
 
-![Cart Page](/public/screenshots/capture_15-11-2022_161013_localhost.jpeg?raw=true)
+sql
+Copy code
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Package.json
+The project's package.json file includes the necessary dependencies for this project, including:
 
-![product Page](/public/screenshots/capture_15-11-2022_161146_localhost.jpeg?raw=true)
+@reduxjs/toolkit for Redux store management
+@testing-library/react for testing
+axios for fetching data from API
+bootstrap for styling
+react-bootstrap for Bootstrap components
+react-icons for icons
+react-redux for React-Redux binding
+react-router-dom for routing
+redux for state management
+redux-persist for persisting Redux store data
+sass for styling
+swiper for carousel
+web-vitals for measuring web performance
+In addition, the scripts section includes the following commands:
 
+start for starting the development server
+build for building the production-ready app
+test for running tests
+eject for ejecting from Create React App configuration
+The eslintConfig section extends the react-app and react-app/jest configurations, while the browserslist section defines the supported browsers for production and development environments.
 
+Running the App
+To start the development server, run the following command:
 
+sql
+Copy code
+npm start
+This will start the app on http://localhost:3000/.
 
+To build the production-ready app, run the following command:
 
+Copy code
+npm run build
+This will create an optimized production build in the build directory.
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Conclusion
+Thank you for checking out this project. If you have any questions or feedback, feel free to contact me at soroush.safarkhah@gmail.com.
