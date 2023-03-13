@@ -21,7 +21,7 @@
         <li>Navigate to the project directory using the following command:</li>
       </ol>
       <pre>
-<code>cd products-list
+<code>cd SusuShop
 </code>
 </pre>
       <ol start="3">
