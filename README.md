@@ -39,7 +39,11 @@
       <ol start="5">
         <li>Install json-server globally by running the following command:</li>
       </ol>
+<<<<<<< HEAD
       <pre><code >json-server --watch db.json --port 5000
+=======
+      <pre><code >json-server --watch db.json --port 3004
+>>>>>>> 5401876779a34217905ea61d3b86c48644266a1c
 </code></pre>
       <ol>
         <li>
