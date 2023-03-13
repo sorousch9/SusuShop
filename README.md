@@ -14,7 +14,7 @@
         </li>
       </ol>
       <pre>
-<code>https://github.com/sorousch9/products-list.git
+<code>https://github.com/sorousch9/SusuShop.git
 </code>
 </pre>
       <ol start="2">
