@@ -1,7 +1,7 @@
 import { Anons } from "../components/Anons";
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "../components/Header";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchData } from "../hooks/apiService";
 import { ProductType } from "../../interfaces/Products";
@@ -76,7 +76,9 @@ export const ProductList = () => {
     _sort: "id",
     _order: "asc",
   });
-  console.log(filters);
+
+  const location = useLocation().search;
+
   useEffect(() => {
     const fetchDataAsync = async () => {
       const params = new URLSearchParams();
@@ -87,15 +89,24 @@ export const ProductList = () => {
           params.append(key, value);
         }
       });
-      const response = await fetchData(
-        `http://localhost:5000/products?${params.toString()}`
-      );
-      if (response !== undefined) {
-        setProducts(response);
+      if (location.length > 0) {
+        const response = await fetchData(
+          `http://localhost:5000/products${location}&${params.toString()}`
+        );
+        if (response !== undefined) {
+          setProducts(response);
+        }
+      } else {
+        const response = await fetchData(
+          `http://localhost:5000/products?${params.toString()}`
+        );
+        if (response !== undefined) {
+          setProducts(response);
+        }
       }
     };
     fetchDataAsync();
-  }, [filters]);
+  }, [filters, location]);
 
   const handleSortChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
