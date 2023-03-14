@@ -11,7 +11,7 @@ import {
 } from "../../redux/cartRedux";
 import { ProductType, Props } from "../../../interfaces/Products";
 import { useAppDispatch } from "../../hooks/hooks";
-import { Container } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 
 export const CustomerOpinions = ({ products }: Props) => {
   const [productOnSale, setProductOnSale] = useState<ProductType[]>([]);
@@ -32,63 +32,59 @@ export const CustomerOpinions = ({ products }: Props) => {
   }, [products]);
 
   return (
-    <Container className="module-categor-products style-raw">
-      <div className="module-header">
-        <div className="column">
+    <Container className="customerOpinions">
+      <Row>
+        <Col>
           <h4 className="entry-title">Bei unseren Kunden beliebt</h4>
           <div className="entry-description">
             zweite Reihe Aktionen und Angebote "Bei unseren Kunden beliebt"
           </div>
-        </div>
-        <div className="column">
-          <i> Alle ansehen</i>
-        </div>
-      </div>
-      <div className="module-body">
-        <div className="column left">
-          <div className="cell">
-            <div className="categories-links">
-              <ul>
-                <li>
-                  <Categories />
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="cell banner">
-            <div className="module-banner align-left full-text">
-              <div className="module-body">
-                <div className="banner-wrapper">
-                  <div className="banner-content">
-                    <div className="content-header">
-                      <div className="category-text color-danger">Qualität</div>
-                    </div>
-                    <div className="content-main">
-                      <h4 className="entry-subtitle">Die Zuverlässigkeit </h4>
-                      <h3 className="entry-title color-text-light">
-                        aller Produkte
-                      </h3>
-                      <div className="entry-store color-info-dark">
-                        Nur in Susu shop
-                      </div>
-                    </div>
-                  </div>
-                  <div className="banner-thumbnail">
-                    <img src={p7718687} alt="tets" />
-                  </div>
-                </div>
+        </Col>
+      </Row>
+      <Row className="module-body">
+        <Col xs="12" sm="12" md="12" lg="5">
+          <Row>
+            <Col xs="8" sm="9" md="6" lg="6">
+              <div className="categories-links">
+                <ul>
+                  <li>
+                    <Categories />
+                  </li>
+                </ul>
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="column right">
-          <div className="products mobile-column-2 column-3">
+            </Col>
+            <Col xs="4" sm="3" md="6" lg="6">
+              <Card>
+                <Card.Img
+                  src={p7718687}
+                  alt="tets"
+                  className="module-body-img"
+                />
+                <Card.ImgOverlay>
+                  <Card.Title style={{ color: "#ededed" }}>Qualität</Card.Title>
+                  <Card.Text style={{ color: "#ededed" }}>
+                    Nur in Susu shop
+                  </Card.Text>
+                </Card.ImgOverlay>
+              </Card>
+            </Col>
+          </Row>
+        </Col>
+        <Col xs="12" sm="12" md="12" lg="7">
+          <Row className="products">
             {productOnSale?.map((item) => (
-              <div className="product product-type-simple" key={item.id}>
-                <div className="product-wrapper product-type-3">
+              <Col
+                xs="6"
+                sm="6"
+                md="4"
+                lg="4"
+                className="product"
+                key={item.id}
+              >
+                <div className="product-wrapper">
                   <div className="thumbnail-wrapper">
                     <div className="product-badges">
-                      <span className="badge style-1 onsale">{item.sale}%</span>
+                      <span className="badge onsale">{item.sale}%</span>
                       <span className={item.available[1]}>
                         {item.available[0]}
                       </span>
@@ -192,11 +188,11 @@ export const CustomerOpinions = ({ products }: Props) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Col>
             ))}
-          </div>
-        </div>
-      </div>
+          </Row>
+        </Col>
+      </Row>
     </Container>
   );
 };
