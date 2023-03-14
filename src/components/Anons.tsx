@@ -3,7 +3,7 @@ import { BsTruck, BsPeople } from "react-icons/bs";
 import { RiMedal2Fill, RiShieldKeyholeLine } from "react-icons/ri";
 export const Anons = () => {
   return (
-    <Container className="container">
+    <Container >
       <Row>
         <div className="anons-info">
           <p>

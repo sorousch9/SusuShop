@@ -43,7 +43,7 @@ const productsBrandFilter = [
   "adidas",
   "nike",
   "ecco",
-  "under-armour",
+  "",
 ];
 const productsColorFilter = [
   "White",

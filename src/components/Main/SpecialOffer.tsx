@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Badge, Card, Col, Container, Row } from "react-bootstrap";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import {
@@ -49,10 +49,7 @@ export const SpecialOffer = ({ products }: Props) => {
           <Col xs="4" sm="4" md="2" lg="2" key={item.id} className="product">
             <div className="product-wrapper">
               <div className="thumbnail-wrapper">
-                <div className="product-badges">
-                  <span className="badge style-1 onsale">{item.sale}%</span>
-                  <span className={item.available[1]}>{item.available[0]}</span>
-                </div>
+                <Badge bg="danger" style={{marginTop:"1rem"}}>{item.sale}%</Badge>
                 <Link
                   className="cart-image"
                   to={`/products/${item.id}`}

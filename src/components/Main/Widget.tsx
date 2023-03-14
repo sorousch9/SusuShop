@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import banner1 from "../../assets/373883.jpg";
 import banner2 from "../../assets/4846461.jpg";
 import banner3 from "../../assets/7303151.jpg";

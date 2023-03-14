@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { categories } from "../../data";
 import { SpecialOffer } from "./SpecialOffer";
 import { fetchData } from "../../hooks/apiService";
 import { ProductType } from "../../../interfaces/Products";
 import { MainBanner } from "./MainBanner";
 import { TopRecommendations } from "./TopRecommendations";
 import { CustomerOpinions } from "./CustomerOpinions";
+import { Categories } from "../Categories";
 import { Widget } from "./Widget";
 
 export const Main = () => {
@@ -59,19 +59,9 @@ export const Main = () => {
             <div className="categorie">
               <h5>Kategorien</h5>
               <ul>
-                {categories.map((item) => (
-                  <li key={item.id}>
-                    <Link
-                      to="/"
-                      style={{ color: "inherit", textDecoration: "inherit" }}
-                    >
-                      <span>{item.title}</span>
-                      <i>
-                        <MdKeyboardArrowRight />
-                      </i>
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Categories />
+                </li>
               </ul>
             </div>
           </div>

@@ -27,5 +27,6 @@ export type Props = {
 export interface InterfaceCategories {
   id: number;
   title: string;
+  value: string;
   category: string;
-};
+}

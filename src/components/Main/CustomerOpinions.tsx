@@ -11,7 +11,7 @@ import {
 } from "../../redux/cartRedux";
 import { ProductType, Props } from "../../../interfaces/Products";
 import { useAppDispatch } from "../../hooks/hooks";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Badge, Card, Col, Container, Row } from "react-bootstrap";
 
 export const CustomerOpinions = ({ products }: Props) => {
   const [productOnSale, setProductOnSale] = useState<ProductType[]>([]);
@@ -83,12 +83,10 @@ export const CustomerOpinions = ({ products }: Props) => {
               >
                 <div className="product-wrapper">
                   <div className="thumbnail-wrapper">
-                    <div className="product-badges">
-                      <span className="badge onsale">{item.sale}%</span>
-                      <span className={item.available[1]}>
-                        {item.available[0]}
-                      </span>
-                    </div>
+                    <Badge bg="danger" style={{ marginTop: "1rem" }}>
+                      {item.sale}%
+                    </Badge>
+
                     <Link
                       className="cart-image"
                       style={{

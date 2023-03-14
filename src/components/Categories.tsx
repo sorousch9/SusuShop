@@ -5,7 +5,7 @@ import { InterfaceCategories } from "../../interfaces/Products";
 import { fetchcat } from "../hooks/apiService";
 export const Categories = () => {
   const [category, setCategory] = useState<InterfaceCategories[]>([]);
-
+  
   useEffect(() => {
     const fetchDataAsync = async () => {
       const response = await fetchcat("http://localhost:5000/category");
@@ -19,7 +19,8 @@ export const Categories = () => {
     <div>
       {category.map((item) => (
         <CategoryItem key={item.id} item={item} />
-      ))}
+        ))}
     </div>
   );
 };
+
