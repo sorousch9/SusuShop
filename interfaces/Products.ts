@@ -24,3 +24,8 @@ export interface ProductType {
 export type Props = {
   products: ProductType[];
 };
+export interface InterfaceCategories {
+  id: number;
+  title: string;
+  category: string;
+};

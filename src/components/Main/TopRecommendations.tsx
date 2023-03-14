@@ -6,12 +6,9 @@ import { Autoplay, Navigation } from "swiper";
 import "swiper/scss/navigation";
 import { Link } from "react-router-dom";
 import { Props } from "../../../interfaces/Products";
+import { Card } from "react-bootstrap";
 
 export const TopRecommendations = ({ products }: Props) => {
-  const productOnSale = products.filter((item) => {
-    return item.onSale === false;
-  });
-
   return (
     <div>
       <Swiper
@@ -37,24 +34,26 @@ export const TopRecommendations = ({ products }: Props) => {
           },
           1024: {
             slidesPerView: 5,
-            spaceBetween: 50,
+            spaceBetween: 10,
           },
         }}
         modules={[Navigation, Autoplay]}
         className="mySwiper"
       >
-        {productOnSale?.map((item) => (
+        {products?.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="carausel-Top-Rec">
+            <Card className="carausel-Top-Rec">
               <Link to={`/products/${item.id}`}>
-                <img src={item.img[0].src} alt={item.title} />
-                <h4>{item.title}</h4>
-                <span>
-                  <p>Preis</p>
-                  {item.price}€
-                </span>
+                <div className="cart-image">
+                  <Card.Img src={item.img[0].src} />
+                </div>
+                <h6>{item.title}</h6>
+                <div className="carausel-price">
+                  <p>Preis : </p>
+                  <span>{item.price}€</span>
+                </div>
               </Link>
-            </div>
+            </Card>
           </SwiperSlide>
         ))}
       </Swiper>
