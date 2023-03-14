@@ -63,6 +63,7 @@ const productsCatFilter = [
   "Neutralschuhe",
   "Trailrunning-Schuhe",
 ];
+
 export const ProductList = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [filters, setFilters] = useState<Filters>({
@@ -76,33 +77,33 @@ export const ProductList = () => {
     _sort: "id",
     _order: "asc",
   });
-
   const location = useLocation().search;
 
+  
+  const buildUrl = (baseUrl: string, filters: Filters, location: string) => {
+    const urlParams = new URLSearchParams();
+    Object.entries(filters).forEach(([key, value]) => {
+      if (Array.isArray(value)) {
+        value.forEach((v) => urlParams.append(key, v));
+      } else if (value !== undefined) {
+        urlParams.append(key, value.toString());
+      }
+    });
+    const url =
+      location.length > 0
+        ? `${baseUrl}${location}&${urlParams.toString()}`
+        : `${baseUrl}?${urlParams.toString()}`;
+    return url;
+  };
+
+
   useEffect(() => {
+    const url = buildUrl("http://localhost:5000/products", filters, location);
+
     const fetchDataAsync = async () => {
-      const params = new URLSearchParams();
-      Object.entries(filters).forEach(([key, value]) => {
-        if (Array.isArray(value)) {
-          value.forEach((v) => params.append(key, v));
-        } else {
-          params.append(key, value);
-        }
-      });
-      if (location.length > 0) {
-        const response = await fetchData(
-          `http://localhost:5000/products${location}&${params.toString()}`
-        );
-        if (response !== undefined) {
-          setProducts(response);
-        }
-      } else {
-        const response = await fetchData(
-          `http://localhost:5000/products?${params.toString()}`
-        );
-        if (response !== undefined) {
-          setProducts(response);
-        }
+      const response = await fetchData(url);
+      if (response !== undefined) {
+        setProducts(response);
       }
     };
     fetchDataAsync();
