@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, ButtonGroup, Col, Container, Row } from "react-bootstrap";
 import { Anons } from "../components/Anons";
 import { Header } from "../components/Header";
 import { Link, useParams } from "react-router-dom";
@@ -152,43 +152,6 @@ export default function Product() {
                       <p>- {product.descShort && product.descShort[4]}</p>
                     </div>
                     <form className="cart">
-                      <div className="quantity">
-                        <button
-                          className="quantity-btn"
-                          type="button"
-                          onClick={() => {
-                            dispatch(decrementQuantity(product.id));
-                            dispatch(getSubTotal());
-                            dispatch(getCartCount());
-                            dispatch(getTotalAmount());
-                          }}
-                        >
-                          -
-                        </button>
-                        <input
-                          type="number"
-                          aria-label="quantityCount"
-                          readOnly
-                          className="text-input"
-                          value={
-                            product.quantity === undefined
-                              ? 1
-                              : product.quantity
-                          }
-                        />
-                        <button
-                          className="quantity-btn"
-                          type="button"
-                          onClick={() => {
-                            dispatch(incrementQuantity(product.id));
-                            dispatch(getSubTotal());
-                            dispatch(getCartCount());
-                            dispatch(getTotalAmount());
-                          }}
-                        >
-                          +
-                        </button>
-                      </div>
                       <Link
                         to={"/cart"}
                         onClick={() => {

@@ -2,7 +2,17 @@ import { useEffect } from "react";
 import { Anons } from "../components/Anons";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer/Footer";
-import { Col, Container, Row } from "react-bootstrap";
+import {
+  Accordion,
+  Button,
+  ButtonGroup,
+  Col,
+  Container,
+  Form,
+  ProgressBar,
+  Row,
+  Table,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
   getTotalAmount,
@@ -17,7 +27,7 @@ import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 
 export const Cart = () => {
   const dispatch = useAppDispatch();
-  const { products, subAmount, totalAmount } = useAppSelector(
+  const { products, subAmount, totalAmount, shipPrice, tax } = useAppSelector(
     (state) => state.cart
   );
   useEffect(() => {
@@ -25,8 +35,25 @@ export const Cart = () => {
     dispatch(getSubTotal());
     dispatch(getCartCount());
     dispatch(getTotalAmount());
-  }, [dispatch]);
+  }, [dispatch, totalAmount]);
 
+  function Progress() {
+    const now = totalAmount;
+    if (now >= 250) {
+      return (
+        <ProgressBar max={250} now={now} label={"Erfolg !"} variant="success" />
+      );
+    } else {
+      return (
+        <ProgressBar
+          max={250}
+          now={now}
+          label={`${now.toFixed(2)}€`}
+          variant="danger"
+        />
+      );
+    }
+  }
   return (
     <div>
       <Anons />
@@ -47,21 +74,24 @@ export const Cart = () => {
           <Row>
             <Col md="12">
               <div className="cart-wrapper">
-                <form className="cart-form">
+                <Form className="cart-form">
                   <div className="free-progress-bar">
-                    <div className="free-shipping-notice">
-                      Nur
-                      <span className="price-amount"> 5€ </span>
-                      in den Warenkorb legen und versandkostenfrei erhalten!
-                    </div>
-                    <div className="raw-progress-bar">
-                      <span
-                        className="progress"
-                        style={{ width: "85%" }}
-                      ></span>
-                    </div>
+                    {totalAmount >= 250 ? (
+                      <p className="free-shipping-notice">
+                        Ihr Warenkorb enthält kostenlosen Versand{" "}
+                      </p>
+                    ) : (
+                      <div className="free-shipping-notice">
+                        Nur
+                        <span className="price-amount">
+                          {(250 - totalAmount).toFixed(2)}€
+                        </span>
+                        in den Warenkorb legen und versandkostenfrei erhalten!
+                      </div>
+                    )}
+                    <Progress />
                   </div>
-                  <table className="table">
+                  <Table bordered hover>
                     <thead>
                       <tr>
                         <th>&nbsp;</th>
@@ -87,29 +117,53 @@ export const Cart = () => {
                           <td className="product-name">
                             <Link to={`/products/${product.id}`}>
                               {product.title}
-                              <span>Produkt ID :{product.id}</span>
+                              <span>Marke :{product.brand}</span>
+                              <span>Farbe :{product.color}</span>
                             </Link>
                           </td>
                           <td className="product-price">{product.price} €</td>
                           <td className="product-quantity">
-                            <div className="quantity">
-                              <div
-                                className="quantity-btn"
-                                onClick={() => {
-                                  dispatch(decrementQuantity(product.id));
-                                  dispatch(getSubTotal());
-                                  dispatch(getCartCount());
-                                  dispatch(getTotalAmount());
-                                }}
-                              >
-                                <span className="icon-minus"></span>
-                              </div>
-                              <span className="text-input">
-                                {" "}
+                            <ButtonGroup className="quantity">
+                              {typeof product.quantity === "number" &&
+                              product.quantity <= 1 ? (
+                                <Button
+                                  variant="outline-dark"
+                                  disabled
+                                  style={{
+                                    fontWeight: "900",
+                                  }}
+                                  onClick={() => {
+                                    dispatch(decrementQuantity(product.id));
+                                    dispatch(getSubTotal());
+                                    dispatch(getCartCount());
+                                    dispatch(getTotalAmount());
+                                  }}
+                                >
+                                  -
+                                </Button>
+                              ) : (
+                                <Button
+                                  variant="outline-dark"
+                                  style={{
+                                    fontWeight: "900",
+                                  }}
+                                  onClick={() => {
+                                    dispatch(decrementQuantity(product.id));
+                                    dispatch(getSubTotal());
+                                    dispatch(getCartCount());
+                                    dispatch(getTotalAmount());
+                                  }}
+                                >
+                                  -
+                                </Button>
+                              )}
+
+                              <Button variant="outline-dark">
                                 {product.quantity}
-                              </span>
-                              <div
-                                className="quantity-btn"
+                              </Button>
+                              <Button
+                                variant="outline-dark"
+                                style={{ fontWeight: "900" }}
                                 onClick={() => {
                                   dispatch(incrementQuantity(product.id));
                                   dispatch(getSubTotal());
@@ -117,9 +171,9 @@ export const Cart = () => {
                                   dispatch(getTotalAmount());
                                 }}
                               >
-                                <span className="icon-plus"></span>
-                              </div>
-                            </div>
+                                +
+                              </Button>
+                            </ButtonGroup>
                           </td>
                           <td className="product-subtotal">
                             {" "}
@@ -135,13 +189,29 @@ export const Cart = () => {
                                   dispatch(getCartCount());
                                   dispatch(getTotalAmount());
                                 }}
-                              ></span>
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="25"
+                                  height="25"
+                                  fill="currentColor"
+                                  className="bi bi-trash"
+                                  viewBox="0 0 16 16"
+                                  style={{ cursor: "pointer" }}
+                                >
+                                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+                                  />
+                                </svg>
+                              </span>
                             </p>
                           </td>
                         </tr>
                       </tbody>
                     ))}
-                  </table>
+                  </Table>
                   <div className="actions">
                     <div className="actions-wrapper">
                       <div className="coupon">
@@ -156,7 +226,7 @@ export const Cart = () => {
                       </div>
                     </div>
                   </div>
-                </form>
+                </Form>
                 <div className="cart-info">
                   <div className="cart-totals">
                     <h2>Gesamtsumme</h2>
@@ -169,30 +239,18 @@ export const Cart = () => {
                           </td>
                         </tr>
                         <tr className="cart-shopping-totals">
-                          <th>Versand</th>
-                          <td className="shopping">
-                            <ul>
-                              <li>
-                                <input
-                                  type="radio"
-                                  className="shipping-method"
-                                  defaultChecked
-                                />
-                                <label className="shipping-label">
-                                  Flatrate: <span>3.50 €</span>
-                                </label>
-                              </li>
-                              <li>
-                                <input
-                                  type="radio"
-                                  className="shipping-method"
-                                />
-                                <label className="shipping-label">
-                                  Lokale Aufnahme
-                                </label>
-                              </li>
-                            </ul>
+                          <th style={{ fontSize: ".8rem" }}>
+                            Versandkosten (Paket)
+                          </th>
+                          <td className="shopping" style={{ fontSize: "1rem" }}>
+                            {shipPrice}
                           </td>
+                        </tr>
+
+                        <tr>
+                          <th style={{ fontSize: ".8rem", fontWeight: "400" }}>
+                            alle Angaben in Euro, inkl. Steuer
+                          </th>
                         </tr>
                         <tr className="cart-order-total">
                           <th>Gesamtsumme</th>
@@ -200,12 +258,23 @@ export const Cart = () => {
                         </tr>
                       </tbody>
                     </table>
+                    <Accordion flush>
+                      <Accordion.Item eventKey="0">
+                        <Accordion.Header>Guthaben </Accordion.Header>
+                        <Accordion.Body>
+                          Leider beträgt dein Guthaben aktuell 0,00 €.
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </Accordion>
                     <div className="checkout">
-                      <Link to={"/checkout"}>
+                      <Link to={"/cart"}>
                         <button className="to-checkout">
-                          weiter zur Kasse
+                          Weiter zur Kasse
                         </button>
                       </Link>
+                    </div>
+                    <div className="co2-ship">
+                      <span>Wir liefern CO2-neutral</span> durch Kompensation
                     </div>
                   </div>
                 </div>

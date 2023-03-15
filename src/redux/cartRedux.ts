@@ -20,7 +20,7 @@ const initialState: CartState = {
 };
 
 function calculateShipPrice(totalAmount: number): number {
-  return totalAmount >= 50 ? 0 : 2.99;
+  return totalAmount >= 250 ? 0 : 2.99;
 }
 
 export const cartSlice = createSlice({
