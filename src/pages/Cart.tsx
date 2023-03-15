@@ -127,11 +127,8 @@ export const Cart = () => {
                               {typeof product.quantity === "number" &&
                               product.quantity <= 1 ? (
                                 <Button
-                                  variant="outline-dark"
+                                  className="quantity-btn"
                                   disabled
-                                  style={{
-                                    fontWeight: "900",
-                                  }}
                                   onClick={() => {
                                     dispatch(decrementQuantity(product.id));
                                     dispatch(getSubTotal());
@@ -139,14 +136,11 @@ export const Cart = () => {
                                     dispatch(getTotalAmount());
                                   }}
                                 >
-                                  -
+                                  <span className="icon-minus"></span>
                                 </Button>
                               ) : (
                                 <Button
-                                  variant="outline-dark"
-                                  style={{
-                                    fontWeight: "900",
-                                  }}
+                                  className="quantity-btn"
                                   onClick={() => {
                                     dispatch(decrementQuantity(product.id));
                                     dispatch(getSubTotal());
@@ -154,16 +148,15 @@ export const Cart = () => {
                                     dispatch(getTotalAmount());
                                   }}
                                 >
-                                  -
+                                  <span className="icon-minus"></span>
                                 </Button>
                               )}
 
-                              <Button variant="outline-dark">
+                              <span className="text-input">
                                 {product.quantity}
-                              </Button>
+                              </span>
                               <Button
-                                variant="outline-dark"
-                                style={{ fontWeight: "900" }}
+                                className="quantity-btn"
                                 onClick={() => {
                                   dispatch(incrementQuantity(product.id));
                                   dispatch(getSubTotal());
@@ -171,7 +164,7 @@ export const Cart = () => {
                                   dispatch(getTotalAmount());
                                 }}
                               >
-                                +
+                                <span className="icon-plus"></span>
                               </Button>
                             </ButtonGroup>
                           </td>

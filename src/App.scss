@@ -1532,7 +1532,6 @@ code {
 
           .cart-item {
             position: relative;
-
             .product-thumbnail {
               font-size: 0.875rem;
               vertical-align: middle;
@@ -1596,6 +1595,7 @@ code {
                   &:hover {
                     background-color: #ffffff;
                     box-shadow: outset 3px 1px 3px #000000c5;
+                    color: #000000c5;
                   }
 
                   .icon-minus::before {

@@ -43,7 +43,7 @@ const productsBrandFilter = [
   "adidas",
   "nike",
   "ecco",
-  "",
+  "under-armour",
 ];
 const productsColorFilter = [
   "White",
@@ -264,7 +264,7 @@ export const ProductList = () => {
               {productsBrandFilter.map((brand) => (
                 <Form.Check
                   key={brand}
-                  label={brand}
+                  label={brand.toLocaleUpperCase()}
                   value={brand}
                   name="brand"
                   type="checkbox"
