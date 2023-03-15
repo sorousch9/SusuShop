@@ -13,6 +13,7 @@ import {
   Container,
   Row,
   Col,
+  Breadcrumb,
 } from "react-bootstrap";
 import { Products } from "../components/Products";
 
@@ -79,7 +80,6 @@ export const ProductList = () => {
   });
   const location = useLocation().search;
 
-  
   const buildUrl = (baseUrl: string, filters: Filters, location: string) => {
     const urlParams = new URLSearchParams();
     Object.entries(filters).forEach(([key, value]) => {
@@ -95,7 +95,6 @@ export const ProductList = () => {
         : `${baseUrl}?${urlParams.toString()}`;
     return url;
   };
-
 
   useEffect(() => {
     const url = buildUrl("http://localhost:5000/products", filters, location);
@@ -149,19 +148,14 @@ export const ProductList = () => {
       <Anons />
       <Header />
       <Row>
-        <Row className="breadcrumb">
-          <nav className="">
-            <ul>
-              <li>
-                <Link to={"/"}>Home</Link>
-              </li>
-              <li>
-                <span />
-                <Link to={"/products"}>Shop</Link>
-              </li>
-            </ul>
-          </nav>
-        </Row>
+      <Breadcrumb className="cart-breadcrumb">
+          <Breadcrumb.Item>
+            <Link to={"/"}>Home</Link>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            <Link to={"/products"}>Produktliste</Link>
+          </Breadcrumb.Item>
+        </Breadcrumb>
         <Row
           xs={10}
           md={4}
@@ -169,7 +163,7 @@ export const ProductList = () => {
           className="d-flex justify-content-center align-items-center "
         >
           <Col>
-            <Form className="my-4">
+            <Form>
               <FormGroup className="d-flex justify-content-center align-items-center">
                 <FormLabel
                   htmlFor="sortInput"
