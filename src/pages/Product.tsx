@@ -1,4 +1,10 @@
-import { Button, ButtonGroup, Col, Container, Row } from "react-bootstrap";
+import {
+  Col,
+  Container,
+  Form,
+  Row,
+  Table,
+} from "react-bootstrap";
 import { Anons } from "../components/Anons";
 import { Header } from "../components/Header";
 import { Link, useParams } from "react-router-dom";
@@ -10,9 +16,7 @@ import {
   addProduct,
   getCartCount,
   getSubTotal,
-  getTotalAmount,
-  incrementQuantity,
-  decrementQuantity,
+  getTotalAmount
 } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import { ProductType } from "../../interfaces/Products";
@@ -151,7 +155,21 @@ export default function Product() {
                       <p>- {product.descShort && product.descShort[3]}</p>
                       <p>- {product.descShort && product.descShort[4]}</p>
                     </div>
-                    <form className="cart">
+
+                    <Form className="cart">
+                      <Form.Select
+                        aria-label="Color select"
+                        defaultValue={product.color}
+                      >
+                        <option>{product.color}</option>
+                      </Form.Select>
+                      <br />
+                      <Form.Select
+                        aria-label="Size select"
+                        defaultValue={product.size}
+                      >
+                        <option>{product.size}</option>
+                      </Form.Select>
                       <Link
                         to={"/cart"}
                         onClick={() => {
@@ -161,7 +179,7 @@ export default function Product() {
                       >
                         In den Warenkorb
                       </Link>
-                    </form>
+                    </Form>
                     <div className="product-actions">
                       <button className="wishlist-clear">
                         <span>in Einkaufslisten</span>
@@ -245,7 +263,7 @@ export default function Product() {
             </Tab>
             <Tab eventKey="additional" title="Additional information">
               <div className="additional_information">
-                <table>
+                <Table>
                   <tbody>
                     <tr>
                       <th>Marke:</th>
@@ -265,8 +283,21 @@ export default function Product() {
                         <p> {product.color}</p>
                       </td>
                     </tr>
+
+                    {product.specifications.map((obj, index) => (
+                      <tr key={index}>
+                        {Object.entries(obj).map(([key, value]) => (
+                          <>
+                            <th>{key}:</th>
+                            <td>
+                              <p>{value}</p>
+                            </td>
+                          </>
+                        ))}
+                      </tr>
+                    ))}
                   </tbody>
-                </table>
+                </Table>
               </div>
             </Tab>
             <Tab eventKey="reviews" title="Reviews">

@@ -77,7 +77,7 @@ export const Products = ({ products }: Props) => {
                   </span>
                   <span className="product-meta">{item.available}</span>
                 </Card.Text>
-                <div className="d-grid">
+                <div>
                   <Button
                     variant="primary"
                     onClick={() => {
