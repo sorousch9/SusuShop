@@ -49,16 +49,10 @@ export const SpecialOffer = ({ products }: Props) => {
           <Col xs="4" sm="4" md="2" lg="2" key={item.id} className="product">
             <div className="product-wrapper">
               <div className="thumbnail-wrapper">
-                <Badge bg="danger" style={{marginTop:"1rem"}}>{item.sale}%</Badge>
-                <Link
-                  className="cart-image"
-                  to={`/products/${item.id}`}
-                  style={{
-                    padding: "0rem",
-                    color: "inherit",
-                    textDecoration: "inherit",
-                  }}
-                >
+                <Badge bg="danger" style={{ marginTop: "1rem" ,position:"absolute" }}>
+                  {item.sale}%
+                </Badge>
+                <Link className="cart-image" to={`/products/${item.id}`}>
                   <img src={item.img[0].src} alt={item.title} />
                 </Link>
                 <div className="product-buttons">

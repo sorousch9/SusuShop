@@ -44,7 +44,7 @@ export const TopRecommendations = ({ products }: Props) => {
           <SwiperSlide key={item.id}>
             <Card className="carausel-Top-Rec">
               <Link to={`/products/${item.id}`}>
-                <div className="cart-image">
+                <div className="cart-image" style={{padding:"2rem"}}>
                   <Card.Img src={item.img[0].src} />
                 </div>
                 <h6>{item.title}</h6>

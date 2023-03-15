@@ -307,10 +307,6 @@ code {
       z-index: 1;
       .thumbnail-wrapper {
         position: relative;
-        padding: 0.9375rem;
-        @media screen and (min-width: 769px) {
-          padding: 0 1.25rem;
-        }
         & > a {
           position: relative;
           img {
@@ -750,7 +746,8 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  color: "inherit";
+  text-decoration: "inherit";
 }
 .card-text {
   font-size: 1rem;
@@ -1852,47 +1849,32 @@ code {
 //Header
 .header-main {
   background-color: var(--primaryBG);
-  z-index: 99;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  .left {
-    flex: 20%;
+  margin-bottom: 0.3rem;
+  .logo {
     display: inline-flex;
-    justify-content: flex-start;
     align-items: center;
-    margin-left: 0.5rem;
-    .logo {
+    flex-shrink: 0;
+    a {
+      position: relative;
       display: inline-flex;
-      align-items: center;
-      flex-shrink: 0;
-      a {
-        position: relative;
-        display: inline-flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-      }
-      img {
-        height: 3rem;
-      }
-      span {
-        display: block;
-        font-size: 0.6875rem;
-        opacity: 0.5;
-        margin-top: 2px;
-      }
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    img {
+      height: 3rem;
+    }
+    span {
+      display: block;
+      font-size: 0.6875rem;
+      opacity: 0.5;
+      margin-top: 2px;
     }
   }
-
   .center {
-    flex: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-
     .search-style {
       width: 100%;
       form {
@@ -1903,13 +1885,7 @@ code {
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        padding: 1rem;
-        @media screen and (max-width: 1200px) {
-          margin-bottom: 0.5rem;
-        }
-        @media screen and (max-width: 695px) {
-          padding: 0.5rem;
-        }
+        padding: 0.6rem;
       }
       .input-item {
         display: flex;
@@ -1930,16 +1906,13 @@ code {
     }
   }
   .right {
-    flex: 30%;
-    margin-left: 1.875rem;
     display: flex;
-    margin-right: 1rem;
-    justify-content: flex-end;
-
+    justify-content: center;
+    align-items: center;
     .header-action {
       display: flex;
       align-items: center;
-
+      justify-content: flex-end;
       .cart-dropdown-wrap {
         position: absolute;
         background-color: #ededed;

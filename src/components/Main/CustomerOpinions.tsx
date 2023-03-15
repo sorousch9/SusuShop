@@ -11,7 +11,7 @@ import {
 } from "../../redux/cartRedux";
 import { ProductType, Props } from "../../../interfaces/Products";
 import { useAppDispatch } from "../../hooks/hooks";
-import { Badge, Card, Col, Container, Row } from "react-bootstrap";
+import { Badge, Card, Col, Container, Image, Row } from "react-bootstrap";
 
 export const CustomerOpinions = ({ products }: Props) => {
   const [productOnSale, setProductOnSale] = useState<ProductType[]>([]);
@@ -89,18 +89,9 @@ export const CustomerOpinions = ({ products }: Props) => {
 
                     <Link
                       className="cart-image"
-                      style={{
-                        padding: "0rem",
-                        color: "inherit",
-                        textDecoration: "inherit",
-                      }}
                       to={`/products/${item.id}`}
                     >
-                      <img
-                        className="p-img"
-                        src={item.img[0].src}
-                        alt={item.title}
-                      />
+                      <Image src={item.img[0].src} />
                     </Link>
                     <div className="product-buttons">
                       <Link
