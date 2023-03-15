@@ -1,10 +1,4 @@
-import {
-  Col,
-  Container,
-  Form,
-  Row,
-  Table,
-} from "react-bootstrap";
+import { Breadcrumb, Col, Container, Form, Row, Table } from "react-bootstrap";
 import { Anons } from "../components/Anons";
 import { Header } from "../components/Header";
 import { Link, useParams } from "react-router-dom";
@@ -16,7 +10,7 @@ import {
   addProduct,
   getCartCount,
   getSubTotal,
-  getTotalAmount
+  getTotalAmount,
 } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import { ProductType } from "../../interfaces/Products";
@@ -75,17 +69,15 @@ export default function Product() {
     <Container>
       <Anons />
       <Header />
-      <nav className="cart-breadcrumb">
-        <ul>
-          <li>
-            <Link to={"/"}>Home</Link>
-          </li>
-          <li>
-            <span />
-            <p>{product.title}</p>
-          </li>
-        </ul>
-      </nav>
+      <Breadcrumb className="cart-breadcrumb">
+        <Breadcrumb.Item>
+          <Link to={"/"}>Home</Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <Link to={"/products"}>Produktliste</Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>{product.title}</Breadcrumb.Item>
+      </Breadcrumb>
       <div className="single-product-wrapper" key={product.id}>
         <div className="product-wrapper">
           <h2 className="product-title">{product.title}</h2>

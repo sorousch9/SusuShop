@@ -4,6 +4,7 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer/Footer";
 import {
   Accordion,
+  Breadcrumb,
   Button,
   ButtonGroup,
   Col,
@@ -56,20 +57,15 @@ export const Cart = () => {
   }
   return (
     <div>
+      <Container>
       <Anons />
       <Header />
-      <Container>
-        <nav className="cart-breadcrumb">
-          <ul>
-            <li>
-              <Link to={"/"}>Home</Link>
-            </li>
-            <li>
-              <span />
-              <p>warenkorb</p>
-            </li>
-          </ul>
-        </nav>
+      <Breadcrumb className="cart-breadcrumb">
+        <Breadcrumb.Item>
+          <Link to={"/"}>Home</Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>Cart</Breadcrumb.Item>
+      </Breadcrumb>
         <div className="cart">
           <Row>
             <Col md="12">
