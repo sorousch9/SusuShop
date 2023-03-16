@@ -58,14 +58,14 @@ export const Cart = () => {
   return (
     <div>
       <Container>
-      <Anons />
-      <Header />
-      <Breadcrumb className="cart-breadcrumb">
-        <Breadcrumb.Item>
-          <Link to={"/"}>Home</Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item active>Cart</Breadcrumb.Item>
-      </Breadcrumb>
+        <Anons />
+        <Header />
+        <Breadcrumb className="cart-breadcrumb">
+          <Breadcrumb.Item>
+            <Link to={"/"}>Home</Link>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item active>Cart</Breadcrumb.Item>
+        </Breadcrumb>
         <div className="cart">
           <Row>
             <Col md="12">
@@ -120,33 +120,21 @@ export const Cart = () => {
                           <td className="product-price">{product.price} €</td>
                           <td className="product-quantity">
                             <ButtonGroup className="quantity">
-                              {typeof product.quantity === "number" &&
-                              product.quantity <= 1 ? (
-                                <Button
-                                  className="quantity-btn"
-                                  disabled
-                                  onClick={() => {
-                                    dispatch(decrementQuantity(product.id));
-                                    dispatch(getSubTotal());
-                                    dispatch(getCartCount());
-                                    dispatch(getTotalAmount());
-                                  }}
-                                >
-                                  <span className="icon-minus"></span>
-                                </Button>
-                              ) : (
-                                <Button
-                                  className="quantity-btn"
-                                  onClick={() => {
-                                    dispatch(decrementQuantity(product.id));
-                                    dispatch(getSubTotal());
-                                    dispatch(getCartCount());
-                                    dispatch(getTotalAmount());
-                                  }}
-                                >
-                                  <span className="icon-minus"></span>
-                                </Button>
-                              )}
+                              <Button
+                                className="quantity-btn"
+                                disabled={
+                                  typeof product.quantity === "number" &&
+                                  product.quantity <= 1
+                                }
+                                onClick={() => {
+                                  dispatch(decrementQuantity(product.id));
+                                  dispatch(getSubTotal());
+                                  dispatch(getCartCount());
+                                  dispatch(getTotalAmount());
+                                }}
+                              >
+                                <span className="icon-minus"></span>
+                              </Button>
 
                               <span className="text-input">
                                 {product.quantity}
