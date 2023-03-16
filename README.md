@@ -104,7 +104,7 @@
         Thank you for checking out this project. If you have any questions or
         feedback, feel free to contact me at.
       </p>
-      <br/>
+
 ![full Home Page](/public/githubImg/Home.png?raw=true "full Home Page")
 <br />
 ![Cart Page](/public/githubImg/cart.png?raw=true "Cart Page")
