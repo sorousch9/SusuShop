@@ -222,6 +222,22 @@ code {
   }
 }
 
+//Pagination color
+.page-link {
+  color: var(--color-org2);
+  &.active,
+  .active > & {
+    background-color: var(--color-org2);
+    border-color: var(--color-org);
+    &:hover {
+      color: var(--color-background);
+    }
+  }
+  &:hover {
+    color: var(--color-text);
+  }
+}
+
 .product-buttons {
   position: absolute;
   display: inline-flex;

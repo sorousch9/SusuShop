@@ -4,7 +4,7 @@ import { InterfaceCategories, ProductType } from "../../interfaces/Products";
 export const fetchData = async (url: string) => {
   try {
     const response = await axios.get<ProductType[]>(url);
-    return response.data;
+    return response;
   } catch (error) {
     console.error(error);
   }

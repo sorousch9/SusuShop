@@ -14,6 +14,7 @@ import {
   Row,
   Col,
   Breadcrumb,
+  Pagination,
 } from "react-bootstrap";
 import { Products } from "../components/Products";
 
@@ -64,7 +65,7 @@ const productsCatFilter = [
   "Neutralschuhe",
   "Trailrunning-Schuhe",
 ];
-
+const PAGE_SIZE = 9;
 export const ProductList = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [filters, setFilters] = useState<Filters>({
@@ -78,9 +79,18 @@ export const ProductList = () => {
     _sort: "id",
     _order: "asc",
   });
+  const [totalCount, setTotalCount] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const location = useLocation().search;
 
-  const buildUrl = (baseUrl: string, filters: Filters, location: string) => {
+  const totalPages = Math.ceil(totalCount / PAGE_SIZE);
+  const buildUrl = (
+    baseUrl: string,
+    filters: Filters,
+    location: string,
+    pageSize: number,
+    page: number
+  ) => {
     const urlParams = new URLSearchParams();
     Object.entries(filters).forEach(([key, value]) => {
       if (Array.isArray(value)) {
@@ -89,6 +99,8 @@ export const ProductList = () => {
         urlParams.append(key, value.toString());
       }
     });
+    urlParams.append("_page", page.toString());
+    urlParams.append("_limit", pageSize.toString());
     const url =
       location.length > 0
         ? `${baseUrl}${location}&${urlParams.toString()}`
@@ -97,16 +109,23 @@ export const ProductList = () => {
   };
 
   useEffect(() => {
-    const url = buildUrl("http://localhost:5000/products", filters, location);
+    const url = buildUrl(
+      "http://localhost:5000/products",
+      filters,
+      location,
+      PAGE_SIZE,
+      currentPage
+    );
 
     const fetchDataAsync = async () => {
       const response = await fetchData(url);
       if (response !== undefined) {
-        setProducts(response);
+        setProducts(response.data);
+        setTotalCount(response.headers["x-total-count"]);
       }
     };
     fetchDataAsync();
-  }, [filters, location]);
+  }, [filters, location, currentPage]);
 
   const handleSortChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -143,12 +162,24 @@ export const ProductList = () => {
     setFilters({ ...filters, price_lte: Number(value) });
   };
 
+  const pages = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pages.push(
+      <Pagination.Item
+        key={i}
+        active={i === currentPage}
+        onClick={() => setCurrentPage(i)}
+      >
+        {i}
+      </Pagination.Item>
+    );
+  }
   return (
     <Container>
       <Anons />
       <Header />
       <Row>
-      <Breadcrumb className="cart-breadcrumb">
+        <Breadcrumb className="cart-breadcrumb">
           <Breadcrumb.Item>
             <Link to={"/"}>Home</Link>
           </Breadcrumb.Item>
@@ -271,6 +302,33 @@ export const ProductList = () => {
         </Col>
         <Col xs={12} md={9} lg={9}>
           <Products products={products} />
+          <Pagination className="justify-content-center">
+            <Pagination.First
+              onClick={() => setCurrentPage(1)}
+              disabled={currentPage === 1}
+            />
+            <Pagination.Prev
+              onClick={() => setCurrentPage(currentPage - 1)}
+              disabled={currentPage === 1}
+            />
+            {pages}
+            <Pagination.Ellipsis />
+            <Pagination.Item
+              key={totalPages}
+              active={currentPage === totalPages}
+              onClick={() => setCurrentPage(totalPages)}
+            >
+              {totalPages}
+            </Pagination.Item>
+            <Pagination.Next
+              onClick={() => setCurrentPage(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            />
+            <Pagination.Last
+              onClick={() => setCurrentPage(totalPages)}
+              disabled={currentPage === totalPages}
+            />
+          </Pagination>
         </Col>
       </Row>
       <Footer />

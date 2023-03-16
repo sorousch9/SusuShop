@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { MdKeyboardArrowRight } from "react-icons/md";
 import { SpecialOffer } from "./SpecialOffer";
 import { fetchData } from "../../hooks/apiService";
 import { ProductType } from "../../../interfaces/Products";
@@ -18,7 +17,7 @@ export const Main = () => {
     const fetchDataAsync = async () => {
       const response = await fetchData("http://localhost:5000/products");
       if (response !== undefined) {
-        setProducts(response);
+        setProducts(response.data);
       }
     };
     fetchDataAsync();
