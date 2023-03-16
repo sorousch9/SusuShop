@@ -14,7 +14,7 @@ import {
   Row,
   Table,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
   getTotalAmount,
   incrementQuantity,
@@ -61,10 +61,12 @@ export const Cart = () => {
         <Anons />
         <Header />
         <Breadcrumb className="cart-breadcrumb">
-          <Breadcrumb.Item>
-            <Link to={"/"}>Home</Link>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item active>Cart</Breadcrumb.Item>
+          <li className="breadcrumb-item">
+            <NavLink to={"/"}>Home</NavLink>
+          </li>
+          <li className="breadcrumb-item active" aria-current="page">
+            <NavLink to={"/products"}>Card</NavLink>
+          </li>
         </Breadcrumb>
         <div className="cart">
           <Row>

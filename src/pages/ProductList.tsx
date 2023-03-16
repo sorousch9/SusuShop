@@ -1,7 +1,7 @@
 import { Anons } from "../components/Anons";
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "../components/Header";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchData } from "../hooks/apiService";
 import { ProductType } from "../../interfaces/Products";
@@ -180,12 +180,12 @@ export const ProductList = () => {
       <Header />
       <Row>
         <Breadcrumb className="cart-breadcrumb">
-          <Breadcrumb.Item>
-            <Link to={"/"}>Home</Link>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            <Link to={"/products"}>Produktliste</Link>
-          </Breadcrumb.Item>
+          <li className="breadcrumb-item">
+            <NavLink to={"/"}>Home</NavLink>
+          </li>
+          <li className="breadcrumb-item active" aria-current="page">
+            <NavLink to={"/products"}>Produktliste</NavLink>
+          </li>
         </Breadcrumb>
         <Row
           xs={10}

@@ -1,7 +1,7 @@
 import { Breadcrumb, Col, Container, Form, Row, Table } from "react-bootstrap";
 import { Anons } from "../components/Anons";
 import { Header } from "../components/Header";
-import { Link, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import { Footer } from "../components/Footer/Footer";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
@@ -70,14 +70,16 @@ export default function Product() {
       <Anons />
       <Header />
       <Breadcrumb className="cart-breadcrumb">
-        <Breadcrumb.Item>
-          <Link to={"/"}>Home</Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item>
-          <Link to={"/products"}>Produktliste</Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item active>{product.title}</Breadcrumb.Item>
-      </Breadcrumb>
+          <li className="breadcrumb-item">
+            <NavLink to={"/"}>Home</NavLink>
+          </li>
+          <li className="breadcrumb-item" aria-current="page">
+            <NavLink to={"/products"}>Produktliste</NavLink>
+          </li>
+          <li className="breadcrumb-item active" aria-current="page">
+            <NavLink to={"/products"}>{product.title}</NavLink>
+          </li>
+        </Breadcrumb>
       <div className="single-product-wrapper" key={product.id}>
         <div className="product-wrapper">
           <h2 className="product-title">{product.title}</h2>
