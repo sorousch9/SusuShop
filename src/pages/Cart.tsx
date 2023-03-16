@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { Anons } from "../components/Anons";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer/Footer";
@@ -56,10 +56,10 @@ export const Cart = () => {
     }
   }
   return (
-    <div>
+    <Fragment>
+      <Anons />
+      <Header />
       <Container>
-        <Anons />
-        <Header />
         <Breadcrumb className="cart-breadcrumb">
           <li className="breadcrumb-item">
             <NavLink to={"/"}>Home</NavLink>
@@ -262,8 +262,7 @@ export const Cart = () => {
           </Row>
         </div>
       </Container>
-
       <Footer />
-    </div>
+    </Fragment>
   );
 };

@@ -2,7 +2,7 @@ import { Anons } from "../components/Anons";
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "../components/Header";
 import { NavLink, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { fetchData } from "../hooks/apiService";
 import { ProductType } from "../../interfaces/Products";
 import {
@@ -175,163 +175,165 @@ export const ProductList = () => {
     );
   }
   return (
-    <Container>
+    <Fragment>
       <Anons />
       <Header />
-      <Row>
-        <Breadcrumb className="cart-breadcrumb">
-          <li className="breadcrumb-item">
-            <NavLink to={"/"}>Home</NavLink>
-          </li>
-          <li className="breadcrumb-item active" aria-current="page">
-            <NavLink to={"/products"}>Produktliste</NavLink>
-          </li>
-        </Breadcrumb>
-        <Row
-          xs={10}
-          md={4}
-          lg={4}
-          className="d-flex justify-content-center align-items-center "
-        >
-          <Col>
+      <Container>
+        <Row>
+          <Breadcrumb className="cart-breadcrumb">
+            <li className="breadcrumb-item">
+              <NavLink to={"/"}>Home</NavLink>
+            </li>
+            <li className="breadcrumb-item active" aria-current="page">
+              <NavLink to={"/products"}>Produktliste</NavLink>
+            </li>
+          </Breadcrumb>
+          <Row
+            xs={10}
+            md={4}
+            lg={4}
+            className="d-flex justify-content-center align-items-center "
+          >
+            <Col>
+              <Form>
+                <FormGroup className="d-flex justify-content-center align-items-center">
+                  <FormLabel
+                    htmlFor="sortInput"
+                    className="me-2"
+                    style={{ minInlineSize: "fit-content" }}
+                  >
+                    Sort by ID:
+                  </FormLabel>
+                  <FormControl
+                    id="sortInput"
+                    as="select"
+                    defaultValue="id asc"
+                    onChange={handleSortChange}
+                    className="me-2"
+                  >
+                    <option value="id asc">Newest</option>
+                    <option value="id desc">in Descending</option>
+                    <option value="price asc">Lowest Price</option>
+                    <option value="price desc">Highest Price</option>
+                  </FormControl>
+                </FormGroup>
+              </Form>
+            </Col>
+          </Row>
+          <Col xs={12} md={3} lg={3}>
             <Form>
-              <FormGroup className="d-flex justify-content-center align-items-center">
-                <FormLabel
-                  htmlFor="sortInput"
-                  className="me-2"
-                  style={{ minInlineSize: "fit-content" }}
-                >
-                  Sort by ID:
-                </FormLabel>
-                <FormControl
-                  id="sortInput"
-                  as="select"
-                  defaultValue="id asc"
-                  onChange={handleSortChange}
-                  className="me-2"
-                >
-                  <option value="id asc">Newest</option>
-                  <option value="id desc">in Descending</option>
-                  <option value="price asc">Lowest Price</option>
-                  <option value="price desc">Highest Price</option>
-                </FormControl>
+              <Row className="mb-3">
+                <Col xs={6}>
+                  <Form.Label className="form-label">Minimum Price</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="minPrice"
+                    value={filters.price_gte}
+                    onChange={handleMinPriceChange}
+                  />
+                </Col>
+                <Col xs={6}>
+                  <Form.Label className="form-label">Maximum Price</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="maxPrice"
+                    value={filters.price_lte}
+                    onChange={handleMaxPriceChange}
+                  />
+                </Col>
+              </Row>
+
+              <FormGroup>
+                <FormLabel>Size:</FormLabel>
+                {productsSizeFilter.map((size) => (
+                  <Form.Check
+                    key={size}
+                    label={size}
+                    value={size}
+                    name="size"
+                    type="checkbox"
+                    id={`size-${size}`}
+                    onChange={handleFiltersChange}
+                  />
+                ))}
+              </FormGroup>
+              <FormGroup>
+                <FormLabel>Color:</FormLabel>
+                {productsColorFilter.map((color) => (
+                  <Form.Check
+                    key={color}
+                    label={color}
+                    value={color}
+                    name="color"
+                    type="checkbox"
+                    id={`color-${color}`}
+                    onChange={handleFiltersChange}
+                  />
+                ))}
+              </FormGroup>
+              <FormGroup>
+                <FormLabel>Color:</FormLabel>
+                {productsCatFilter.map((category) => (
+                  <Form.Check
+                    key={category}
+                    label={category}
+                    value={category}
+                    name="category"
+                    type="checkbox"
+                    id={`category-${category}`}
+                    onChange={handleFiltersChange}
+                  />
+                ))}
+              </FormGroup>
+              <FormLabel>Color:</FormLabel>
+              <FormGroup controlId="modeSelect">
+                {productsBrandFilter.map((brand) => (
+                  <Form.Check
+                    key={brand}
+                    label={brand.toLocaleUpperCase()}
+                    value={brand}
+                    name="brand"
+                    type="checkbox"
+                    id={`brand-${brand}`}
+                    onChange={handleFiltersChange}
+                  />
+                ))}
               </FormGroup>
             </Form>
           </Col>
+          <Col xs={12} md={9} lg={9}>
+            <Products products={products} />
+            <Pagination className="justify-content-center">
+              <Pagination.First
+                onClick={() => setCurrentPage(1)}
+                disabled={currentPage === 1}
+              />
+              <Pagination.Prev
+                onClick={() => setCurrentPage(currentPage - 1)}
+                disabled={currentPage === 1}
+              />
+              {pages}
+              <Pagination.Ellipsis />
+              <Pagination.Item
+                key={totalPages}
+                active={currentPage === totalPages}
+                onClick={() => setCurrentPage(totalPages)}
+              >
+                {totalPages}
+              </Pagination.Item>
+              <Pagination.Next
+                onClick={() => setCurrentPage(currentPage + 1)}
+                disabled={currentPage === totalPages}
+              />
+              <Pagination.Last
+                onClick={() => setCurrentPage(totalPages)}
+                disabled={currentPage === totalPages}
+              />
+            </Pagination>
+          </Col>
         </Row>
-        <Col xs={12} md={3} lg={3}>
-          <Form>
-            <Row className="mb-3">
-              <Col xs={6}>
-                <Form.Label className="form-label">Minimum Price</Form.Label>
-                <Form.Control
-                  type="number"
-                  name="minPrice"
-                  value={filters.price_gte}
-                  onChange={handleMinPriceChange}
-                />
-              </Col>
-              <Col xs={6}>
-                <Form.Label className="form-label">Maximum Price</Form.Label>
-                <Form.Control
-                  type="number"
-                  name="maxPrice"
-                  value={filters.price_lte}
-                  onChange={handleMaxPriceChange}
-                />
-              </Col>
-            </Row>
-
-            <FormGroup>
-              <FormLabel>Size:</FormLabel>
-              {productsSizeFilter.map((size) => (
-                <Form.Check
-                  key={size}
-                  label={size}
-                  value={size}
-                  name="size"
-                  type="checkbox"
-                  id={`size-${size}`}
-                  onChange={handleFiltersChange}
-                />
-              ))}
-            </FormGroup>
-            <FormGroup>
-              <FormLabel>Color:</FormLabel>
-              {productsColorFilter.map((color) => (
-                <Form.Check
-                  key={color}
-                  label={color}
-                  value={color}
-                  name="color"
-                  type="checkbox"
-                  id={`color-${color}`}
-                  onChange={handleFiltersChange}
-                />
-              ))}
-            </FormGroup>
-            <FormGroup>
-              <FormLabel>Color:</FormLabel>
-              {productsCatFilter.map((category) => (
-                <Form.Check
-                  key={category}
-                  label={category}
-                  value={category}
-                  name="category"
-                  type="checkbox"
-                  id={`category-${category}`}
-                  onChange={handleFiltersChange}
-                />
-              ))}
-            </FormGroup>
-            <FormLabel>Color:</FormLabel>
-            <FormGroup controlId="modeSelect">
-              {productsBrandFilter.map((brand) => (
-                <Form.Check
-                  key={brand}
-                  label={brand.toLocaleUpperCase()}
-                  value={brand}
-                  name="brand"
-                  type="checkbox"
-                  id={`brand-${brand}`}
-                  onChange={handleFiltersChange}
-                />
-              ))}
-            </FormGroup>
-          </Form>
-        </Col>
-        <Col xs={12} md={9} lg={9}>
-          <Products products={products} />
-          <Pagination className="justify-content-center">
-            <Pagination.First
-              onClick={() => setCurrentPage(1)}
-              disabled={currentPage === 1}
-            />
-            <Pagination.Prev
-              onClick={() => setCurrentPage(currentPage - 1)}
-              disabled={currentPage === 1}
-            />
-            {pages}
-            <Pagination.Ellipsis />
-            <Pagination.Item
-              key={totalPages}
-              active={currentPage === totalPages}
-              onClick={() => setCurrentPage(totalPages)}
-            >
-              {totalPages}
-            </Pagination.Item>
-            <Pagination.Next
-              onClick={() => setCurrentPage(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            />
-            <Pagination.Last
-              onClick={() => setCurrentPage(totalPages)}
-              disabled={currentPage === totalPages}
-            />
-          </Pagination>
-        </Col>
-      </Row>
+      </Container>
       <Footer />
-    </Container>
+    </Fragment>
   );
 };
