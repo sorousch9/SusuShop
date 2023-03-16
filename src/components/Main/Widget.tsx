@@ -1,3 +1,4 @@
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import banner1 from "../../assets/373883.jpg";
 import banner2 from "../../assets/4846461.jpg";
@@ -5,51 +6,69 @@ import banner3 from "../../assets/7303151.jpg";
 
 export const Widget = () => {
   return (
-    <div className="widget-container">
-      <div className="widget-wrapper">
-        <div className="widget-col">
-          <div className="banner-content">
-            <div className="content-main">
-              <h6 className="b-black"> Neu für Ihr Sport </h6>
-              <h3>Laufen mit uns</h3>
-              <p>Everything You Need to Know</p>
-            </div>
-            <div className="button"> entdecken</div>
-          </div>
-          <div className="banner-thumbnail">
-            <img src={banner1} alt="banner" />
-          </div>
-        </div>
-        <div className="widget-col">
-          <div className="banner-content">
-            <div className="content-main">
-              <h6>Neuheiten</h6>
-              <h3>FINDE DEN RICHTIGEN</h3>
-              <p>
-                Mit dem Online Shoe Advisor findest du das Laufschuh-Modell, das
-                am besten zu dir passt.{" "}
-              </p>
-            </div>
-            <div className="button"> entdecken</div>
-          </div>
-          <div className="banner-thumbnail">
-            <img src={banner2} alt="banner" />
-          </div>
-        </div>{" "}
-        <div className="widget-col">
-          <div className="banner-content">
-            <div className="content-main">
-              <h6> Modernen Produktion</h6>
-              <h3>Die besten Laufschuhe</h3>
-              <p>Hier geht es zu den besten Laufschuhen 2023! </p>
-            </div>
-            <div className="button"> entdecken</div>
-          </div>
-          <div className="banner-thumbnail">
-            <img src={banner3} alt="banner" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <Container>
+      <Row>
+        <Col md="4" lg="4">
+          <Card>
+            <Card.Img src={banner1} alt="Card image" />
+            <Card.ImgOverlay className="widget">
+              <Card.Title>Sport Berater</Card.Title>
+              <Card.Text>
+                Everything You Need to Know <br />
+                Laufen mit uns
+              </Card.Text>
+              <Button>
+                <Link
+                  to={"/products"}
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  entdecken
+                </Link>
+              </Button>
+            </Card.ImgOverlay>
+          </Card>
+        </Col>
+        <Col md="4" lg="4">
+          <Card>
+            <Card.Img src={banner2} alt="Card image" />
+            <Card.ImgOverlay className="widget">
+              <Card.Title>Neuheiten</Card.Title>
+              <Card.Text>
+                FINDE DEN RICHTIGEN <br />
+                das am besten zu dir passt.
+              </Card.Text>
+              <Button>
+                <Link
+                  to={"/products"}
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  entdecken
+                </Link>
+              </Button>
+            </Card.ImgOverlay>
+          </Card>
+        </Col>
+        <Col md="4" lg="4">
+          <Card>
+            <Card.Img src={banner3} alt="Card image" />
+            <Card.ImgOverlay className="widget">
+              <Card.Title> Modernen Produktion</Card.Title>
+              <Card.Text>
+                Die besten Laufschuhe <br />
+                Hier geht es zu den besten Laufschuhen 2023!
+              </Card.Text>
+              <Button>
+                <Link
+                  to={"/products"}
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  entdecken
+                </Link>
+              </Button>
+            </Card.ImgOverlay>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 };

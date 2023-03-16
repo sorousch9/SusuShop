@@ -58,7 +58,7 @@ export const MainBanner = () => {
                 to="/products"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
-                Shop now
+                entdecken
               </Link>
             </Button>
           </Figure>
