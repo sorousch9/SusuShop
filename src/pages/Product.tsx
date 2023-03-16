@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Breadcrumb, Col, Container, Form, Row, Table } from "react-bootstrap";
 import { Anons } from "../components/Anons";
 import { Header } from "../components/Header";
@@ -70,17 +71,17 @@ export default function Product() {
       <Anons />
       <Header />
       <Breadcrumb className="cart-breadcrumb">
-          <li className="breadcrumb-item">
-            <NavLink to={"/"}>Home</NavLink>
-          </li>
-          <li className="breadcrumb-item" aria-current="page">
-            <NavLink to={"/products"}>Produktliste</NavLink>
-          </li>
-          <li className="breadcrumb-item active" aria-current="page">
-            <NavLink to={"/products"}>{product.title}</NavLink>
-          </li>
-        </Breadcrumb>
-      <div className="single-product-wrapper" key={product.id}>
+        <li className="breadcrumb-item">
+          <NavLink to={"/"}>Home</NavLink>
+        </li>
+        <li className="breadcrumb-item" aria-current="page">
+          <NavLink to={"/products"}>Produktliste</NavLink>
+        </li>
+        <li className="breadcrumb-item active" aria-current="page">
+          <NavLink to={"/products"}>{product.title}</NavLink>
+        </li>
+      </Breadcrumb>
+      <div className="single-product-wrapper">
         <div className="product-wrapper">
           <h2 className="product-title">{product.title}</h2>
           <div className="product-meta">
@@ -153,14 +154,13 @@ export default function Product() {
                     <Form className="cart">
                       <Form.Select
                         aria-label="Color select"
-                        defaultValue={product.color}
+                        
                       >
                         <option>{product.color}</option>
                       </Form.Select>
                       <br />
                       <Form.Select
                         aria-label="Size select"
-                        defaultValue={product.size}
                       >
                         <option>{product.size}</option>
                       </Form.Select>
@@ -281,12 +281,12 @@ export default function Product() {
                     {product.specifications.map((obj, index) => (
                       <tr key={index}>
                         {Object.entries(obj).map(([key, value]) => (
-                          <>
+                          <Fragment key={key}>
                             <th>{key}:</th>
                             <td>
                               <p>{value}</p>
                             </td>
-                          </>
+                          </Fragment>
                         ))}
                       </tr>
                     ))}
