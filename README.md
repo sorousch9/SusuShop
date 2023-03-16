@@ -104,8 +104,11 @@
         Thank you for checking out this project. If you have any questions or
         feedback, feel free to contact me at.
       </p>
-
-![full Home Page](/client/public/githubImg/Home.png?raw=true "full Home Page")
-![Cart Page](/client/public/githubImg/cart.png?raw=true "Cart Page")
-![products List Page](/client/public/githubImg/HproductsList.png?raw=true "products List Page")
-![Singleproduct Page](/client/public/githubImg/Singleproduct.png?raw=true "Singleproduct Page")
+      <br/>
+![full Home Page](/public/githubImg/Home.png?raw=true "full Home Page")
+<br />
+![Cart Page](/public/githubImg/cart.png?raw=true "Cart Page")
+<br/>
+![products List Page](/public/githubImg/productsList.png?raw=true "products List Page")
+<br/>
+![Singleproduct Page](/public/githubImg/Singleproduct.png?raw=true "Singleproduct Page")
