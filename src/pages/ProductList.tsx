@@ -272,7 +272,7 @@ export const ProductList = () => {
                 ))}
               </FormGroup>
               <FormGroup>
-                <FormLabel>Color:</FormLabel>
+                <FormLabel>Category:</FormLabel>
                 {productsCatFilter.map((category) => (
                   <Form.Check
                     key={category}
@@ -285,7 +285,7 @@ export const ProductList = () => {
                   />
                 ))}
               </FormGroup>
-              <FormLabel>Color:</FormLabel>
+              <FormLabel>Brand:</FormLabel>
               <FormGroup controlId="modeSelect">
                 {productsBrandFilter.map((brand) => (
                   <Form.Check
