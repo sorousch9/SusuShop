@@ -1,4 +1,4 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
   addProduct,
@@ -48,9 +48,7 @@ export const Products = ({ products }: Props) => {
                     {item.title}
                   </Link>
                 </Card.Title>
-                <Card.Text className="card-text" style={{ fontWeight: "bold" }}>
-                  {item.brand.toUpperCase()}
-                </Card.Text>
+
                 <Card.Text className="card-text">
                   <span className="cart-price">
                     Prise:
@@ -77,6 +75,21 @@ export const Products = ({ products }: Props) => {
                   </span>
                   <span className="product-meta">{item.available}</span>
                 </Card.Text>
+                <Table borderless className="products-table">
+                  <thead>
+                    <tr>
+                      <th>Verfügbar in:</th>
+                      <td>Größe: {item.size.join(" , ")}</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td>Farbe: {item.color.join(" , ")}</td>
+                    </tr>
+                  </tbody>
+                </Table>
+
                 <div>
                   <Button
                     variant="primary"

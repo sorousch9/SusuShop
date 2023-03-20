@@ -19,13 +19,13 @@ import {
 import { Products } from "../components/Products";
 
 interface Filters {
-  size: string[];
+  size_like: string[];
   price_gte: number;
   price_lte: number;
   inStock: boolean;
-  color: string[];
+  color_like: string[];
   brand: string[];
-  category: string[];
+  category_like: string[];
   _sort: string;
   _order: string;
 }
@@ -72,10 +72,10 @@ export const ProductList = () => {
     price_gte: 49.99,
     price_lte: 299.99,
     inStock: true,
-    size: [],
-    color: [],
+    size_like: [],
+    color_like: [],
     brand: [],
-    category: [],
+    category_like: [],
     _sort: "id",
     _order: "asc",
   });
@@ -136,9 +136,9 @@ export const ProductList = () => {
     const { name, value, checked } = event.target;
     setFilters((prevFilters) => {
       switch (name) {
-        case "size":
-        case "color":
-        case "category":
+        case "size_like":
+        case "color_like":
+        case "category_like":
         case "brand":
           return {
             ...prevFilters,
@@ -250,7 +250,7 @@ export const ProductList = () => {
                     key={size}
                     label={size}
                     value={size}
-                    name="size"
+                    name="size_like"
                     type="checkbox"
                     id={`size-${size}`}
                     onChange={handleFiltersChange}
@@ -264,7 +264,7 @@ export const ProductList = () => {
                     key={color}
                     label={color}
                     value={color}
-                    name="color"
+                    name="color_like"
                     type="checkbox"
                     id={`color-${color}`}
                     onChange={handleFiltersChange}
@@ -278,7 +278,7 @@ export const ProductList = () => {
                     key={category}
                     label={category}
                     value={category}
-                    name="category"
+                    name="category_like"
                     type="checkbox"
                     id={`category-${category}`}
                     onChange={handleFiltersChange}

@@ -273,6 +273,18 @@ code {
     }
   }
 }
+.products-table {
+  margin-bottom: 0rem;
+  th{
+    padding: 0.1rem;
+    font-weight: 400;
+    font-size: .875rem;
+  }
+  td{
+    padding: 0.1rem;
+    font-size: .8rem;
+  }
+}
 .products {
   position: relative;
   display: flex;
@@ -767,7 +779,6 @@ code {
 }
 .card-text {
   font-size: 1rem;
-  margin-bottom: 1rem;
   color: var(--color-text-lighter);
   font-family: "Lato";
 }
