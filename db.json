@@ -55,7 +55,7 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -98,12 +98,12 @@
       "img": [
         {
           "id": 1,
-          "src": "https://images2.imgbox.com/9b/77/CtvYJxLO_o.jpeg",
+          "src": "https://images2.imgbox.com/68/51/tIWQmGVj_o.jpeg",
           "alt": "Women's Running Shoes - Front View"
         },
         {
           "id": 2,
-          "src": "https://thumbs2.imgbox.com/ef/f3/3ZUw3xWk_t.png",
+          "src": "https://images2.imgbox.com/9b/77/CtvYJxLO_o.jpeg",
           "alt": "Women's Running Shoes - Side View"
         },
         {
@@ -122,14 +122,14 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
         "US-9"
       ],
       "color": [
-        "Brown",
+        "Green",
         "Black"
       ]
     },
@@ -188,11 +188,11 @@
           "alt": "Men's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 5-7 days",
+      "available": "Schiffe in 5-7 Tagen",
       "sale": 35,
       "onSale": true,
       "size": [
-        "US 12",
+        "US-12",
         "US-11"
       ],
       "color": [
@@ -254,12 +254,12 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 5-7 days",
+      "available": "Schiffe in 5-7 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
         "US-8",
-        "US 12"
+        "US-12"
       ],
       "color": [
         "Red",
@@ -317,11 +317,11 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 5-7 days",
+      "available": "Schiffe in 5-7 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
-        "US 12",
+        "US-12",
         "US-6"
       ],
       "color": [
@@ -384,7 +384,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 3-5 days",
+      "available": "Schiffe in 3-5 Tagen",
       "sale": 20,
       "onSale": true,
       "size": [
@@ -425,7 +425,7 @@
       "img": [
         {
           "id": 1,
-          "src": "https://images2.imgbox.com/68/51/tIWQmGVj_o.jpeg",
+          "src": "https://images2.imgbox.com/9b/77/CtvYJxLO_o.jpeg",
           "alt": " Trail Running Shoes - Front View"
         },
         {
@@ -449,14 +449,15 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 15,
       "onSale": true,
       "size": [
         "US-11"
       ],
       "color": [
-        "Grren"
+        "Gray",
+        "Green"
       ]
     },
     {
@@ -490,7 +491,7 @@
       "img": [
         {
           "id": 1,
-          "src": "https://images2.imgbox.com/2f/45/BCHzQS0J_o.jpeg",
+          "src": "https://images2.imgbox.com/81/2a/xehzV7cw_o.jpeg",
           "alt": " Trail Running Shoes - Front View"
         },
         {
@@ -514,7 +515,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": true,
       "size": [
@@ -522,6 +523,7 @@
         "US-7"
       ],
       "color": [
+        "Black",
         "Green"
       ]
     },
@@ -706,7 +708,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 10,
       "onSale": true,
       "size": [
@@ -1025,7 +1027,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 35,
       "onSale": false,
       "size": [
@@ -1091,7 +1093,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -1157,7 +1159,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -1223,7 +1225,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 3 days",
+      "available": "Schiffe in 3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -1288,7 +1290,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -1354,7 +1356,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -1419,7 +1421,7 @@
           "alt": "Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 8,
       "onSale": true,
       "size": [
@@ -1484,7 +1486,7 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 7 days",
+      "available": "Schiffe in 7 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -1527,7 +1529,7 @@
       "img": [
         {
           "id": 1,
-          "src": "https://images2.imgbox.com/81/2a/xehzV7cw_o.jpeg",
+          "src": "https://images2.imgbox.com/2f/45/BCHzQS0J_o.jpeg",
           "alt": "Women's Running Shoes - Front View"
         },
         {
@@ -1551,14 +1553,14 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
         "US-9"
       ],
       "color": [
-        "Gray"
+        "Green"
       ]
     },
     {
@@ -1616,7 +1618,7 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -1682,7 +1684,7 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -1747,12 +1749,12 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 5-7 days",
+      "available": "Schiffe in 5-7 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
         "US-12.5",
-        "US 12"
+        "US-12"
       ],
       "color": [
         "Black"
@@ -1813,7 +1815,7 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 3-4 days",
+      "available": "Schiffe in 3-4 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -1879,7 +1881,7 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 12,
       "onSale": true,
       "size": [
@@ -1945,7 +1947,7 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -2011,7 +2013,7 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -2076,7 +2078,7 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -2142,7 +2144,7 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 0,
       "onSale": false,
       "size": [
@@ -2208,7 +2210,7 @@
           "alt": "Women's Running Shoes - Bottom View"
         }
       ],
-      "available": "Ships in 2-3 days",
+      "available": "Schiffe in 2-3 Tagen",
       "sale": 8,
       "onSale": true,
       "size": [

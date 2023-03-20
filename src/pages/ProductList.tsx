@@ -182,7 +182,7 @@ export const ProductList = () => {
         <Row>
           <Breadcrumb className="cart-breadcrumb">
             <li className="breadcrumb-item">
-              <NavLink to={"/"}>Home</NavLink>
+              <NavLink to={"/"}>Startseite</NavLink>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
               <NavLink to={"/products"}>Produktliste</NavLink>
@@ -202,7 +202,7 @@ export const ProductList = () => {
                     className="me-2"
                     style={{ minInlineSize: "fit-content" }}
                   >
-                    Sort by ID:
+                    Nach ID sortieren:
                   </FormLabel>
                   <FormControl
                     id="sortInput"
@@ -211,10 +211,10 @@ export const ProductList = () => {
                     onChange={handleSortChange}
                     className="me-2"
                   >
-                    <option value="id asc">Newest</option>
-                    <option value="id desc">in Descending</option>
-                    <option value="price asc">Lowest Price</option>
-                    <option value="price desc">Highest Price</option>
+                    <option value="id asc">Neueste</option>
+                    <option value="id desc">in absteigender</option>
+                    <option value="price asc">Mindestpreis</option>
+                    <option value="price desc">Höchstpreis</option>
                   </FormControl>
                 </FormGroup>
               </Form>
@@ -224,7 +224,7 @@ export const ProductList = () => {
             <Form>
               <Row className="mb-3">
                 <Col xs={6}>
-                  <Form.Label className="form-label">Minimum Price</Form.Label>
+                  <Form.Label className="form-label">Mindestpreis</Form.Label>
                   <Form.Control
                     type="number"
                     name="minPrice"
@@ -233,7 +233,7 @@ export const ProductList = () => {
                   />
                 </Col>
                 <Col xs={6}>
-                  <Form.Label className="form-label">Maximum Price</Form.Label>
+                  <Form.Label className="form-label">Höchstpreis</Form.Label>
                   <Form.Control
                     type="number"
                     name="maxPrice"
@@ -244,7 +244,7 @@ export const ProductList = () => {
               </Row>
 
               <FormGroup>
-                <FormLabel>Size:</FormLabel>
+                <FormLabel>Größe:</FormLabel>
                 {productsSizeFilter.map((size) => (
                   <Form.Check
                     key={size}
@@ -258,7 +258,7 @@ export const ProductList = () => {
                 ))}
               </FormGroup>
               <FormGroup>
-                <FormLabel>Color:</FormLabel>
+                <FormLabel>Farbe:</FormLabel>
                 {productsColorFilter.map((color) => (
                   <Form.Check
                     key={color}
@@ -272,7 +272,7 @@ export const ProductList = () => {
                 ))}
               </FormGroup>
               <FormGroup>
-                <FormLabel>Category:</FormLabel>
+                <FormLabel>Kategorie:</FormLabel>
                 {productsCatFilter.map((category) => (
                   <Form.Check
                     key={category}

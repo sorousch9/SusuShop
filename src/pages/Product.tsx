@@ -62,7 +62,7 @@ export default function Product() {
       <Container>
         <Breadcrumb className="cart-breadcrumb">
           <li className="breadcrumb-item">
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink to={"/"}>Startseite</NavLink>
           </li>
           <li className="breadcrumb-item" aria-current="page">
             <NavLink to={"/products"}>Produktliste</NavLink>
@@ -134,20 +134,24 @@ export default function Product() {
                         </div>
                       </div>
                       <div className="product-details-short">
-                        <h6>{product.descShort && product.descShort[0]}</h6>
-                        <p>- {product.descShort && product.descShort[1]}</p>
-                        <p>- {product.descShort && product.descShort[2]}</p>
-                        <p>- {product.descShort && product.descShort[3]}</p>
-                        <p>- {product.descShort && product.descShort[4]}</p>
+                        <h6>{product.descShort[0]}</h6>
+                        <p>- {product.descShort[1]}</p>
+                        <p>- {product.descShort[2]}</p>
+                        <p>- {product.descShort[3]}</p>
+                        <p>- {product.descShort[4]}</p>
                       </div>
 
                       <Form className="cart">
                         <Form.Select aria-label="Color select">
-                          <option>{product.color}</option>
+                          {product.color.map((c, index) => (
+                            <option key={index}>{c}</option>
+                          ))}
                         </Form.Select>
                         <br />
                         <Form.Select aria-label="Size select">
-                          <option>{product.size}</option>
+                          {product.size.map((s, index) => (
+                            <option key={index}>{s}</option>
+                          ))}
                         </Form.Select>
                         <Link
                           to={"/cart"}
@@ -235,12 +239,12 @@ export default function Product() {
             >
               <Tab
                 eventKey="description"
-                title="Description"
+                title="Beschreibung"
                 className="description"
               >
                 <p>{product.description}</p>
               </Tab>
-              <Tab eventKey="additional" title="Additional information">
+              <Tab eventKey="additional" title="Weitere Informationen">
                 <div className="additional_information">
                   <Table>
                     <tbody>
@@ -279,7 +283,7 @@ export default function Product() {
                   </Table>
                 </div>
               </Tab>
-              <Tab eventKey="reviews" title="Reviews">
+              <Tab eventKey="reviews" title="Bewertungen">
                 <div className="tab-panel reviews">Reviews</div>
               </Tab>
             </Tabs>
