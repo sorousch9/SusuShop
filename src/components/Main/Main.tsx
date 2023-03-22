@@ -28,9 +28,14 @@ export const Main = () => {
       <Row>
         <Col xl="2">
           <div className="sideBar">
+              <Link
+                to="/products"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
             <button className="glow" type="button">
-              GRATIS FÜR SIE
+                Product List
             </button>
+              </Link>
             <div className="categorie-1">
               <Link
                 to="/"

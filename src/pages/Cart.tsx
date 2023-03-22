@@ -55,6 +55,7 @@ export const Cart = () => {
       );
     }
   }
+
   return (
     <Fragment>
       <Anons />
@@ -75,7 +76,7 @@ export const Cart = () => {
                 <Form className="cart-form">
                   <div className="free-progress-bar">
                     {totalAmount >= 250 ? (
-                      <p className="free-shipping-notice">
+                      <p className="free-shipping-notice alert alert-success">
                         Ihr Warenkorb enthält kostenlosen Versand{" "}
                       </p>
                     ) : (
@@ -116,16 +117,28 @@ export const Cart = () => {
                             <Link to={`/products/${product.id}`}>
                               {product.title}
                               <span>
-                                Size :{" "}
+                                Größe :{" "}
                                 {typeof product.size === "object"
                                   ? product.size[0]
                                   : product.size}
                               </span>
-                              <span>
+                              <span className="filterColorUl">
                                 Farbe :{" "}
-                                {typeof product.color === "object"
-                                  ? product.color[0]
-                                  : product.color}
+                                {typeof product.color === "object" ? (
+                                  <span
+                                    style={{
+                                      backgroundColor: product.color[0],
+                                    }}
+                                    className="filterColorli"
+                                  />
+                                ) : (
+                                  <span
+                                    style={{
+                                      backgroundColor: product.color,
+                                    }}
+                                    className="filterColorli"
+                                  />
+                                )}
                               </span>
                             </Link>
                           </td>

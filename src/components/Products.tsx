@@ -91,10 +91,20 @@ export const Products = ({ products }: Props) => {
                     <tr>
                       <td></td>
                       <td>
-                        Farbe:{" "}
-                        {typeof item.color === "object"
-                          ? item.color.join(" , ")
-                          : item.color}
+                        <span className="filterColorUl">
+                          <span>Farbe:</span>
+                          {typeof item.color === "object"
+                            ? item.color.map((item, index) => (
+                                <span
+                                  key={index}
+                                  style={{
+                                    backgroundColor: item,
+                                  }}
+                                  className="filterColorli"
+                                />
+                              ))
+                            : ""}
+                        </span>
                       </td>
                     </tr>
                   </tbody>

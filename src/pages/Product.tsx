@@ -30,7 +30,6 @@ export default function Product() {
     dispatch(getSubTotal());
     dispatch(getTotalAmount());
   };
-  console.log(product);
   useEffect(() => {}, [dispatch]);
   useEffect(() => {
     const fetchDataAsync = async () => {
@@ -147,17 +146,22 @@ export default function Product() {
                       </div>
 
                       <Form className="cart">
-                        <Form.Select
-                          aria-label="Color select"
-                          onChange={(e) => setSelectedColor(e.target.value)}
-                        >
+                        <span>Farbe :</span>
+                        <div  className="filterColorUl">
                           {(Array.isArray(product.color)
                             ? product.color
                             : [product.color]
                           ).map((c, index) => (
-                            <option key={index}>{c}</option>
+                            <div
+                              className="filterColorli"
+                              key={index}
+                              style={{ backgroundColor: c }}
+                              onClick={() => {
+                                setSelectedColor(c);
+                              }}
+                            />
                           ))}
-                        </Form.Select>
+                        </div>
                         <br />
                         <Form.Select
                           aria-label="Size select"
