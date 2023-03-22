@@ -196,7 +196,8 @@
         "US-11"
       ],
       "color": [
-        "Grey"
+        "red",
+        "White"
       ]
     },
     {
@@ -293,7 +294,7 @@
       "img": [
         {
           "id": 1,
-          "src": "https://images2.imgbox.com/1a/2b/9UqrFobR_o.jpeg",
+          "src": "https://images2.imgbox.com/9c/61/dvepI5Wc_o.jpeg",
           "alt": "Men's Dress Shoes - Front View"
         },
         {
@@ -325,8 +326,7 @@
         "US-6"
       ],
       "color": [
-        "Brown",
-        "Green"
+        "Black"
       ]
     },
     {
@@ -557,7 +557,7 @@
       "img": [
         {
           "id": 1,
-          "src": "https://images2.imgbox.com/a8/a4/XgYumabk_o.jpeg",
+          "src": "https://images2.imgbox.com/43/45/BSb3qLPR_o.jpeg",
           "alt": " Trail Running Shoes - Front View"
         },
         {
@@ -1725,7 +1725,7 @@
       "img": [
         {
           "id": 1,
-          "src": "https://images2.imgbox.com/9c/61/dvepI5Wc_o.jpeg",
+          "src": "https://images2.imgbox.com/1a/2b/9UqrFobR_o.jpeg",
           "alt": "Women's Running Shoes - Front View"
         },
         {
@@ -1757,7 +1757,7 @@
         "US-12"
       ],
       "color": [
-        "Black"
+        "Brown"
       ]
     },
     {
@@ -1791,7 +1791,7 @@
       "img": [
         {
           "id": 1,
-          "src": "https://images2.imgbox.com/43/45/BSb3qLPR_o.jpeg",
+          "src": "https://images2.imgbox.com/a8/a4/XgYumabk_o.jpeg",
           "alt": "Women's Running Shoes - Front View"
         },
         {
