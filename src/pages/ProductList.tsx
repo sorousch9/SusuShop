@@ -150,6 +150,7 @@ export const ProductList = () => {
           return { ...prevFilters, [name]: value };
       }
     });
+    setCurrentPage(1);
   };
 
   const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
