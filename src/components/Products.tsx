@@ -79,13 +79,23 @@ export const Products = ({ products }: Props) => {
                   <thead>
                     <tr>
                       <th>Verfügbar in:</th>
-                      <td>Größe: {item.size.join(" , ")}</td>
+                      <td>
+                        Größe:{" "}
+                        {typeof item.size === "object"
+                          ? item.size.join(" , ")
+                          : item.size}
+                      </td>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td></td>
-                      <td>Farbe: {item.color.join(" , ")}</td>
+                      <td>
+                        Farbe:{" "}
+                        {typeof item.color === "object"
+                          ? item.color.join(" , ")
+                          : item.color}
+                      </td>
                     </tr>
                   </tbody>
                 </Table>

@@ -17,8 +17,8 @@ export interface ProductType {
   available: string;
   sale: number;
   onSale: boolean;
-  size: string[];
-  color: string[];
+  size: string[] | string;
+  color: string[] | string;
   quantity: number;
 }
 export type Props = {

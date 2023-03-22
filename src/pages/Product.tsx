@@ -20,14 +20,17 @@ import { fetchSingleData } from "../hooks/apiService";
 export default function Product() {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<ProductType>();
+  const [selectedColor, setSelectedColor] = useState<string>();
+  const [selectedSize, setSelectedSize] = useState<string>();
   const [currentImage, setCurrentImage] = useState("");
   const dispatch = useDispatch();
-  const addToCart = (product: ProductType) => {
-    dispatch(addProduct({ ...product }));
+  const addToCart = (product: ProductType, color: string, size: string) => {
+    dispatch(addProduct({ ...product, color, size }));
     dispatch(getCartCount());
     dispatch(getSubTotal());
     dispatch(getTotalAmount());
   };
+  console.log(product);
   useEffect(() => {}, [dispatch]);
   useEffect(() => {
     const fetchDataAsync = async () => {
@@ -37,6 +40,8 @@ export default function Product() {
       if (response !== undefined) {
         setProduct(response);
         setCurrentImage(response.img[0].src);
+        setSelectedColor(response.color[0]);
+        setSelectedSize(response.size[0]);
       }
     };
     fetchDataAsync();
@@ -142,21 +147,33 @@ export default function Product() {
                       </div>
 
                       <Form className="cart">
-                        <Form.Select aria-label="Color select">
-                          {product.color.map((c, index) => (
+                        <Form.Select
+                          aria-label="Color select"
+                          onChange={(e) => setSelectedColor(e.target.value)}
+                        >
+                          {(Array.isArray(product.color)
+                            ? product.color
+                            : [product.color]
+                          ).map((c, index) => (
                             <option key={index}>{c}</option>
                           ))}
                         </Form.Select>
                         <br />
-                        <Form.Select aria-label="Size select">
-                          {product.size.map((s, index) => (
+                        <Form.Select
+                          aria-label="Size select"
+                          onChange={(e) => setSelectedSize(e.target.value)}
+                        >
+                          {(Array.isArray(product.size)
+                            ? product.size
+                            : [product.size]
+                          ).map((s, index) => (
                             <option key={index}>{s}</option>
                           ))}
                         </Form.Select>
                         <Link
                           to={"/cart"}
                           onClick={() => {
-                            addToCart(product);
+                            addToCart(product, selectedColor!, selectedSize!);
                           }}
                           className="button"
                         >

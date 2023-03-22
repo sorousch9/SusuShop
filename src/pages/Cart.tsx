@@ -28,7 +28,7 @@ import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 
 export const Cart = () => {
   const dispatch = useAppDispatch();
-  const { products, subAmount, totalAmount, shipPrice, tax } = useAppSelector(
+  const { products, subAmount, totalAmount, shipPrice } = useAppSelector(
     (state) => state.cart
   );
   useEffect(() => {
@@ -115,8 +115,18 @@ export const Cart = () => {
                           <td className="product-name">
                             <Link to={`/products/${product.id}`}>
                               {product.title}
-                              <span>Marke :{product.brand}</span>
-                              <span>Farbe :{product.color}</span>
+                              <span>
+                                Size :{" "}
+                                {typeof product.size === "object"
+                                  ? product.size[0]
+                                  : product.size}
+                              </span>
+                              <span>
+                                Farbe :{" "}
+                                {typeof product.color === "object"
+                                  ? product.color[0]
+                                  : product.color}
+                              </span>
                             </Link>
                           </td>
                           <td className="product-price">{product.price} €</td>
