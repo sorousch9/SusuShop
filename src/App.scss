@@ -1,13 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~animate.css/source/animate.css";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
-@font-face {
-  font-family: "Raw";
-  src: url(../src/assets/fonts/Raw.woff) format("woff"),
-    url(../src/assets/fonts/Raw.woff2) format("woff2"),
-    url(../src/assets/fonts/Raw.ttf) format("truetype");
-}
 *,
 ::after,
 ::before {
@@ -30,7 +25,7 @@ body {
     margin-bottom: 0rem;
   }
   margin: 0;
-  font-family: "Lato", "Inter", "Raw", sans-serif;
+  font-family: "Lato", "Inter", sans-serif;
   color: #0f0f0f;
 
   .overlay-link {
@@ -44,7 +39,7 @@ body {
   }
 }
 code {
-  font-family: "Inter", "Lato", "Raw", sans-serif;
+  font-family: "Inter", "Lato", sans-serif;
 }
 :root {
   --primaryBG: #ffdb55;
@@ -123,48 +118,11 @@ code {
     }
   }
 }
-// Star Rating
-.product-rating {
+.rating {
   display: flex;
+  justify-content: center;
   align-items: center;
-  .count-rating {
-    font-family: "Inter";
-    font-size: 0.8125rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-left: 0.5rem;
-    color: var(--color-text-light);
-  }
 }
-.star-rating {
-  position: relative;
-  font-size: 0.6875rem;
-  width: 3.9375rem;
-  overflow: hidden;
-  &::before {
-    font-family: "Raw";
-    content: "\e84a\e84a\e84a\e84a\e84a";
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--color-border-dark);
-  }
-  span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    &::before {
-      //raw soroush
-      font-family: "Raw";
-      //e84a is a Code points font
-      content: "\e84a\e84a\e84a\e84a\e84d";
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--color-rating);
-    }
-  }
-}
-
 // Product Meta
 .product-meta {
   display: flex;
@@ -391,13 +349,6 @@ code {
             background-color: transparent;
           }
         }
-        .product-rating {
-          justify-content: center;
-          margin-bottom: 0.4375rem;
-          .rating-text {
-            display: none;
-          }
-        }
 
         .product-button-group {
           display: block;
@@ -580,47 +531,6 @@ code {
 
     .module-body-img {
       height: 100px;
-    }
-  }
-  // Star Rating
-  .product-rating {
-    display: flex;
-    align-items: center;
-    .count-rating {
-      font-family: "Inter";
-      font-size: 0.8125rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-left: 0.5rem;
-      color: var(--color-text-light);
-    }
-  }
-  .star-rating {
-    position: relative;
-    font-size: 0.6875rem;
-    width: 3.9375rem;
-    overflow: hidden;
-    &::before {
-      font-family: "Raw";
-      content: "\e84a\e84a\e84a\e84a\e84a";
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--color-border-dark);
-    }
-    span {
-      position: absolute;
-      top: 0;
-      left: 0;
-      overflow: hidden;
-      &::before {
-        //raw soroush
-        font-family: "Raw";
-        //e84a is a Code points font
-        content: "\e84a\e84a\e84a\e84a\e84d";
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: var(--color-rating);
-      }
     }
   }
 
@@ -1060,28 +970,6 @@ code {
           @media screen and (max-width: 512px) {
             justify-content: center;
           }
-
-          .wishlist-clear {
-            justify-content: center;
-            height: 2.0625rem;
-            padding: 1.3rem 1.45rem;
-            border: 1px solid var(--color-border-dark);
-            border-radius: 2.0625rem;
-            display: inline-flex;
-            align-items: center;
-            font-family: var(--font-secondary);
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0;
-            color: var(--color-text-lighter);
-            span:before {
-              content: "\2665";
-              font-family: "Raw";
-              margin-right: 0.4rem;
-              font-size: 1rem;
-            }
-          }
         }
         .product-cat {
           display: flex;
@@ -1125,22 +1013,6 @@ code {
                     color: #fff;
                     border-radius: 7px;
                   }
-                }
-                .whatsapp::before {
-                  content: "\f232";
-                  font-family: "Raw";
-                }
-                .facebook::before {
-                  content: "\f09a";
-                  font-family: "Raw";
-                }
-                .instagram::before {
-                  content: "\f16d";
-                  font-family: "Raw";
-                }
-                .linkdin::before {
-                  content: "\f0e1";
-                  font-family: "Raw";
                 }
               }
             }
@@ -1189,18 +1061,6 @@ code {
                 align-items: flex-start;
                 font-size: 1.25rem;
                 margin-right: 1.25rem;
-                &.shipping::after {
-                  content: "\e855";
-                  font-family: "Raw";
-                }
-                &.orginal::after {
-                  content: "\e8e1";
-                  font-family: "Raw";
-                }
-                &.return::after {
-                  content: "\e85c";
-                  font-family: "Raw";
-                }
               }
               .message {
                 font-size: 0.75rem;
@@ -1280,6 +1140,17 @@ code {
         }
       }
     }
+  }
+}
+.noItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  font-family: "Inter";
+  h2 {
+    font-weight: 400;
+    text-align: center;
   }
 }
 .filterColorUl {
@@ -1432,7 +1303,7 @@ code {
   height: 50px;
   border-radius: 50%;
   background-color: rgba(264, 255, 255, 0.9);
-  color: #333;
+  color: #1c1c1c;
   box-shadow: 0 0 5px rgb(0 0 0 / 17%);
   text-align: center;
   line-height: 50px;
@@ -1440,12 +1311,6 @@ code {
   z-index: 350;
   &.scrollToTop:hover {
     color: #777;
-  }
-  &.scrollToTop:after {
-    display: inline-block;
-    font-size: 30px;
-    content: "\e8c2";
-    font-family: "Raw";
   }
   @media (max-width: 1024px) {
     .scrollToTop {
@@ -1573,25 +1438,6 @@ code {
                     background-color: #ffffff;
                     box-shadow: outset 3px 1px 3px #000000c5;
                     color: #000000c5;
-                  }
-
-                  .icon-minus::before {
-                    content: "\e8c8";
-                    font-family: "Raw";
-                    width: 1em;
-                    font-weight: bold;
-                    text-align: center;
-                    font-size: 1.1rem;
-                    display: inline-block;
-                  }
-
-                  .icon-plus::before {
-                    content: "\e8c5";
-                    font-family: "Raw";
-                    width: 1em;
-                    text-align: center;
-                    font-size: 1.1rem;
-                    display: inline-block;
                   }
                 }
               }
@@ -1800,25 +1646,6 @@ code {
       color: var(--bs-gray-800);
     }
   }
-  .bussiness-shop {
-    font-size: 1rem;
-    @media screen and (max-width: 560px) {
-      font-size: 0.8rem;
-    }
-
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    &::after {
-      content: "\e8ad\e88d";
-      font-family: "Raw";
-      padding: 0rem 0.3rem;
-      color: var(--color-warning-dark);
-      animation: blink 3s forwards infinite;
-    }
-    &:hover {
-      font-size: 1.2;
-    }
-  }
 }
 @keyframes blink {
   0% {
@@ -1934,39 +1761,13 @@ code {
         flex-direction: column;
         align-items: center;
         color: var(--color-text-light);
+        .header {
+          font-size: 1.65rem;
+        }
         .herder-span {
           display: inline-block;
           font-size: 0.875rem;
         }
-        &.account::before {
-          content: "\F007";
-          padding-right: 0.2rem;
-          font-family: "Raw";
-          font-size: 1.6rem;
-        }
-        &.wishlist::before {
-          content: "\E472";
-          font-family: "Raw";
-          font-size: 1.6rem;
-          padding-right: 0.2rem;
-          display: inline-block;
-        }
-        &.service::before {
-          content: "\E1E7";
-          font-family: "Raw";
-          font-size: 1.6rem;
-          padding-right: 0.2rem;
-          display: inline-block;
-        }
-        &.corb::before {
-          font-family: "Raw";
-          content: "\F290";
-          font-size: 1.6rem;
-          padding-right: 0.2rem;
-          display: inline-block;
-          position: relative;
-        }
-
         .count-style {
           position: absolute;
           top: 15px;
@@ -2107,53 +1908,40 @@ code {
       text-decoration: none;
     }
 
-    .instagram::after {
-      content: "\f16d";
-      font-family: "Raw";
+    .instagram {
       color: var(--color-text-light);
       font-size: 2rem;
-    }
-    .instagram {
-      &:hover::after {
+      &:hover {
         font-size: 2.1rem;
         color: #dd58b3;
       }
     }
-    .twitter::after {
-      content: "\f099";
-      font-family: "Raw";
+
+    .twitter {
       color: var(--color-text-light);
       font-size: 2rem;
       margin-left: 1rem;
-    }
-    .twitter {
-      &:hover::after {
+      &:hover {
         font-size: 2.1rem;
         color: #1d9bf0;
       }
     }
-    .youtube::after {
-      content: "\f16a";
-      font-family: "Raw";
+
+    .youtube {
       color: var(--color-text-light);
       font-size: 2rem;
       margin-left: 1rem;
-    }
-    .youtube {
-      &:hover::after {
+      &:hover {
         font-size: 2.1rem;
         color: red;
       }
     }
-    .facebook::after {
-      content: "\f09a";
-      font-family: "Raw";
+
+    .facebook {
       color: var(--color-text-light);
       font-size: 2rem;
       margin-left: 1rem;
-    }
-    .facebook {
-      &:hover::after {
+      &:hover {
         font-size: 2.1rem;
         color: var(--bs-primary);
       }
@@ -2170,7 +1958,7 @@ code {
       }
       .safarkhah::before {
         content: "SAFARKHAH";
-        font-family: "Raw";
+        font-family: "Inter";
         font-weight: 500;
         font-size: 1rem;
         color: var(--color-text);
@@ -2179,10 +1967,6 @@ code {
     .redirect {
       color: var(--color-text-link);
       text-decoration: none;
-      &::after {
-        content: "\e8c9";
-        font-family: "Raw";
-      }
     }
   }
 }
@@ -2221,35 +2005,6 @@ code {
             img {
               width: auto;
               height: 1.5rem;
-            }
-
-            .send {
-              &::after {
-                content: "\e855";
-                color: var(--color-success);
-                font-family: "Raw";
-              }
-            }
-            .back {
-              &::after {
-                content: "\e8a3";
-                color: var(--color-success);
-                font-family: "Raw";
-              }
-            }
-            .customer {
-              &::after {
-                content: "\e8e1";
-                color: var(--color-success);
-                font-family: "Raw";
-              }
-            }
-            .article {
-              &::after {
-                content: "\e889";
-                font-family: "Raw";
-                color: var(--color-success);
-              }
             }
           }
         }
@@ -2327,16 +2082,12 @@ code {
         display: flex;
         align-items: center;
         width: 100%;
-        span {
+        i {
           position: absolute;
-          font-size: 1.125rem;
+          font-size: 1.375rem;
           color: var(--color-info);
           left: 1.25rem;
           z-index: 3;
-          &::before {
-            content: "\e84f";
-            font-family: "Raw";
-          }
         }
         .subscribe-input {
           height: 3.5rem;

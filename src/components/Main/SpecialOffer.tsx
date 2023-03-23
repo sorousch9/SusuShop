@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Badge, Card, Col, Container, Row } from "react-bootstrap";
+import { Badge, Col, Container, Row } from "react-bootstrap";
 import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import {
@@ -11,11 +11,49 @@ import {
 import { ProductType, Props } from "../../../interfaces/Products";
 import { Timer } from "./Timer";
 import { useAppDispatch } from "../../hooks/hooks";
+import { FaStar } from "react-icons/fa";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 export const SpecialOffer = ({ products }: Props) => {
   const dispatch = useAppDispatch();
   const [productOnSale, setProductOnSale] = useState<ProductType[]>([]);
+  const [rating, setRating] = useState(4);
 
+  const renderStars = () => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      if (i < rating) {
+        stars.push(
+          <OverlayTrigger
+            key={i}
+            placement="top"
+            overlay={
+              <Tooltip id={`tooltip-top-${i}`}>
+                {i < Math.floor(rating) ? "Selected" : "Half selected"}
+              </Tooltip>
+            }
+          >
+            <FaStar color="gold" onClick={() => setRating(i + 1)} />
+          </OverlayTrigger>
+        );
+      } else {
+        stars.push(
+          <OverlayTrigger
+            key={i}
+            placement="top"
+            overlay={<Tooltip id={`tooltip-top-${i}`}>Not selected</Tooltip>}
+          >
+            <FaStar
+              color="gray"
+              onClick={() => setRating(i + 1)}
+              style={{ cursor: "pointer" }}
+            />
+          </OverlayTrigger>
+        );
+      }
+    }
+    return stars;
+  };
   useEffect(() => {
     const filteredProducts = products.filter((item) => item.sale > 12);
     setProductOnSale(filteredProducts);
@@ -49,7 +87,10 @@ export const SpecialOffer = ({ products }: Props) => {
           <Col xs="4" sm="4" md="2" lg="2" key={item.id} className="product">
             <div className="product-wrapper">
               <div className="thumbnail-wrapper">
-                <Badge bg="danger" style={{ marginTop: "1rem" ,position:"absolute" }}>
+                <Badge
+                  bg="danger"
+                  style={{ marginTop: "1rem", position: "absolute" }}
+                >
                   {item.sale}%
                 </Badge>
                 <Link className="cart-image" to={`/products/${item.id}`}>
@@ -110,18 +151,8 @@ export const SpecialOffer = ({ products }: Props) => {
                 <div className="product-meta">
                   <div className="product-available in-stock">AUF LAGER</div>
                 </div>
-                <div className="product-rating">
-                  <div
-                    className="star-rating"
-                    role="img"
-                    aria-label="Rated 5.00 out of 5"
-                  >
-                    <span style={{ width: "100%" }}></span>
-                  </div>
-                  <div className="count-rating">
-                    58 <span className="rating-text">Ratings</span>
-                  </div>
-                </div>
+                <div className="rating">{renderStars()}</div>
+
                 <div className="product-fade-block">
                   <button
                     className="product-btn-fade"

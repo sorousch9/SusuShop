@@ -55,7 +55,8 @@ export const Header = () => {
         </Col>
         <Col md="4" lg="4" className="right">
           <div className="header-action">
-            <div className="header-action-icon service">
+            <div className="header-action-icon">
+              <i className="bi bi-chat-square-dots header" />
               <Link
                 to="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -67,7 +68,8 @@ export const Header = () => {
               </Link>
             </div>
 
-            <div className="header-action-icon account">
+            <div className="header-action-icon">
+              <i className="bi bi-person header" />
               <Link
                 to="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -157,7 +159,8 @@ export const Header = () => {
                 </ul>
               </div>
             </div>
-            <div className="header-action-icon wishlist">
+            <div className="header-action-icon ">
+              <i className="bi bi-card-checklist header" />
               <Link
                 to="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -167,7 +170,8 @@ export const Header = () => {
                 <span className="herder-span">Einkaufslisten</span>
               </Link>
             </div>
-            <div className="header-action-icon corb">
+            <div className="header-action-icon">
+              <i className="bi bi-bag header" />
               <Link
                 to="/cart"
                 style={{ color: "inherit", textDecoration: "inherit" }}

@@ -23,7 +23,7 @@ export const Subscribe = () => {
               <div className="form-wrapper">
                 <form className="form">
                   <div className="form-fields">
-                    <span></span>
+                    <i className="bi bi-envelope-at" />
                     <input
                       className="subscribe-input"
                       type="email"

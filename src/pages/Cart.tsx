@@ -158,7 +158,9 @@ export const Cart = () => {
                                   dispatch(getTotalAmount());
                                 }}
                               >
-                                <span className="icon-minus"></span>
+                                <span className="icon-minus">
+                                  <i className="bi bi-dash"></i>
+                                </span>
                               </Button>
 
                               <span className="text-input">
@@ -173,7 +175,9 @@ export const Cart = () => {
                                   dispatch(getTotalAmount());
                                 }}
                               >
-                                <span className="icon-plus"></span>
+                                <span className="icon-plus">
+                                  <i className="bi bi-plus"></i>
+                                </span>
                               </Button>
                             </ButtonGroup>
                           </td>

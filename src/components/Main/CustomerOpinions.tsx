@@ -3,6 +3,7 @@ import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import p7718687 from "../../assets/7718687.jpg";
 import { Categories } from "../Categories";
 import { useEffect, useState } from "react";
+
 import {
   addProduct,
   getCartCount,
@@ -12,9 +13,49 @@ import {
 import { ProductType, Props } from "../../../interfaces/Products";
 import { useAppDispatch } from "../../hooks/hooks";
 import { Badge, Card, Col, Container, Image, Row } from "react-bootstrap";
+import { FaStar } from "react-icons/fa";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+
 
 export const CustomerOpinions = ({ products }: Props) => {
   const [productOnSale, setProductOnSale] = useState<ProductType[]>([]);
+  const [rating, setRating] = useState(4);
+
+  const renderStars = () => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      if (i < rating) {
+        stars.push(
+          <OverlayTrigger
+            key={i}
+            placement="top"
+            overlay={
+              <Tooltip id={`tooltip-top-${i}`}>
+                {i < Math.floor(rating) ? "Selected" : "Half selected"}
+              </Tooltip>
+            }
+          >
+            <FaStar color="gold" onClick={() => setRating(i + 1)} />
+          </OverlayTrigger>
+        );
+      } else {
+        stars.push(
+          <OverlayTrigger
+            key={i}
+            placement="top"
+            overlay={<Tooltip id={`tooltip-top-${i}`}>Not selected</Tooltip>}
+          >
+            <FaStar
+              color="gray"
+              onClick={() => setRating(i + 1)}
+              style={{ cursor: "pointer" }}
+            />
+          </OverlayTrigger>
+        );
+      }
+    }
+    return stars;
+  };
 
   const dispatch = useAppDispatch();
   const handleAddToCart = (product: ProductType) => {
@@ -87,10 +128,7 @@ export const CustomerOpinions = ({ products }: Props) => {
                       {item.sale}%
                     </Badge>
 
-                    <Link
-                      className="cart-image"
-                      to={`/products/${item.id}`}
-                    >
+                    <Link className="cart-image" to={`/products/${item.id}`}>
                       <Image src={item.img[0].src} />
                     </Link>
                     <div className="product-buttons">
@@ -153,18 +191,8 @@ export const CustomerOpinions = ({ products }: Props) => {
                         AUF LAGER
                       </div>
                     </div>
-                    <div className="product-rating">
-                      <div
-                        className="star-rating"
-                        role="img"
-                        aria-label="Rated 5.00 out of 5"
-                      >
-                        <span style={{ width: "100%" }}></span>
-                      </div>
-                      <div className="count-rating">
-                        58 <span className="rating-text">Ratings</span>
-                      </div>
-                    </div>
+                    <div className="rating">{renderStars()}</div>
+                   
                     <div className="product-fade-block">
                       <button
                         className="product-btn-fade"

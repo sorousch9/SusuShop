@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { SpecialOffer } from "./SpecialOffer";
-import { fetchData } from "../../hooks/apiService";
-import { ProductType } from "../../../interfaces/Products";
-import { MainBanner } from "./MainBanner";
-import { TopRecommendations } from "./TopRecommendations";
-import { CustomerOpinions } from "./CustomerOpinions";
-import { Categories } from "../Categories";
-import { Widget } from "./Widget";
+import { fetchData } from "../hooks/apiService";
+import { ProductType } from "../../interfaces/Products";
+import { Categories } from "./Categories";
+import { MainBanner } from "./Main/MainBanner";
+import { SpecialOffer } from "./Main/SpecialOffer";
+import { TopRecommendations } from "./Main/TopRecommendations";
+import { Widget } from "./Main/Widget";
+import { CustomerOpinions } from "./Main/CustomerOpinions";
 
 export const Main = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -28,14 +28,14 @@ export const Main = () => {
       <Row>
         <Col xl="2">
           <div className="sideBar">
-              <Link
-                to="/products"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-            <button className="glow" type="button">
+            <Link
+              to="/products"
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              <button className="glow" type="button">
                 Product List
-            </button>
-              </Link>
+              </button>
+            </Link>
             <div className="categorie-1">
               <Link
                 to="/"
@@ -79,7 +79,7 @@ export const Main = () => {
         </Col>
       </Row>
       <a href="/" className="scrollToTop">
-        {" "}
+        <i className="bi bi-chevron-up " />
       </a>
     </Container>
   );

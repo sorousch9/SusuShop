@@ -175,6 +175,7 @@ export const ProductList = () => {
       </Pagination.Item>
     );
   }
+  console.log(products);
   return (
     <Fragment>
       <Anons />
@@ -303,7 +304,18 @@ export const ProductList = () => {
             </Form>
           </Col>
           <Col xs={12} md={9} lg={9}>
-            <Products products={products} />
+            {products.length === 0 ? (
+              <Row>
+                <Col className="noItem">
+                  <h2>
+                    Unfortunately, no products match your current filter
+                    criteria at this time.
+                  </h2>
+                </Col>
+              </Row>
+            ) : (
+              <Products products={products} />
+            )}
             <Pagination className="justify-content-center">
               <Pagination.First
                 onClick={() => setCurrentPage(1)}

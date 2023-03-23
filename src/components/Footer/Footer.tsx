@@ -17,24 +17,24 @@ export const Footer = () => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <span className="instagram" />
+            <span className="bi bi-instagram instagram" />
           </a>
           <a href="/" target="_blank" rel="noreferrer noopener">
-            <span className="twitter" />
+            <span className="bi bi-twitter twitter" />
           </a>
           <a
             href="https://www.youtube.com/user/BueromarktBoettcher"
             target="_blank"
             rel="noreferrer noopener"
           >
-            <span className="youtube" />
+            <span className="bi bi-youtube youtube" />
           </a>
           <a
             href="https://www.facebook.com/BueromarktBoettcherAG"
             target="_blank"
             rel="noreferrer noopener"
           >
-            <span className="facebook" />
+            <span className="bi bi-facebook facebook" />
           </a>
         </div>
         <div className="site-copyright">

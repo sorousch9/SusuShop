@@ -91,7 +91,6 @@ export default function Product() {
                   </tbody>
                 </table>
               </div>
-              <div className="product-rating"></div>
             </div>
             <div className="product-content">
               <Row>
@@ -147,7 +146,7 @@ export default function Product() {
 
                       <Form className="cart">
                         <span>Farbe :</span>
-                        <div  className="filterColorUl">
+                        <div className="filterColorUl">
                           {(Array.isArray(product.color)
                             ? product.color
                             : [product.color]
@@ -203,16 +202,16 @@ export default function Product() {
                         <div className="social-share">
                           <ul>
                             <li>
-                              <p className="whatsapp"></p>
+                              <i className="bi bi-whatsapp"/>
                             </li>
                             <li>
-                              <p className="facebook"></p>
+                              <i className="bi bi-facebook"/>
                             </li>
                             <li>
-                              <p className="instagram"></p>
+                              <i className="bi bi-instagram"/>
                             </li>
                             <li>
-                              <p className="linkdin"></p>
+                              <i className="bi bi-twitter"/>
                             </li>
                           </ul>
                         </div>
@@ -225,20 +224,26 @@ export default function Product() {
                       <div className="icon-messages">
                         <ul>
                           <li>
-                            <span className="icon shipping"></span>
+                            <span className="icon">
+                              <i className="bi bi-truck"></i>
+                            </span>
                             <div className="message">
                               Kostenloser Versand gilt für alle Bestellungen
                               über 50 €
                             </div>
                           </li>
                           <li>
-                            <span className="icon orginal"></span>
+                            <span className="icon">
+                              <i className="bi bi-check-all"></i>
+                            </span>
                             <div className="message">
                               die Echtheit des Produkts garantiert
                             </div>
                           </li>
                           <li>
-                            <span className="icon return"></span>
+                            <span className="icon ">
+                              <i className="bi bi-cash"></i>
+                            </span>
                             <div className="message">
                               14 Tag Rückgaberecht, wenn Sie Ihre Meinung ändern
                             </div>
