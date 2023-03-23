@@ -1,36 +1,34 @@
 import { Container, Row } from "react-bootstrap";
-import { BsTruck, BsPeople } from "react-icons/bs";
-import { RiMedal2Fill, RiShieldKeyholeLine } from "react-icons/ri";
 export const Anons = () => {
   return (
-    <Container >
+    <Container>
       <Row>
         <div className="anons-info">
           <p>
             über 7 Mio. Kunden{" "}
             <span>
-              <BsPeople />
+              <i className="bi bi-person"></i>
             </span>
           </p>
 
           <p>
             24h-Versand{" "}
             <span>
-              <BsTruck />
+              <i className="bi bi-truck"></i>
             </span>
           </p>
 
           <p>
             über 200.000 Artikel{" "}
             <span>
-              <RiMedal2Fill />
+              <i className="bi bi-stack"></i>
             </span>
           </p>
 
           <p>
             Sicher einkaufen{" "}
             <span>
-              <RiShieldKeyholeLine />
+              <i className="bi bi-shield-check"></i>
             </span>
           </p>
         </div>

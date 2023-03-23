@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Badge, Col, Container, Row } from "react-bootstrap";
-import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
+
 import { useEffect, useState } from "react";
 import {
   addProduct,
@@ -11,7 +11,7 @@ import {
 import { ProductType, Props } from "../../../interfaces/Products";
 import { Timer } from "./Timer";
 import { useAppDispatch } from "../../hooks/hooks";
-import { FaStar } from "react-icons/fa";
+
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 export const SpecialOffer = ({ products }: Props) => {
@@ -33,7 +33,12 @@ export const SpecialOffer = ({ products }: Props) => {
               </Tooltip>
             }
           >
-            <FaStar color="gold" onClick={() => setRating(i + 1)} />
+            <i
+              className="bi bi-star-fill"
+              color="gold"
+              onClick={() => setRating(i + 1)}
+              style={{ color: "gold" }}
+            />
           </OverlayTrigger>
         );
       } else {
@@ -43,10 +48,10 @@ export const SpecialOffer = ({ products }: Props) => {
             placement="top"
             overlay={<Tooltip id={`tooltip-top-${i}`}>Not selected</Tooltip>}
           >
-            <FaStar
-              color="gray"
+            <i
+              className="bi bi-star-fill"
               onClick={() => setRating(i + 1)}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", color: "gray" }}
             />
           </OverlayTrigger>
         );
@@ -54,6 +59,7 @@ export const SpecialOffer = ({ products }: Props) => {
     }
     return stars;
   };
+  
   useEffect(() => {
     const filteredProducts = products.filter((item) => item.sale > 12);
     setProductOnSale(filteredProducts);
@@ -101,9 +107,7 @@ export const SpecialOffer = ({ products }: Props) => {
                     to={`/products/${item.id}`}
                     style={{ color: "inherit", textDecoration: "inherit" }}
                   >
-                    <BsArrowsFullscreen
-                      style={{ color: "inherit", textDecoration: "inherit" }}
-                    />
+                    <i className="bi bi-arrows-fullscreen" />
                   </Link>
 
                   <Link
@@ -111,7 +115,7 @@ export const SpecialOffer = ({ products }: Props) => {
                     className="detail-bnt quick-view-button"
                     style={{ color: "inherit", textDecoration: "inherit" }}
                   >
-                    <BsHeart />
+                    <i className="bi bi-heart" />
                   </Link>
                 </div>
               </div>

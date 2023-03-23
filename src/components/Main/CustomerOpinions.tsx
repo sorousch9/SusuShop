@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
-import { BsArrowsFullscreen, BsHeart } from "react-icons/bs";
 import p7718687 from "../../assets/7718687.jpg";
 import { Categories } from "../Categories";
 import { useEffect, useState } from "react";
-
 import {
   addProduct,
   getCartCount,
@@ -13,9 +11,7 @@ import {
 import { ProductType, Props } from "../../../interfaces/Products";
 import { useAppDispatch } from "../../hooks/hooks";
 import { Badge, Card, Col, Container, Image, Row } from "react-bootstrap";
-import { FaStar } from "react-icons/fa";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-
 
 export const CustomerOpinions = ({ products }: Props) => {
   const [productOnSale, setProductOnSale] = useState<ProductType[]>([]);
@@ -35,7 +31,12 @@ export const CustomerOpinions = ({ products }: Props) => {
               </Tooltip>
             }
           >
-            <FaStar color="gold" onClick={() => setRating(i + 1)} />
+            <i
+              className="bi bi-star-fill"
+              color="gold"
+              onClick={() => setRating(i + 1)}
+              style={{ color: "gold" }}
+            />
           </OverlayTrigger>
         );
       } else {
@@ -45,10 +46,10 @@ export const CustomerOpinions = ({ products }: Props) => {
             placement="top"
             overlay={<Tooltip id={`tooltip-top-${i}`}>Not selected</Tooltip>}
           >
-            <FaStar
-              color="gray"
+            <i
+              className="bi bi-star-fill"
               onClick={() => setRating(i + 1)}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", color: "gray" }}
             />
           </OverlayTrigger>
         );
@@ -136,12 +137,7 @@ export const CustomerOpinions = ({ products }: Props) => {
                         to={`/products/${item.id}`}
                         style={{ color: "inherit", textDecoration: "inherit" }}
                       >
-                        <BsArrowsFullscreen
-                          style={{
-                            color: "inherit",
-                            textDecoration: "inherit",
-                          }}
-                        />
+                        <i className="bi bi-arrows-fullscreen" />
                       </Link>
 
                       <Link
@@ -149,7 +145,7 @@ export const CustomerOpinions = ({ products }: Props) => {
                         className="detail-bnt quick-view-button"
                         style={{ color: "inherit", textDecoration: "inherit" }}
                       >
-                        <BsHeart />
+                        <i className="bi bi-heart" />
                       </Link>
                     </div>
                   </div>
@@ -192,7 +188,7 @@ export const CustomerOpinions = ({ products }: Props) => {
                       </div>
                     </div>
                     <div className="rating">{renderStars()}</div>
-                   
+
                     <div className="product-fade-block">
                       <button
                         className="product-btn-fade"

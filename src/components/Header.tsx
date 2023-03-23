@@ -1,9 +1,5 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/LOGO.png";
-import { BsSearch, BsCheck2Square } from "react-icons/bs";
-import { AiOutlineUser } from "react-icons/ai";
-import { GoLocation } from "react-icons/go";
-import { VscSignOut, VscHeart } from "react-icons/vsc";
 import { useAppSelector } from "../hooks/hooks";
 import { Categories } from "./Categories";
 import { Col, Container, Form, NavDropdown, Row } from "react-bootstrap";
@@ -46,9 +42,7 @@ export const Header = () => {
               </NavDropdown>
               <div className="input-item">
                 <input type="text" placeholder="Suche" />
-                <i>
-                  <BsSearch />
-                </i>
+                <i className="bi bi-search" />
               </div>
             </Form>
           </div>
@@ -77,7 +71,6 @@ export const Header = () => {
               >
                 <span className="herder-span">Mein Konto</span>
               </Link>
-
               <div className="cart-dropdown-wrap">
                 <ul>
                   <li>
@@ -89,9 +82,7 @@ export const Header = () => {
                       }}
                       className="text-link"
                     >
-                      <i className="tab-ico">
-                        <AiOutlineUser />
-                      </i>
+                      <i className="tab-ico bi bi-person" />
                       My Account
                     </Link>
                   </li>
@@ -104,9 +95,7 @@ export const Header = () => {
                       }}
                       className="text-link"
                     >
-                      <i className="tab-ico">
-                        <GoLocation />
-                      </i>
+                      <i className="tab-ico bi bi-geo-alt" />
                       Order Tracking
                     </Link>
                   </li>
@@ -119,9 +108,7 @@ export const Header = () => {
                       }}
                       className="text-link"
                     >
-                      <i className="tab-ico">
-                        <BsCheck2Square />
-                      </i>
+                      <i className="tab-ico bi bi-check2-circle" />
                       Mein Gutschein
                     </Link>
                   </li>
@@ -134,9 +121,7 @@ export const Header = () => {
                       }}
                       className="text-link"
                     >
-                      <i className="tab-ico">
-                        <VscHeart />
-                      </i>
+                      <i className="tab-ico bi bi-heart" />
                       Meine Wunschliste
                     </Link>
                   </li>
@@ -150,9 +135,7 @@ export const Header = () => {
                       }}
                       className="text-link"
                     >
-                      <i className="tab-ico">
-                        <VscSignOut />
-                      </i>
+                      <i className="tab-ico bi bi-box-arrow-right" />
                       Ausloggen
                     </Link>
                   </li>
@@ -171,7 +154,7 @@ export const Header = () => {
               </Link>
             </div>
             <div className="header-action-icon">
-              <i className="bi bi-bag header" />
+              <i className="bi-bag header" />
               <Link
                 to="/cart"
                 style={{ color: "inherit", textDecoration: "inherit" }}

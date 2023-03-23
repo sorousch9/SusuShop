@@ -13,33 +13,33 @@ export const MainBanner = () => {
             <Carousel.Item>
               <img className="d-block w-100" src={banner1} alt="First slide" />
               <Carousel.Caption className="caption-text">
-                <h3>Comfortable Running Shoes</h3>
+                <h3>Bequeme Laufschuhe</h3>
                 <p>
-                  These lightweight and breathable shoes are perfect for runners
-                  who want a comfortable and supportive shoe that won't weigh
-                  them down.
+                  Diese leichten und atmungsaktiven Schuhe sind perfekt für
+                  Läufer die einen bequemen und stützenden Schuh wollen, der
+                  nicht wiegt sie runter.
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img className="d-block w-100" src={banner2} alt="Second slide" />
               <Carousel.Caption className="caption-text">
-                <h3>Stylish Leather Boots</h3>
+                <h3>Stilvolle Lederstiefel</h3>
                 <p>
-                  These sleek and sophisticated boots are made with high-quality
-                  leather and are perfect for dressing up or down. They're a
-                  must-have for any fashion-forward wardrobe.
+                  Diese eleganten und raffinierten Stiefel sind mit hoher
+                  Qualität gefertigt Leder und eignen sich perfekt zum An- und
+                  Ausziehen. Sie sind ein Must-Have für jede modische Garderobe.
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img className="d-block w-100" src={banner3} alt="Third slide" />
               <Carousel.Caption className="caption-text">
-                <h3>Durable Hiking Boots</h3>
+                <h3>Strapazierfähige Wanderschuhe</h3>
                 <p>
-                  Take on any trail with these rugged and durable hiking boots.
-                  They're designed to keep your feet dry and comfortable on even
-                  the toughest hikes.
+                  Nehmen Sie mit diesen robusten und langlebigen Wanderschuhen
+                  jeden Trail in Angriff. Sie wurden entwickelt, um Ihre Füße
+                  trocken und bequem zu halten die härtesten Wanderungen.
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -49,9 +49,10 @@ export const MainBanner = () => {
           <Figure>
             <Figure.Image src={pimg2} alt="Image description" />
             <Figure.Caption>
-              Find the perfect shoes to complete your look at our online store.
-              We offer a wide selection of shoes for men, women, and kids, with
-              styles ranging from casual to formal.
+              Finden Sie die perfekten Schuhe, um Ihren Look in unserem
+              Online-Shop zu vervollständigen. Wir bieten eine große Auswahl an
+              Schuhen für Männer, Frauen und Kinder, mit Stilen, die von lässig
+              bis formell reichen.
             </Figure.Caption>
             <Button>
               <Link
