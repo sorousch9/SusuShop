@@ -243,6 +243,7 @@ code {
     font-size: 0.8rem;
   }
 }
+
 .products {
   position: relative;
   display: flex;
@@ -250,6 +251,7 @@ code {
   margin: 0;
   padding: 0;
   list-style: none;
+
   &::before {
     position: absolute;
     content: "";
@@ -261,6 +263,7 @@ code {
     pointer-events: none;
   }
   .product {
+    border: 1px solid #e4e4e4;
     position: relative;
     z-index: 1;
     transition: z-index 0.2s cubic-bezier(0.28, 0.12, 0.22, 1);

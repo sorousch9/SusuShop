@@ -112,7 +112,7 @@ export const CustomerOpinions = ({ products }: Props) => {
             </Col>
           </Row>
         </Col>
-        <Col xs="12" sm="12" md="12" lg="7">
+        <Col xs="12" sm="12" md="12" lg="7" style={{padding:"0rem"}}>
           <Row className="products">
             {productOnSale?.map((item) => (
               <Col
