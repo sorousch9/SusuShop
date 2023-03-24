@@ -2,9 +2,40 @@ import { Link } from "react-router-dom";
 import logo from "../assets/LOGO.png";
 import { useAppSelector } from "../hooks/hooks";
 import { Categories } from "./Categories";
-import { Col, Container, Form, NavDropdown, Row } from "react-bootstrap";
+import {
+  Col,
+  Container,
+  Form,
+  NavDropdown,
+  Overlay,
+  Popover,
+  Row,
+  Tooltip,
+} from "react-bootstrap";
+import { Fragment, useEffect, useState } from "react";
+import { ProductType } from "../../interfaces/Products";
+
+import axios from "axios";
 
 export const Header = () => {
+  const [query, setQuery] = useState<string>("ecco");
+  const [searchProducts, setSearchProducts] = useState<ProductType[]>([]);
+
+  useEffect(() => {
+    const handleSearch = async () => {
+      const response = await axios.get<ProductType[]>(
+        `http://localhost:5000/products?q=${query}`
+      );
+      setSearchProducts(response.data);
+    };
+    handleSearch();
+  }, [query]);
+  const handleSearch = async () => {
+    const response = await axios.get<ProductType[]>(
+      `http://localhost:5000/products?q=${query}`
+    );
+    setSearchProducts(response.data);
+  };
   const quantity = useAppSelector((state) => state.cart.total);
   return (
     <Container className="header-main">
@@ -40,9 +71,32 @@ export const Header = () => {
                   </Link>
                 </NavDropdown.Item>
               </NavDropdown>
-              <div className="input-item">
-                <input type="text" placeholder="Suche" />
-                <i className="bi bi-search" />
+              <div className="search-input-container">
+                <label htmlFor="search-input">Search:</label>
+                <div className="input-item">
+                  <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Enter search query"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        handleSearch();
+                      }
+                    }}
+                  />
+                  <button onClick={handleSearch}>
+                    <i className="bi bi-search" />
+                  </button>
+                </div>
+                {searchProducts.length > 0 && (
+                  <ul className="search-results">
+                    {searchProducts.map((product) => (
+                      <li key={product.id}>{product.title}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </Form>
           </div>

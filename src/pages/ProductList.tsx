@@ -175,7 +175,7 @@ export const ProductList = () => {
       </Pagination.Item>
     );
   }
-  console.log(products);
+
   return (
     <Fragment>
       <Anons />

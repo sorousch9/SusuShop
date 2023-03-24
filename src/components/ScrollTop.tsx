@@ -2,7 +2,7 @@ import {  useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 
-export const ScrollToTop = () => {
+export const ScrollToTop:React.FC = () => {
   const { pathname } = useLocation();
   const [showScroll, setShowScroll] = useState(false);
 
