@@ -9,6 +9,7 @@ import { SpecialOffer } from "./Main/SpecialOffer";
 import { TopRecommendations } from "./Main/TopRecommendations";
 import { Widget } from "./Main/Widget";
 import { CustomerOpinions } from "./Main/CustomerOpinions";
+import { ScrollToTop } from "./ScrollTop";
 
 export const Main = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -78,9 +79,6 @@ export const Main = () => {
           <CustomerOpinions products={products} />
         </Col>
       </Row>
-      <a href="/" className="scrollToTop">
-        <i className="bi bi-chevron-up " />
-      </a>
     </Container>
   );
 };

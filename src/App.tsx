@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { Cart } from "./pages/Cart";
 import Product from "./pages/Product";
 import { ProductList } from "./pages/ProductList";
+import { ScrollToTop } from "./components/ScrollTop";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/products/:category" element={<ProductList />} />
         <Route path="/products" element={<ProductList />} />
       </Routes>
+      <ScrollToTop />
     </BrowserRouter>
   );
 }

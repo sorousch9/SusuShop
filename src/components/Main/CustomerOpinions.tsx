@@ -75,6 +75,7 @@ export const CustomerOpinions = ({ products }: Props) => {
 
   return (
     <Container className="customerOpinions">
+      
       <Row>
         <Col>
           <h4 className="entry-title">Bei unseren Kunden beliebt</h4>
