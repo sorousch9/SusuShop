@@ -1707,7 +1707,7 @@ code {
               font-size: 1rem;
             }
 
-            button {
+            i {
               margin-left: 0.5rem;
               background: none;
               border: none;
@@ -1715,7 +1715,6 @@ code {
               font-size: 1.5rem;
               cursor: pointer;
               transition: color 0.2s;
-
               &:hover {
                 color: #000;
               }
@@ -1740,12 +1739,28 @@ code {
 
             li {
               margin-bottom: 0.25rem;
+              border: 1px solid #cdcdcd;
+              border-radius: 3px;
               padding: 0.25rem;
               cursor: pointer;
               transition: background-color 0.2s;
 
               &:hover {
                 background-color: #f0f0f0;
+              }
+              .result-container {
+                display: flex;
+                padding: .5rem;
+                a {
+                  text-decoration: inherit;
+                  color: inherit;
+                  margin-left: 1rem;
+                }
+                img {
+                  height: 2rem;
+                  width: 3.2rem;
+                  object-fit: cover;
+                }
               }
             }
           }

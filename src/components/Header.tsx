@@ -9,23 +9,24 @@ import { ProductType } from "../../interfaces/Products";
 import axios from "axios";
 
 export const Header = () => {
-  const [query, setQuery] = useState<string | undefined>(undefined);
+  const [query, setQuery] = useState<string>("");
   const [searchProducts, setSearchProducts] = useState<ProductType[]>([]);
 
-  const handleSearch = async () => {
+  const handleSearch = async (searchQuery: string) => {
     const response = await axios.get<ProductType[]>(
-      `http://localhost:5000/products?q=${query}`
+      `http://localhost:5000/products?q=${searchQuery}`
     );
-    setSearchProducts(response.data);
+    return response.data;
   };
+
   useEffect(() => {
-    const handleSearch = async () => {
-      const response = await axios.get<ProductType[]>(
-        `http://localhost:5000/products?q=${query}`
-      );
-      setSearchProducts(response.data);
-    };
-    handleSearch();
+    if (query !== "") {
+      handleSearch(query).then((searchResults) => {
+        setSearchProducts(searchResults);
+      });
+    } else {
+      setSearchProducts([]);
+    }
   }, [query]);
 
   const quantity = useAppSelector((state) => state.cart.total);
@@ -68,26 +69,25 @@ export const Header = () => {
                   <input
                     type="text"
                     id="search-input"
-                    placeholder="Enter search query"
+                    placeholder="Wonach suchen Sie"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") {
-                        handleSearch();
-                      }
-                    }}
                   />
-                  <button onClick={handleSearch}>
-                    <i className="bi bi-search" />
-                  </button>
+                  <i className="bi bi-search" />
                 </div>
-                {searchProducts.length > 0 && (
+                {searchProducts.length >= 1 && (
                   <ul className="search-results">
                     {searchProducts.map((product) => (
                       <li key={product.id}>
-                        <Link to={`/products/${product.id}`}>
-                          {product.title}
-                        </Link>
+                        <div className="result-container">
+                          <img
+                            src={product.img[0].src}
+                            alt={product.title}
+                          ></img>
+                          <Link to={`/products/${product.id}`}>
+                            {product.title}
+                          </Link>
+                        </div>
                       </li>
                     ))}
                   </ul>
