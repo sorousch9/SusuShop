@@ -970,6 +970,9 @@ code {
           display: flex;
           align-items: center;
           margin-bottom: 1.875rem;
+          span {
+            margin-right: 0.3rem;
+          }
           @media screen and (max-width: 512px) {
             justify-content: center;
           }
@@ -999,20 +1002,19 @@ code {
           .social-share {
             ul {
               display: flex;
-              justify-content: space-around;
               align-items: center;
               flex-flow: row wrap;
               margin: 0;
               padding: 0;
               list-style: none;
               li {
-                a {
+                i {
                   color: currentColor;
                   text-decoration: none;
-                  padding: 0.2rem 0.6rem;
+                  padding: 0.3rem 0.6rem;
                   font-size: 1.6rem;
                   &:hover {
-                    background-color: gray;
+                    background-color: rgb(155, 155, 155);
                     color: #fff;
                     border-radius: 7px;
                   }

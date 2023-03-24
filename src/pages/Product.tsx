@@ -1,5 +1,13 @@
 import { Fragment } from "react";
-import { Breadcrumb, Col, Container, Form, Row, Table } from "react-bootstrap";
+import {
+  Breadcrumb,
+  Button,
+  Col,
+  Container,
+  Form,
+  Row,
+  Table,
+} from "react-bootstrap";
 import { Anons } from "../components/Anons";
 import { Header } from "../components/Header";
 import { Link, NavLink, useParams } from "react-router-dom";
@@ -181,12 +189,20 @@ export default function Product() {
                           className="button"
                         >
                           In den Warenkorb
+                          <i
+                            className="bi bi-cart-plus"
+                            style={{ margin: ".3rem" ,fontSize:"1.2rem"}}
+                          />
                         </Link>
                       </Form>
                       <div className="product-actions">
-                        <button className="wishlist-clear">
-                          <span>in Einkaufslisten</span>
-                        </button>
+                        <Button
+                          className="wishlist-clear "
+                          variant="outline-warning"
+                        >
+                          <span> in Einkaufslisten</span>
+                          <i className="bi bi-heart" />
+                        </Button>
                       </div>
                       <div className="product-cat">
                         <span className="post-in">
@@ -202,16 +218,16 @@ export default function Product() {
                         <div className="social-share">
                           <ul>
                             <li>
-                              <i className="bi bi-whatsapp"/>
+                              <i className="bi bi-whatsapp" />
                             </li>
                             <li>
-                              <i className="bi bi-facebook"/>
+                              <i className="bi bi-facebook" />
                             </li>
                             <li>
-                              <i className="bi bi-instagram"/>
+                              <i className="bi bi-instagram" />
                             </li>
                             <li>
-                              <i className="bi bi-twitter"/>
+                              <i className="bi bi-twitter" />
                             </li>
                           </ul>
                         </div>
